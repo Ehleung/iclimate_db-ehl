@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>iClimate Story Search</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="content">
+			<br/>
+			<h1>iClimate Story Search</h1>
+		</div>
+		<br/>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Story</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Story</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<% data.forEach(function(dbData){ %>
+				<tr>
+					<td><%= dbData.title %></td>
+					<td><%= dbData.author %></td>
+					<td><%= dbData.story %></td>
+				</tr>
+				<% }); %>		
+			</tbody>
+		</table>
+		<br/>
+
+		<div class="content">
+			<p>Return to the full list <a href="/storylist">here</a>.</p>
+		</div>
+	</div>
+
+</body>
+</html>

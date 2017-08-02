@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+		<link rel="stylesheet" type="text/css" href="css/explore/explore_main.css">
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+		<script src="js/explore/explore_init.js"></script>
+		<script src="js/explore/explore_function.js"></script>
+		<title>iClimate</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="materialize/css/materialize.min.css">
+		<link href="css/ionicons.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/animate.css">
+		<script src="materialize/js/materialize.min.js"></script>
+  </head>
+
+
+
+	<!-- navbar -->
+	<nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo" style="padding-left: 20px">iClimate</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="share.html">Share</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="share.html">Share</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div id="modal1" class="modal modal-fixed-footer" style="background-color: rgb(20, 63, 108);">
+
+  <div class="animated zoomIn" style="animation-delay: 0.1s; padding-left: 20px;padding-right: 20px;padding-top: 20px;">
+    <div class="card" style="margin-bottom: 0px;">
+          <div class="card-content">
+            <div class="chip"><img src="images/profile.jpg" alt="Contact Person">Pat</div>
+            "Hello this is me from ASU."
+          </div>
+      </div>
+      <div id="triangle-down" style="align: right;"></div>
+    </div>
+  <div class="animated zoomIn" style="animation-delay: 0.2s; padding-left: 20px;padding-right: 20px;padding-top: 20px;">
+    <div class="card" style="margin-bottom: 0px;">
+          <div class="card-content">
+            <textarea id="textarea1" class="materialize-textarea" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;"></textarea>
+
+          </div>
+      </div>
+      <div id="triangle-down" style="align: right;"></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<body onload="world()">
+
+					<div id="earth_div"  class="wrapper">
+
+					</div>
+
+
+</body>
+
+
+
+
+<script>
+$(document).ready(function(){
+// the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+$('.modal').modal();
+});
+
+
+</script>
+
+</html>

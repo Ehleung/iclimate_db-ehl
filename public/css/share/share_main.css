@@ -1,0 +1,33 @@
+html, body{padding: 0; margin: 0;}
+#earth_div{
+  z-index: -1;
+  top: 50px; right: 0; bottom: 0; left: 0;
+  background-color: #000; position: absolute !important;
+}
+
+.wrapper {
+
+    display: inline-block;
+    position: relative;
+
+}
+
+.hover {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+    bottom: 30%;
+}
+
+#triangle-down {
+  position: relative;
+  float: right;
+	width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 24px solid white;
+
+
+}
