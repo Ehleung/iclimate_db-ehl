@@ -1,15 +1,6 @@
 <!-- views/index.ejs -->
 <!doctype html>
 <html>
-    <!-- <head>
-        <title>iClimate Database Test</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body        { padding-top:80px; }
-            p.ex         { color: rgb(175,30,62); }
-        </style>
-    </head> -->
     <head>
         <link rel="stylesheet" type="text/css" runat="server" href="/css/home/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css">
@@ -24,7 +15,6 @@
         <link href="css/ionicons.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="css/animate.css">
         <script src="materialize/js/materialize.min.js"></script>
-        <script src="js/index/index_func.js"></script>
     </head>
 
     <!-- navbar -->
@@ -66,7 +56,7 @@
                 <div class="modal-card">
                     <header class="modal-card-head">
                         <p class="modal-card-title">Login</p>
-                        <button class="delete" id="del"></button>
+                        <a class="delete" id="del"></a>
                     </header>
                     <section class="modal-card-body">
                         <div class="field">
@@ -98,18 +88,6 @@
         document.getElementById("background").onclick = function() { modal.style.display = "none"; }
         document.getElementById("cancel").onclick = function() { modal.style.display = "none"; }
     </script>
-<!-- <div class="container">
-
-    <div>
-        <h1 class="title is-1">iClimate Database Adminstration</h1>
-
-        <h2 class="subtitle is-3">Login or Register:</h2>
-
-        <a href="/login" class="btn btn-default"></span>Login</a><br/>
-        <a href="/signup" class="btn btn-default"></span>Signup</a>
-        
-    </div>
-</div> -->
 </body>
 
 </html>
