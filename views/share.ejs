@@ -29,7 +29,7 @@
       <ul class="side-nav" id="mobile-demo">
         <li><a href="/share">Share</a></li>
         <li><a href="/explore">Explore</a></li>
-        <li><a id="login1">Login</a></li>
+        <li><a id="login2">Login</a></li>
       </ul>
     </div>
   </nav>
@@ -71,32 +71,32 @@
                 </div>
               </div>
             </div>
-
           </div>
+
         </div>
       </div>
 
       <div class="animated zoomIn" style="animation-delay: 0.2s;">
         <div class="card" style="margin-bottom: 0px;">
           <form action="/storylist" method="post">
-           <div class="card-content">
-            <div class="columns">
-              <div class="column is-half is-offset-one-quarter">
-                <input class="input" type="text" name="title" id="title" placeholder="Give your story a title!"></input>
+             <div class="card-content">
+              <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                  <input class="input" type="text" name="title" id="title" placeholder="Give your story a title!"></input>
+                </div>
+              </div>
+              <textarea id="textarea1" name="story" class="textarea" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="I imagine..."></textarea>
+              <br/>      
+              <div class="columns">
+                <div class="column is-half is-offset-5">
+                  <button class="button is-primary" type="submit">Submit</button>
+                </div>
               </div>
             </div>
-            <textarea id="textarea1" name="story" class="textarea" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="I imagine..."></textarea>
-            <br/>      
-            <div class="columns">
-              <div class="column is-half is-offset-5">
-                <button class="button is-primary" type="submit">Submit</button>
-              </div>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
+        <div id="triangle-down" style="align: right;"></div>
       </div>
-      <div id="triangle-down" style="align: right;"></div>
-    </div>
   </div>
 </div>
 </div>
