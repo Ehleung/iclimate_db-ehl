@@ -85,7 +85,19 @@ module.exports = function(app, passport) {
 	app.get('/explore', function(req, res) {
 		res.render('explore.ejs');
 	});
+	app.post('/explore', function(req, res) {
+		var newStory = new Story();
+		newStory.author = req.body.author;
+		newStory.title = req.body.title;
+		newStory.story = req.body.story;
+		newStory.comments = [];
+		console.log(req.body);
 
+		newStory.save(req.body, function(err, doc) {
+			//res.render('storylist_2.ejs', {data:docs});
+			res.redirect('/storylist');
+		});
+	});
 	app.get('/share', function(req, res) {
 		res.render('share.ejs');
 	});

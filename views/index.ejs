@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/animate.css">
         <script src="materialize/js/materialize.min.js"></script>
     </head>
-
+    
     <!-- navbar -->
     <nav class="navbar">
         <div class="navbar-brand">
@@ -49,37 +49,36 @@
         </div>
     </div>
 
-    
-        <div class="modal" id="myModal">
-            <div class="modal-background" id="background"></div>
-            <form action="/login" method="post">
-                <div class="modal-card">
-                    <header class="modal-card-head">
-                        <p class="modal-card-title">Login</p>
-                        <a class="delete" id="del"></a>
-                    </header>
-                    <section class="modal-card-body">
-                        <div class="field">
-                            <label class="label">Username</label>
-                            <p class="control">
-                                <input class="input" type="text" name="username" id="user" placeholder="Enter your username">
-                            </p>
-                        </div>
-                        <div class="field">
-                            <label class="label">Password</label>
-                            <p class="control">
-                                <input class="input" type="password" name="password" placeholder="Enter your password here">
-                            </p>
-                        </div>
-                    </section>
-                    <footer class="modal-card-foot">
-                        <button class="button is-primary" id="submit">Submit</button>
-                        <a class="button" id="cancel">Cancel</a>
-                    </footer>
-                </div>
-            </form>
-        </div>
-    
+    <div class="modal" id="myModal">
+        <div class="modal-background" id="background"></div>
+        <form action="/login" method="post">
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Login</p>
+                    <a class="delete" id="del"></a>
+                </header>
+                <section class="modal-card-body">
+                    <div class="field">
+                        <label class="label">Username</label>
+                        <p class="control">
+                            <input class="input" type="text" name="username" id="user" placeholder="Enter your username">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <p class="control">
+                            <input class="input" type="password" name="password" placeholder="Enter your password here">
+                        </p>
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-primary" id="submit">Submit</button>
+                    <a class="button" id="cancel">Cancel</a>
+                </footer>
+            </div>
+        </form>
+    </div>
+
     <script type="text/javascript">
         var modal = document.getElementById("myModal");
         document.getElementById("login1").onclick = function() { modal.style.display = "block"; }

@@ -51,13 +51,3 @@ random_question = random_question + " in Grand Canyon in year 2018?";
 document.getElementById("random_question").textContent=random_question;
 
 }
-
-// Config ==========================================================================
-var mongoose = require('mongoose');
-var configDB = require('database.js');
-var Story = require('story.js');
-mongoose.connect(configDB.url);
-
-document.getElementById("textarea1").onclick = function() {
-
-}
