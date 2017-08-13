@@ -15,8 +15,8 @@ module.exports = function(app, passport) {
 	});
 	// Process signup form
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/storylist',
-		failureRedirect : '/signup',
+		successRedirect : '/explore',
+		failureRedirect : '/',
 		failureFlash : true
 	}));
 	// LOGIN ==================================================================
@@ -85,7 +85,11 @@ module.exports = function(app, passport) {
 	app.get('/explore', function(req, res) {
 		res.render('explore.ejs');
 	});
-	app.post('/explore', function(req, res) {
+
+	app.get('/share', function(req, res) {
+		res.render('share.ejs');
+	});
+	app.post('/share', function(req, res) {
 		var newStory = new Story();
 		newStory.author = req.body.author;
 		newStory.title = req.body.title;
@@ -97,9 +101,6 @@ module.exports = function(app, passport) {
 			//res.render('storylist_2.ejs', {data:docs});
 			res.redirect('/storylist');
 		});
-	});
-	app.get('/share', function(req, res) {
-		res.render('share.ejs');
 	});
 };
 

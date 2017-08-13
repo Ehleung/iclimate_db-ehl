@@ -22,19 +22,16 @@
           <a href="/" class="brand-logo" style="padding-left: 20px">iClimate</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/share">Share</a></li>
-            <li><a href="/explore">Explore</a></li>
-            <li><a id="login1">Login</a></li>
+            <li><a id="login1">Login/Signup</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
-            <li><a href="/share">Share</a></li>
-            <li><a href="/explore">Explore</a></li>
-            <li><a id="login1">Login</a></li>
+            <li><a id="login1">Login/Signup</a></li>
           </ul>
         </div>
     </nav>
 
 <body onload="world()">
+    <!-- Display for page -->
     <div id="earth_div"  class="wrapper">
         <div class="hover">
             <center><h2 style="color: rgb(255, 255, 255);">iClimate</h2></center>
@@ -44,12 +41,13 @@
         </div>
     </div>
 
+    <!-- Login Modal -->
     <div class="modal" id="myModal">
         <div class="modal-background" id="background"></div>
         <form action="/login" method="post">
             <div class="modal-card">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">Login</p>
+                    <p class="modal-card-title">Login/Signup</p>
                     <a class="delete" id="del"></a>
                 </header>
                 <section class="modal-card-body">
@@ -67,13 +65,14 @@
                     </div>
                 </section>
                 <footer class="modal-card-foot">
-                    <button class="button is-primary" id="submit">Submit</button>
+                    <button class="button is-primary" id="submit">Login</button>
                     <a class="button" id="cancel">Cancel</a>
+                    <label>Need an account? Sign up <a href="/signup">here</a>.</label>
                 </footer>
             </div>
         </form>
     </div>
-
+    <!-- Script for modal -->
     <script type="text/javascript">
         var modal = document.getElementById("myModal");
         document.getElementById("login1").onclick = function() { modal.style.display = "block"; }
