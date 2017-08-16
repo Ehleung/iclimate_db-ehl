@@ -26,7 +26,7 @@ module.exports = function(app, passport) {
 	});
 	// Process login form
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect : '/storylist', // redirect to secure profile seciton
+		successRedirect : '/explore', // redirect to secure profile seciton
 		failureRedirect : '/', // redirect back to signin page if error
 		failureFlash : true // allow flash messages
 	}));
@@ -63,12 +63,15 @@ module.exports = function(app, passport) {
 	})
 
 	// STORYLIST ==============================================================
-	app.get('/storylist', function(req, res) {
+	app.get('/storylist', isLoggedIn, function(req, res) {
 		Story.find({}, function(err, docs) {
-			res.render('storylist_2.ejs', {data:docs});
+			res.render('storylist_2.ejs', {
+				data : docs
+				user : req.user
+			});
 		});
 	});
-	app.post('/storylist', function(req, res) {
+	app.post('/storylist', isLoggedIn, function(req, res) {
 		var newStory = new Story();
 		newStory.author = req.body.author;
 		newStory.title = req.body.title;
@@ -86,10 +89,12 @@ module.exports = function(app, passport) {
 		res.render('explore.ejs');
 	});
 
-	app.get('/share', function(req, res) {
-		res.render('share.ejs');
+	app.get('/share', isLoggedIn, function(req, res) {
+		res.render('share.ejs', {
+			user : req.user // get user out of session and pass to the page
+		});
 	});
-	app.post('/share', function(req, res) {
+	app.post('/share', isLoggedIn, function(req, res) {
 		var newStory = new Story();
 		newStory.author = req.body.author;
 		newStory.title = req.body.title;
