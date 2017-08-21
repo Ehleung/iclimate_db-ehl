@@ -67,7 +67,7 @@ module.exports = function(app, passport) {
 		Story.find({}, function(err, docs) {
 			res.render('storylist_2.ejs', {
 				data : docs
-				user : req.user
+				// user : req.user
 			});
 		});
 	});
