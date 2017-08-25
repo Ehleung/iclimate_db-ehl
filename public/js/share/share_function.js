@@ -36,7 +36,7 @@ function shuffle_question()
 {
 random_question ="What would happen to "
 var x = Math.floor((Math.random() * 10) + 1);
-if (x == 1) { random_question = random_question + "cactus";;}
+if (x == 1) { random_question = random_question + "cacti";;}
 else if (x == 2) { random_question = random_question + "native peoples";}
 else if (x == 3) { random_question = random_question + "babys";}
 else if (x == 4) { random_question = random_question + "cats";}
@@ -46,7 +46,7 @@ else if (x == 7) { random_question = random_question + "dogs";}
 else if (x == 8) { random_question = random_question + "teachers";}
 else if (x == 9) { random_question = random_question + "cats";}
 else if (x == 10) { random_question = random_question + "dinosaurs";}
-random_question = random_question + " in Grand Canyon in year 2018?";
+random_question = random_question + " here in the year 2050?";
 
 document.getElementById("random_question").textContent=random_question;
 
