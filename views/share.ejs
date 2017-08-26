@@ -11,7 +11,7 @@
 		<title>iClimate</title>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
  		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!-- <link rel="stylesheet" href="materialize/css/materialize.min.css"> -->
+		<link rel="stylesheet" href="materialize/css/materialize.min.css">
 		<link href="css/ionicons.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="css/animate.css">
 		<script src="materialize/js/materialize.min.js"></script>
@@ -75,20 +75,18 @@
    <div class="hover">
      <div class="row">
 
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
+      <div class="select" value="">
+        <select>
+          <option>Select a location...</option>
+          <option>Grand Canyon</option>
+          <option>Flagstaff</option>
+          <option>Phoenix</option>
+          <option>ASU</option>
+          <option>Tuscon</option>
+          <option>Yuma</option>
+          <option>Prescott</option>
+        </select>
       </div>
-
-      <script type="text/javascript">
-      function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-      }
-      </script>
 
       <div class="animated zoomIn">
         <div class="card">
