@@ -75,18 +75,39 @@
    <div class="hover">
      <div class="row">
 
-      <div class="select" value="">
+      <div class="select">
         <select>
-          <option>Select a location...</option>
-          <option>Grand Canyon</option>
-          <option>Flagstaff</option>
-          <option>Phoenix</option>
-          <option>ASU</option>
-          <option>Tuscon</option>
-          <option>Yuma</option>
-          <option>Prescott</option>
+          
         </select>
       </div>
+
+      <script type="text/javascript">
+      var select = document.getElementById("location");
+      var options = ["Grand Canyon National Park",
+                      "Saguaro National Park",
+                      "Petrified Forest National Park",
+                      "Prescott",
+                      "Payson",
+                      "Yuma",
+                      "Phoenix",
+                      "Lake Havasu",
+                      "Sedona",
+                      "Flagstaff",
+                      "Nogales",
+                      "Bisbee",
+                      "Window Rock"]
+
+      // clear out existing options first
+      // select.innerHTML = "";
+      for (var i = 0; i < options.length; i++) {
+        var opt = options[i];
+        var element = document.createElement("option");
+        element.textContent = opt;
+        element.value = opt;
+        select.appendChild(element);
+      }
+      </script>
+      
 
       <div class="animated zoomIn">
         <div class="card">
