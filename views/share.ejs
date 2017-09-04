@@ -74,98 +74,99 @@
  <div id="earth_div"  class="wrapper">
    <div class="hover">
      <div class="row">
-
       <form action="/storylist" method="post">
+        <element hidden id="user" name="user"><%= user.local.username %></element>
 
-      <div class="select">
-        <select name="location" id="location">
-        </select>
-      </div>
-      <script type="text/javascript">
-      var select = document.getElementById("location");
-      var options = [ "Select a location...",
-                      "Grand Canyon National Park",
-                      "Saguaro National Park",
-                      "Petrified Forest National Park",
-                      "Prescott",
-                      "Payson",
-                      "Yuma",
-                      "Phoenix",
-                      "Lake Havasu",
-                      "Sedona",
-                      "Flagstaff",
-                      "Nogales",
-                      "Bisbee",
-                      "Window Rock"]
+        <div class="select">
+          <select name="location" id="location">
+          </select>
+        </div>
+        <script type="text/javascript">
+        var select = document.getElementById("location");
+        var options = [ "Select a location...",
+                        "Grand Canyon National Park",
+                        "Saguaro National Park",
+                        "Petrified Forest National Park",
+                        "Prescott",
+                        "Payson",
+                        "Yuma",
+                        "Phoenix",
+                        "Lake Havasu",
+                        "Sedona",
+                        "Flagstaff",
+                        "Nogales",
+                        "Bisbee",
+                        "Window Rock"]
 
-      for (var i = 0; i < options.length; i++) {
-        var opt = options[i];
-        var element = document.createElement("option");
-        element.textContent = opt;
-        element.value = opt;
-        select.appendChild(element);
-      }
-      </script>
+        for (var i = 0; i < options.length; i++) {
+          var opt = options[i];
+          var element = document.createElement("option");
+          element.textContent = opt;
+          element.value = opt;
+          select.appendChild(element);
+        }
+        </script>
 
-      <!-- Question Prompt goes here -->
-      <div class="animated zoomIn">
-        <div class="card">
-          <div class="card-content">
-            <a class="btn-floating btn-small waves-effect waves-light red" onclick ="shuffle_question()"><i class="material-icons">replay</i></a>
-            <span id="random_question"></span>
-          </div>
+        <!-- Question Prompt goes here -->
+        <div class="animated zoomIn">
+          <div class="card">
+            <div class="card-content">
+              <a class="btn-floating btn-small waves-effect waves-light red" onclick ="shuffle_question()"><i class="material-icons">replay</i></a>
+              <span id="random_question"></span>
+            </div>
 
-          <div class="card-action">
-            <div class="row">
-              <div class="col s3">
-                <div class="animated flipInX" style="animation-delay: 0.5s;">
-                  <i class="ion-waterdrop" style="font-size: 30px;"></i><b style="font-size: 30px;"> 20%</b> <i class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+            <div class="card-action">
+              <div class="row">
+                <div class="col s3">
+                  <div class="animated flipInX" style="animation-delay: 0.5s;">
+                    <i class="ion-waterdrop" style="font-size: 30px;"></i><b style="font-size: 30px;"> 20%</b> <i class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                  </div>
                 </div>
-              </div>
-              <div class="col s3">
-                <div class="animated flipInX" style="animation-delay: 0.7s;">
-                  <i class="ion-thermometer" style="font-size: 30px;"></i><b style="font-size: 30px;"> 100F</b> <i class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                <div class="col s3">
+                  <div class="animated flipInX" style="animation-delay: 0.7s;">
+                    <i class="ion-thermometer" style="font-size: 30px;"></i><b style="font-size: 30px;"> 100F</b> <i class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                  </div>
                 </div>
-              </div>
-              <div class="col s3">
-                <div class="animated flipInX" style="animation-delay: 0.9s;">
-                  <i class="ion-pizza" style="font-size: 30px;"></i><b style="font-size: 30px;"> 10%</b> <i class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                <div class="col s3">
+                  <div class="animated flipInX" style="animation-delay: 0.9s;">
+                    <i class="ion-pizza" style="font-size: 30px;"></i><b style="font-size: 30px;"> 10%</b> <i class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                  </div>
                 </div>
-              </div>
-              <div class="col s3">
-                <div class="animated flipInX" style="animation-delay: 1.1s;">
-                  <i class="ion-leaf" style="font-size: 30px;"></i><b style="font-size: 30px;"> 10%</b> <i class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                <div class="col s3">
+                  <div class="animated flipInX" style="animation-delay: 1.1s;">
+                    <i class="ion-leaf" style="font-size: 30px;"></i><b style="font-size: 30px;"> 10%</b> <i class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- End of question prompt -->
+        <!-- End of question prompt -->
 
-      <!-- Story input goes here -->
-      <div class="animated zoomIn" style="animation-delay: 0.2s;">
-        <div class="card" style="margin-bottom: 0px;">
-          
-             <div class="card-content">
-              <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
-                  <input class="input" type="text" name="title" id="title" placeholder="Give your story a title!"></input>
+        <!-- Story input goes here -->
+        <div class="animated zoomIn" style="animation-delay: 0.2s;">
+          <div class="card" style="margin-bottom: 0px;">
+            
+               <div class="card-content">
+                <div class="columns">
+                  <div class="column is-half is-offset-one-quarter">
+                    <input class="input" type="text" name="title" id="title" placeholder="Give your story a title!"></input>
+                  </div>
+                </div>
+                <textarea id="textarea1" name="story" class="textarea" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="I imagine..."></textarea>
+                <br/>      
+                <div class="columns">
+                  <div class="column is-half is-offset-5">
+                    <button class="button is-primary" type="submit">Submit</button>
+                  </div>
                 </div>
               </div>
-              <textarea id="textarea1" name="story" class="textarea" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="I imagine..."></textarea>
-              <br/>      
-              <div class="columns">
-                <div class="column is-half is-offset-5">
-                  <button class="button is-primary" type="submit">Submit</button>
-                </div>
-              </div>
-            </div>
-          
+            
+          </div>
+          <div id="triangle-down" style="align: right;"></div>
         </div>
-        <div id="triangle-down" style="align: right;"></div>
-      </div>
-      <!-- End of story input -->
+        <!-- End of story input -->
+      
       </form>
       <!-- End of form -->
   </div>
@@ -184,7 +185,7 @@
                 <div class="field">
                     <label class="label">Username</label>
                     <p class="control">
-                        <input class="input" type="text" name="username" id="user" placeholder="Enter your username">
+                        <input class="input" type="text" name="username" id="username" placeholder="Enter your username">
                     </p>
                 </div>
                 <div class="field">

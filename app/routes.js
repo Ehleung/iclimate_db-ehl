@@ -73,7 +73,7 @@ module.exports = function(app, passport) {
 	});
 	app.post('/storylist', isLoggedIn, function(req, res) {
 		var newStory = new Story();
-		newStory.author = req.body.author;
+		newStory.author = req.user.local.username;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
 		newStory.location = req.body.location;
@@ -97,7 +97,7 @@ module.exports = function(app, passport) {
 	});
 	app.post('/share', isLoggedIn, function(req, res) {
 		var newStory = new Story();
-		newStory.author = req.body.author;
+		newStory.author = req.body.user;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
 		newStory.comments = [];
