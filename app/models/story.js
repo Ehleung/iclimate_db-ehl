@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var storySchema = mongoose.Schema({
+	location: String,
 	author : String,
 	title : String,
 	story : String,

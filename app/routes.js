@@ -57,7 +57,7 @@ module.exports = function(app, passport) {
 				res.render('search.ejs', {data:docs});
 			});
 		else
-			Story.find({$or: [{title: search}, {author: search}, {story: search}]}, function(err, docs) {
+			Story.find({$or: [{title: search}, {author: search}, {story: search}, {location: search}]}, function(err, docs) {
 				res.render('search.ejs', {data:docs});
 			});
 	})
@@ -76,8 +76,9 @@ module.exports = function(app, passport) {
 		newStory.author = req.body.author;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
+		newStory.location = req.body.location;
 		newStory.comments = [];
-		console.log(req.body);
+		// console.log(req.body);
 
 		newStory.save(req.body, function(err, doc) {
 			//res.render('storylist_2.ejs', {data:docs});

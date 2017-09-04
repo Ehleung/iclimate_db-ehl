@@ -7,8 +7,8 @@ function setPositionToEverest()
 function flyToJapan()
             {
             //earth.fitBounds([[22, 122], [48, 154]]);
-            //earth.panTo([33.572162, -112.087966], {heading: 0, zoom: 10000, tilt: 15, duration: 1});
-
+            
+            earth.panTo([33.572162, -112.087966], {heading: 0, zoom: 10000, tilt: 15, duration: 1});
             earth.panInsideBounds([[33.572162, -112.087966], [30.572162, -111.087966]],
                 {heading: 0, tilt: 15, duration: 1});
 

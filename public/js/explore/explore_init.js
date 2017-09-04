@@ -1,4 +1,16 @@
 var earth
+
+  function flyToArizona()
+              {
+              //earth.fitBounds([[22, 122], [48, 154]]);
+              //earth.panTo([33.572162, -112.087966], {heading: 0, zoom: 10000, tilt: 15, duration: 1});
+
+              earth.panInsideBounds([[33.572162, -112.087966], [30.572162, -111.087966]],
+                  {heading: 0, tilt: 15, duration: 1});
+
+
+              }
+
   function world() {
     var options = {
          sky: true,
@@ -111,7 +123,7 @@ var earth
 
 
 
-       earth.swith_map = function swith_map(x)
+       earth.switch_map = function switch_map(x)
         {
           nature.setOpacity(0);
           toner.setOpacity(0);
@@ -120,7 +132,7 @@ var earth
         }
         nature.addTo(earth);
         toner.addTo(earth);
-        earth.swith_map(1);
+        earth.switch_map(1);
         setTimeout(spin(), 5000);
-
+        flyToArizona();
   }
