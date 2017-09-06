@@ -87,7 +87,11 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/explore', function(req, res) {
-		res.render('explore.ejs');
+		Story.find({}, function(err, docs) {
+			res.render('explore.ejs', {
+				data : docs
+			});
+		});
 	});
 
 	app.get('/share', isLoggedIn, function(req, res) {
