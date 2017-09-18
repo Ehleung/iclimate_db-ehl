@@ -86,6 +86,7 @@ module.exports = function(app, passport) {
 		});
 	});
 
+	
 	app.get('/explore', function(req, res) {
 		Story.find({}, function(err, docs) {
 			res.render('explore.ejs', {
