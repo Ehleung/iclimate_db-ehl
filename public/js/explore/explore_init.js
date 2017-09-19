@@ -1,15 +1,11 @@
-var earth
-
-  function flyToArizona()
-              {
-              //earth.fitBounds([[22, 122], [48, 154]]);
-              //earth.panTo([33.572162, -112.087966], {heading: 0, zoom: 10000, tilt: 15, duration: 1});
-
-              earth.panInsideBounds([[33.572162, -112.087966], [30.572162, -111.087966]],
-                  {heading: 0, tilt: 15, duration: 1});
+var Story = require('./models/story.js');
+var earth;
+var data;
 
 
-              }
+function flyToArizona() {
+	earth.panInsideBounds([[33.572162, -112.087966], [30.572162, -111.087966]], {heading: 0, tilt: 15, duration: 1});
+}
 
   function world() {
     var options = {
@@ -27,6 +23,14 @@ var earth
        var toner = WE.tileLayer('http://tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {});
 
        // Imagination
+
+       Story.find({}, function(err, docs) {
+           docs.forEach(function(dbData) {
+               var marker = WE.marker([]).addTo(earth);
+           })
+       });
+
+       
 
 
         var marker = WE.marker([51.5, 20.09]).addTo(earth);
