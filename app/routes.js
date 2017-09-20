@@ -1,5 +1,6 @@
 // Obtain connection for storylist
 var Story = require('./models/story.js');
+var Place = require('./models/location.js');
 
 module.exports = function(app, passport) {
 	
@@ -66,8 +67,8 @@ module.exports = function(app, passport) {
 	app.get('/storylist', isLoggedIn, function(req, res) {
 		Story.find({}, function(err, docs) {
 			res.render('storylist_2.ejs', {
-				data : docs
-				// user : req.user
+				data : docs,
+				user : req.user
 			});
 		});
 	});
@@ -86,22 +87,28 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	
 	app.get('/explore', function(req, res) {
-		Story.find({}, function(err, docs) {
-			res.render('explore.ejs', {
-				data : docs
+		Story.find({}, function (err, docs) {
+			Place.find({}, function (error, result) {
+				res.render('explore.ejs', {
+					data : docs,
+					locs : result
+				});	
 			});
-		});
+		});		
 	});
 
 	app.get('/share', isLoggedIn, function(req, res) {
-		res.render('share.ejs', {
-			user : req.user // get user out of session and pass to the page
+		Place.find({}, function (error, result) {
+			res.render('share.ejs', {
+				user : req.user, // get user out of session and pass to the page
+				locs : result
+			});
 		});
 	});
 	app.post('/share', isLoggedIn, function(req, res) {
 		var newStory = new Story();
+		newStory.admin = false;
 		newStory.author = req.body.user;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;

@@ -1,14 +1,7 @@
-var Story = require('./models/story.js');
 var earth;
-var data;
 
-
-function flyToArizona() {
-	earth.panInsideBounds([[33.572162, -112.087966], [30.572162, -111.087966]], {heading: 0, tilt: 15, duration: 1});
-}
-
-  function world() {
-    var options = {
+function world() {
+  var options = {
          sky: true,
          atmosphere: true,
          dragging: true,
@@ -23,33 +16,8 @@ function flyToArizona() {
        var toner = WE.tileLayer('http://tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {});
 
        // Imagination
-
-       Story.find({}, function(err, docs) {
-           docs.forEach(function(dbData) {
-               var marker = WE.marker([]).addTo(earth);
-           })
-       });
-
-       
-
-
         var marker = WE.marker([51.5, 20.09]).addTo(earth);
         marker.bindPopup("<h7><b>Pat</b></h7><br> <h6>\"Hello this is me from ASU.\"</h6></br> <a href=\"#modal1\" ><i class=\"material-icons left\">comment</i>comment</a>", {maxWidth: 320, closeButton: true});
-
-
-        var marker = WE.marker([5.5, 100.09]).addTo(earth);
-      marker.bindPopup("<h7><b>Pat</b></h7><br> <h6>\"Hello this is me from ASU.\"</h6></br> <a href=\"#modal1\" ><i class=\"material-icons left\">comment</i>comment</a>", {maxWidth: 320, closeButton: true});
-
-
-
-        var marker = WE.marker([31.5, -100.09]).addTo(earth);
-      marker.bindPopup("<h7><b>Pat</b></h7><br> <h6>\"Hello this is me from ASU.\"</h6></br> <a href=\"#modal1\" ><i class=\"material-icons left\">comment</i>comment</a>", {maxWidth: 320, closeButton: true});
-
-
-
-        var marker = WE.marker([11.5, 50.09]).addTo(earth);
-      marker.bindPopup("<h7><b>Pat</b></h7><br> <h6>\"Hello this is me from ASU.\"</h6></br> <a href=\"#modal1\" ><i class=\"material-icons left\">comment</i>comment</a>", {maxWidth: 320, closeButton: true});
-
 
        earth.switch_map = function switch_map(x)
         {
@@ -63,4 +31,4 @@ function flyToArizona() {
         earth.switch_map(1);
         setTimeout(spin(), 5000);
         flyToArizona();
-  }
+}

@@ -3,7 +3,6 @@
   <head>
 		<link rel="stylesheet" type="text/css" href="css/share/share_main.css">
     <link rel="stylesheet" type="text/css" href="/bulma/css/bulma.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="http://www.webglearth.com/v2/api.js"></script>
 		<script src="js/share/share_init.js"></script>
@@ -79,33 +78,11 @@
 
         <div class="select">
           <select name="location" id="location">
+            <% locs.forEach(function(loc) { %>
+              <option value=<%= loc.name %>><%= loc.name %></option>
+            <% }); %>
           </select>
         </div>
-        <script type="text/javascript">
-        var select = document.getElementById("location");
-        var options = [ "Select a location...",
-                        "Grand Canyon National Park",
-                        "Saguaro National Park",
-                        "Petrified Forest National Park",
-                        "Prescott",
-                        "Payson",
-                        "Yuma",
-                        "Phoenix",
-                        "Lake Havasu",
-                        "Sedona",
-                        "Flagstaff",
-                        "Nogales",
-                        "Bisbee",
-                        "Window Rock"]
-
-        for (var i = 0; i < options.length; i++) {
-          var opt = options[i];
-          var element = document.createElement("option");
-          element.textContent = opt;
-          element.value = opt;
-          select.appendChild(element);
-        }
-        </script>
 
         <!-- Question Prompt goes here -->
         <div class="animated zoomIn">
