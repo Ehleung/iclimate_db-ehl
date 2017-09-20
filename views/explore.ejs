@@ -16,6 +16,12 @@
 		<link href="css/ionicons.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="css/animate.css">
 		<script src="materialize/js/materialize.min.js"></script>
+
+    <style>
+      html, body {padding: 0; margin: 0; background-color: black;}
+      #earth_div {top: 0; right: 0; bottom: 0; left: 0; position: absolute !important;}
+    </style>
+
   </head>
 
   <!-- navbar -->
@@ -59,6 +65,9 @@
 
 <body onload="world()">
   <div id="earth_div"  class="wrapper">
+    <% locs.forEach(function(loc) { %>
+      <script> newMarker(<%= loc.coord[0] %>, <%= loc.coord[1] %>); </script>
+    <% }); %>
   </div>
 </body>
 
