@@ -56,7 +56,6 @@
       <div class="card" style="margin-bottom: 0px;">
             <div class="card-content">
               <textarea id="textarea1" class="materialize-textarea" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;"></textarea>
-
             </div>
       </div>
       <div id="triangle-down" style="align: right;"></div>
@@ -65,9 +64,6 @@
 
 <body onload="world()">
   <div id="earth_div"  class="wrapper">
-    <% locs.forEach(function(loc) { %>
-      <script> newMarker(<%= loc.coord[0] %>, <%= loc.coord[1] %>); </script>
-    <% }); %>
   </div>
 </body>
 
