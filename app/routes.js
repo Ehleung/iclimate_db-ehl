@@ -108,7 +108,6 @@ module.exports = function(app, passport) {
 	});
 	app.post('/share', isLoggedIn, function(req, res) {
 		var newStory = new Story();
-		newStory.admin = false;
 		newStory.author = req.body.user;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
