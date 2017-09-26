@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 443;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
@@ -59,5 +59,5 @@ require('./app/routes.js')(app, passport);	// load our routes and pass in our ap
 
 
 // Launch ==========================================================================
-app.listen(port);
+app.listen(port, '18.221.138.216');
 console.log('Server running at http://localhost:' + port);
