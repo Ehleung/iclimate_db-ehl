@@ -9,8 +9,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var configDB = require('./config/database.js');
-var server = require('http').createServer(app);
-var io = io.listen(server);
+// var server = require('http').createServer(app);
+// var io = io.listen(server);
 
 // Config ==========================================================================
 mongoose.connect(configDB.url);
@@ -33,5 +33,5 @@ app.use(flash());	// use connect-flash for flash messages stored in sessions
 require('./app/routes.js')(app, passport);	// load our routes and pass in our app & fully configured passport
 
 // Launch ==========================================================================
-server.listen(port);
+app.listen(port);
 console.log('Server running at http://localhost:' + port);
