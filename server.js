@@ -9,8 +9,6 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var configDB = require('./config/database.js');
-// var server = require('http').createServer(app);
-// var io = io.listen(server);
 
 // Config ==========================================================================
 mongoose.connect(configDB.url);
