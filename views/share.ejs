@@ -73,7 +73,7 @@
  <div id="earth_div"  class="wrapper">
    <div class="hover">
      <div class="row">
-      <form action="/storylist" method="post">
+      <form action="/share" method="post">
         <element hidden id="user" name="user"><%= user.local.username %></element>
 
         <div class="select">
@@ -134,7 +134,7 @@
                 <br/>      
                 <div class="columns">
                   <div class="column is-half is-offset-5">
-                    <button class="button is-primary" type="submit">Submit</button>
+                    <button class="button is-primary" id="sharesubmit" type="submit">Submit</button>
                   </div>
                 </div>
               </div>
@@ -179,12 +179,18 @@
         </div>
     </form>
 </div>
-    
+
 <script type="text/javascript">
     var modal = document.getElementById("myModal");
     document.getElementById("del").onclick = function() { modal.style.display = "none"; }
     document.getElementById("background").onclick = function() { modal.style.display = "none"; }
     document.getElementById("cancel").onclick = function() { modal.style.display = "none"; }
+
+    document.getElementById("sharesubmit").onclick = function() {
+      window.sessionStorage.recentStory = document.getElementById("textarea1").value;
+      console.log(window.sessionStorage.recentStory);
+    }
+
 </script>
 
 
