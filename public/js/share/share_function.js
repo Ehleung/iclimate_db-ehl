@@ -32,50 +32,26 @@ function spin()
 
 function stop_spin (){cancelAnimationFrame(world_spin);}
 
-function shuffle_question()
-{
-random_question = "What would happen to "
-var x = Math.floor((Math.random() * 12));
+topics = [
+  "children",
+  "people",
+  "plant life",
+  "large animals",
+  "small animals",
+  "insects",
+  "microbes",
+  "businesses",
+  "tourism",
+  "buildings",
+  "water resources",
+];
 
-switch(x) {
-  case 0:
-    random_question += "children";
-    break;
-  case 1:
-    random_question += "people";
-    break;
-  case 2:
-    random_question += "plant life";
-    break;
-  case 3:
-    random_question += "large animals";
-    break;
-  case 4:
-    random_question += "small animals";
-    break;
-  case 5:
-    random_question += "insects";
-    break;
-  case 6:
-    random_question += "microbes";
-    break;
-  case 7:
-    random_question += "businesses";
-    break;
-  case 8:
-    random_question += "tourism";
-    break;
-  case 9:
-    random_question += "buildings";
-    break;
-  case 10:
-    random_question += "water resources";
-    break;
-  default:
-    random_question += "daily living";
-}
-random_question += " here in the year 2050?";
+function shuffle_question() {
+  random_question = "What would happen to "
+  var x = Math.floor((Math.random() * 12));
+  random_question += topics[x];
+  
+  random_question += " here in the year 2050?";
 
-document.getElementById("random_question").textContent=random_question;
-
+  document.getElementById("random_question").textContent=random_question;
 }

@@ -16,7 +16,7 @@ module.exports = function(app, passport) {
 	});
 	// Process signup form
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/explore',
+		successRedirect : '/share',
 		failureRedirect : '/',
 		failureFlash : true
 	}));
@@ -27,7 +27,7 @@ module.exports = function(app, passport) {
 	});
 	// Process login form
 	app.post('/login', passport.authenticate('local-login', {
-		successRedirect : '/explore', // redirect to secure profile seciton
+		successRedirect : '/share', // redirect to secure profile seciton
 		failureRedirect : '/', // redirect back to signin page if error
 		failureFlash : true // allow flash messages
 	}));
