@@ -28,8 +28,8 @@ module.exports = function(app, passport) {
 	// Process login form
 	app.post('/login', passport.authenticate('local-login', {
 		successRedirect : '/share', // redirect to secure profile seciton
-		failureRedirect : '/', // redirect back to signin page if error
-		failureFlash : true // allow flash messages
+		failureRedirect : '/?login=failed', // redirect back to signin page if error
+		failureFlash : false // allow flash messages
 	}));
 
 	// LOGOUT =================================================================
