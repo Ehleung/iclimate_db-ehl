@@ -84,6 +84,42 @@
         document.getElementById("background").onclick = function() { modal.style.display = "none"; }
         document.getElementById("cancel").onclick = function() { modal.style.display = "none"; }
     </script>
+    
+    <!-- Error Modal -->
+    <div class="modal" id="myError_Modal">
+        <div class="modal-background" id="background"></div>
+        <form action="/login" method="post">
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Oops!</p>
+                    <a class="delete" id="error_del"></a>
+                </header>
+                <section class="modal-card-body">
+                    <div class="field">
+                        <label class="label">Your username or password is in correct!</label>
+                        </p>
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                </footer>
+            </div>
+        </form>
+    </div>
+    <!-- Script for modal -->
+    <script type="text/javascript">
+    	
+        var error_modal = document.getElementById("myError_Modal");
+        document.getElementById("error_del").onclick = function() { error_modal.style.display = "none"; }
+        error_modal.style.display = "none";
+        
+        var login_status = window.location.href;
+    	if (login_status.includes("failed") == true)
+    		{
+    		 error_modal.style.display = "block";
+    		}
+    </script>
+    
+    
 </body>
 
 </html>

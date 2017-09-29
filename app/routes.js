@@ -1,6 +1,7 @@
 // Obtain connection for storylist
 var Story = require('./models/story.js');
 var Place = require('./models/location.js');
+var login_fail_message = false;
 
 module.exports = function(app, passport) {
 	
