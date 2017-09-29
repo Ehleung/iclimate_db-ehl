@@ -116,7 +116,7 @@ module.exports = function(app, passport) {
 
 		newStory.save(req.body, function(err, doc) {
 			//res.render('storylist_2.ejs', {data:docs});
-			res.redirect('/storylist');
+			res.redirect('/explore');
 		});
 	});
 };
