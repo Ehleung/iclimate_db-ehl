@@ -102,17 +102,19 @@ module.exports = function(app, passport) {
 		Place.find({}, function (error, result) {
 			res.render('share.ejs', {
 				user : req.user, // get user out of session and pass to the page
+				// SET USER'S MOST RECENT STORY
 				locs : result
 			});
 		});
 	});
 	app.post('/share', isLoggedIn, function(req, res) {
 		var newStory = new Story();
-		newStory.author = req.body.user;
+		newStory.author = req.user.local.username;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
+		newStory.location = req.body.location;
 		newStory.comments = [];
-		console.log(req.body);
+		// console.log(req.body);
 
 		newStory.save(req.body, function(err, doc) {
 			//res.render('storylist_2.ejs', {data:docs});
