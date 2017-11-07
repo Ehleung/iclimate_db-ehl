@@ -92,7 +92,6 @@ module.exports = function(app, passport) {
 		Place.find({}, function (error, result) {
 			res.render('share.ejs', {
 				user : req.user, // get user out of session and pass to the page
-				// SET USER'S MOST RECENT STORY
 				locs : result
 			});
 		});
@@ -104,15 +103,14 @@ module.exports = function(app, passport) {
 		newStory.story = req.body.story;
 		newStory.location = req.body.location;
 		newStory.comments = [];
-		// console.log(req.body);
 
 		newStory.save(req.body, function(err, doc) {
-			//res.render('storylist_2.ejs', {data:docs});
 			res.redirect('/explore');
 		});
 	});
 
 	app.get('/explore', function(req, res) {
+		// Need to make a find for each location
 		Story.find({}, function (err, docs) {
 			Place.find({}, function (error, result) {
 				res.render('explore.ejs', {
