@@ -59,13 +59,19 @@
         <li><a href="/about">About Us</a></li>
         <li><a href="/share">Share</a></li>
         <li><a href="/explore">Explore</a></li>
-        <li><a href="/logout">Logout</a></li>
+        <element hidden id="user" name="user"><%= user.local.username %></element>
+        <% if user.local.username == null %>
+          <li><a id="login1">Login/Signup</a></li>
+        <% else %>
+          <li><a href="/logout">Logout</a></li>
+        </script>
+        <!-- <li><a href="/logout">Logout</a></li> -->
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="/about">About Us</a></li>
         <li><a href="/share">Share</a></li>
         <li><a href="/explore">Explore</a></li>
-        <li><a href="/logout">Logout</a></li>
+        <!-- <li><a href="/logout">Logout</a></li> -->
       </ul>
     </div>
   </nav>
