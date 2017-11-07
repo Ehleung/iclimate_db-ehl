@@ -88,17 +88,6 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	app.get('/explore', function(req, res) {
-		Story.find({}, function (err, docs) {
-			Place.find({}, function (error, result) {
-				res.render('explore.ejs', {
-					data : docs,
-					locs : result
-				});	
-			});
-		});		
-	});
-
 	app.get('/share', isLoggedIn, function(req, res) {
 		Place.find({}, function (error, result) {
 			res.render('share.ejs', {
@@ -120,6 +109,23 @@ module.exports = function(app, passport) {
 		newStory.save(req.body, function(err, doc) {
 			//res.render('storylist_2.ejs', {data:docs});
 			res.redirect('/explore');
+		});
+	});
+
+	app.get('/explore', function(req, res) {
+		Story.find({}, function (err, docs) {
+			Place.find({}, function (error, result) {
+				res.render('explore.ejs', {
+					data : docs,
+					locs : result
+				});	
+			});
+		});		
+	});
+
+	app.get('/about', function(req, res) {
+		res.render('about.ejs', {
+			user : req.user
 		});
 	});
 };
