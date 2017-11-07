@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+		<link rel="stylesheet" type="text/css" href="css/share/share_main.css">
+    <link rel="stylesheet" type="text/css" href="/bulma/css/bulma.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+		
+		<title>Imagining Climate</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="materialize/css/materialize.min.css">
+		<link href="css/ionicons.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/animate.css">
+		<script src="materialize/js/materialize.min.js"></script>
+
+    <style>
+    .dropbtn {
+        background-color: #00d1b2;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #00d1b2;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown a:hover {background-color: #f1f1f1}
+    .show {display:block;}
+    </style>
+  </head>
+
+	<!-- navbar -->
+	<nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo" style="padding-left: 20px">Imagining Climate</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/share">Share</a></li>
+        <li><a href="/explore">Explore</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/share">Share</a></li>
+        <li><a href="/explore">Explore</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<body>
+ <div id="earth_div"  class="wrapper">
+   <div class="hover">
+     <div class="row">
+      
+  </div>
+</div>
+</div>
+
+<div class="modal" id="myModal" >
+    <div class="modal-background" id="background" ></div>
+    <form action="/login" method="post">
+        <div class="modal-card" >
+            <header class="modal-card-head">
+                <p class="modal-card-title">Login</p>
+                <a class="delete" id="del"></a>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Username</label>
+                    <p class="control">
+                        <input class="input" type="text" name="username" id="username" placeholder="Enter your username">
+                    </p>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <p class="control">
+                        <input class="input" type="password" name="password" placeholder="Enter your password here">
+                    </p>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-primary" id="submit">Submit</button>
+                <a class="button" id="cancel">Cancel</a>
+            </footer>
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>

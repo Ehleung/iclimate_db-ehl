@@ -22,7 +22,7 @@ app.use(bodyParser());
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
-app.use(session({ secret: 'thisisasupersecretthatnooneknows' }));
+app.use(session({ secret: 'isculpiemrasteec7r1e2t0' }));
 app.use(passport.initialize());
 app.use(passport.session());	// persistent login sessions
 app.use(flash());	// use connect-flash for flash messages stored in sessions
