@@ -75,6 +75,44 @@
             </div>
         </form>
     </div>
+    
+    <!-- Error Modal -->
+    <div class="modal" id="myError_Modal">
+        <div class="modal-background" id="background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Oops!</p>
+                <a class="delete" id="error_del"></a>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Your username or password is incorrect!</label>
+                    </p>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+            </footer>
+        </div>
+    </div>
+    
+    <div class="modal" id="about_modal">
+        <div class="modal-background" id="background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">About Us</p>
+                <a class="delete" id="about_del"></a>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Hello there! Welcome to Imagining Climate!</label>
+                    </p>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+            </footer>
+        </div>
+    </div>
+
     <!-- Script for modal -->
     <script type="text/javascript">
         var modal = document.getElementById("myModal");
@@ -83,43 +121,19 @@
         document.getElementById("del").onclick = function() { modal.style.display = "none"; }
         document.getElementById("background").onclick = function() { modal.style.display = "none"; }
         document.getElementById("cancel").onclick = function() { modal.style.display = "none"; }
-    </script>
-    
-    <!-- Error Modal -->
-    <div class="modal" id="myError_Modal">
-        <div class="modal-background" id="background"></div>
-        <form action="/login" method="post">
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Oops!</p>
-                    <a class="delete" id="error_del"></a>
-                </header>
-                <section class="modal-card-body">
-                    <div class="field">
-                        <label class="label">Your username or password is in correct!</label>
-                        </p>
-                    </div>
-                </section>
-                <footer class="modal-card-foot">
-                </footer>
-            </div>
-        </form>
-    </div>
-    <!-- Script for modal -->
-    <script type="text/javascript">
-    	
+
         var error_modal = document.getElementById("myError_Modal");
         document.getElementById("error_del").onclick = function() { error_modal.style.display = "none"; }
-        error_modal.style.display = "none";
         
         var login_status = window.location.href;
-    	if (login_status.includes("failed") == true)
-    		{
-    		 error_modal.style.display = "block";
-    		}
+        if (login_status.includes("failed") == true)
+           error_modal.style.display = "block";
+
+       var aboutModal = document.getElementById("about_modal");
+       document.getElementById("about_del").onclick = function() {aboutModal.style.display ="none"; }
+
     </script>
-    
-    
+
 </body>
 
 </html>
