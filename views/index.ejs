@@ -23,11 +23,11 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a id="about_button1">About Us</a></li>
-            <li><a id="login1">Login/Signup</a></li>
+            <li><a onclick="showLogin()" id="login1">Login/Signup</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><a id="/about_button2">About Us</a></li>
-            <li><a id="login2">Login/Signup</a></li>
+            <li><a onclick="showLogin()" id="login2">Login/Signup</a></li>
           </ul>
         </div>
     </nav>
@@ -46,12 +46,12 @@
 
     <!-- Login Modal -->
     <div class="modal" id="myModal">
-        <div class="modal-background" id="background"></div>
+        <div onclick="closeLogin()" class="modal-background" id="background"></div>
         <form action="/login" method="post">
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Login/Signup</p>
-                    <a class="delete" id="del"></a>
+                    <a onclick="closeLogin()" class="delete" id="del"></a>
                 </header>
                 <section class="modal-card-body">
                     <div class="field">
@@ -69,7 +69,7 @@
                 </section>
                 <footer class="modal-card-foot">
                     <button class="button is-primary" id="submit">Login</button>
-                    <a class="button" id="cancel">Cancel</a>
+                    <a onclick="closeLogin()" class="button" id="cancel">Cancel</a>
                     <label>Need an account? Sign up <a href="/signup">here</a>.</label>
                 </footer>
             </div>
@@ -78,11 +78,11 @@
     
     <!-- Error Modal -->
     <div class="modal" id="myError_Modal">
-        <div class="modal-background" id="background"></div>
+        <div onclick="closeError()" class="modal-background" id="background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Oops!</p>
-                <a class="delete" id="error_del"></a>
+                <a onclick="closeError()" class="delete" id="error_del"></a>
             </header>
             <section class="modal-card-body">
                 <div class="field">
@@ -118,30 +118,15 @@
             </footer>
         </div>
     </div>
-
-    <!-- Script for modal -->
-    <script type="text/javascript">
-        var modal = document.getElementById("myModal");
-        document.getElementById("login1").onclick = function() { modal.style.display = "block"; }
-        document.getElementById("login2").onclick = function() { modal.style.display = "block"; }
-        document.getElementById("del").onclick = function() { modal.style.display = "none"; }
-        document.getElementById("background").onclick = function() { modal.style.display = "none"; }
-        document.getElementById("cancel").onclick = function() { modal.style.display = "none"; }
-
-        var error_modal = document.getElementById("myError_Modal");
-        document.getElementById("error_del").onclick = function() { error_modal.style.display = "none"; }
-        
-        var login_status = window.location.href;
-        if (login_status.includes("failed") == true)
-           error_modal.style.display = "block";
-
-       var aboutModal = document.getElementById("about_modal");
-       document.getElementById("about_button1").onclick = function() { aboutModal.style.display = "block"; }
-       document.getElementById("about_button1").onclick = function() { aboutModal.style.display = "block"; }
-       document.getElementById("about_del").onclick = function() {aboutModal.style.display ="none"; }
-
-    </script>
-
 </body>
+
+<script>
+$(document).ready(function() {
+    var error_modal = document.getElementById("myError_Modal");
+    var login_status = window.location.href;
+    if (login_status.includes("failed") == true)
+       error_modal.style.display = "block";
+});
+</script>
 
 </html>

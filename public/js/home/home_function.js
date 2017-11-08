@@ -31,3 +31,26 @@ function spin()
           }
 
 function stop_spin (){cancelAnimationFrame(world_spin);}
+
+function showLogin() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
+}
+function closeLogin() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+function showAbout() {
+  var aboutModal = document.getElementById("about_modal");
+  modal.style.display = "block";
+}
+function closeAbout() {
+  var aboutModal = document.getElementById("about_modal");
+  modal.style.display = "none";
+}
+
+function closeError() {
+  var error_modal = document.getElementById("myError_Modal");
+  error_modal.style.display = "none";
+}
