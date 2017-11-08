@@ -132,7 +132,7 @@
                 <br/>      
                 <div class="columns">
                   <div class="column is-half is-offset-5">
-                    <button onload="initSubmit()" class="button is-primary" id="sharesubmit" type="submit">Submit</button>
+                    <button class="button is-primary" id="sharesubmit" type="submit">Submit</button>
                   </div>
                 </div>
               </div>
@@ -177,6 +177,10 @@
 </div>
 
 <script type="text/javascript">
+    document.getElementById("sharesubmit").onload = function() {
+      document.getElementById("sharesubmit").style.visibility = "hidden";
+    }
+
     var modal = document.getElementById("myModal");
     document.getElementById("del").onclick = function() { modal.style.display = "none"; }
     document.getElementById("background").onclick = function() { modal.style.display = "none"; }
