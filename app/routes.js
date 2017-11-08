@@ -78,16 +78,16 @@ module.exports = function(app, passport) {
 			res.redirect('/share');
 		else {
 			var newStory = new Story();
-		newStory.author = req.user.local.username;
-		newStory.title = req.body.title;
-		newStory.story = req.body.story;
-		newStory.location = req.body.location;
-		newStory.comments = [];
-		// console.log(req.body);
+			newStory.author = req.user.local.username;
+			newStory.title = req.body.title;
+			newStory.story = req.body.story;
+			newStory.location = req.body.location;
+			newStory.comments = [];
+			// console.log(req.body);
 
-		newStory.save(req.body, function(err, doc) {
-			res.redirect('/storylist');
-		});
+			newStory.save(req.body, function(err, doc) {
+				res.redirect('/storylist');
+			});
 		}
 	});
 
@@ -100,16 +100,20 @@ module.exports = function(app, passport) {
 		});
 	});
 	app.post('/share', isLoggedIn, function(req, res) {
-		var newStory = new Story();
-		newStory.author = req.user.local.username;
-		newStory.title = req.body.title;
-		newStory.story = req.body.story;
-		newStory.location = req.body.location;
-		newStory.comments = [];
+		if (req.body.location == "Choose")
+			res.redirect('/share');
+		else {
+			var newStory = new Story();
+			newStory.author = req.user.local.username;
+			newStory.title = req.body.title;
+			newStory.story = req.body.story;
+			newStory.location = req.body.location;
+			newStory.comments = [];
 
-		newStory.save(req.body, function(err, doc) {
-			res.redirect('/explore');
-		});
+			newStory.save(req.body, function(err, doc) {
+				res.redirect('/explore');
+			});
+		}
 	});
 
 	app.get('/explore', function(req, res) {
