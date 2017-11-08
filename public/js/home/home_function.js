@@ -43,11 +43,11 @@ function closeLogin() {
 
 function showAbout() {
   var aboutModal = document.getElementById("about_modal");
-  modal.style.display = "block";
+  aboutModal.style.display = "block";
 }
 function closeAbout() {
   var aboutModal = document.getElementById("about_modal");
-  modal.style.display = "none";
+  aboutModal.style.display = "none";
 }
 
 function closeError() {
