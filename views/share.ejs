@@ -75,7 +75,7 @@
         <element hidden id="user" name="user"><%= user.local.username %></element>
 
         <div class="select">
-          <select name="location" id="location" onload="checkValid()" onchange="checkValid()">
+          <select hidden name="location" id="location" onchange="checkValid()">
             <% locs.forEach(function(loc) { %>
               <option value=<%= loc.name %>><%= loc.name %></option>
             <% }); %>
