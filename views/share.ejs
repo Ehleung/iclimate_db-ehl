@@ -75,7 +75,7 @@
         <element hidden id="user" name="user"><%= user.local.username %></element>
 
         <div class="select">
-          <select name="location" id="location">
+          <select name="location" id="location" onchange="checkValid()">
             <% locs.forEach(function(loc) { %>
               <option value=<%= loc.name %>><%= loc.name %></option>
             <% }); %>
@@ -187,15 +187,6 @@
       window.sessionStorage.recentLoc = document.getElementById("location").value;
       window.sessionStorage.recentTitle = document.getElementById("title").value;
     }
-
-    var checkLocation = document.getElementById("location").value;
-    var validSubmit = document.getElementById("sharesubmit");
-    console.log(checkLocation);
-    if (checkLocation == "Choose")
-      validSubmit.style.display = "hidden"
-    else
-      validSubmit.style.display = "visible"
-
 </script>
 
 </body>

@@ -55,3 +55,12 @@ function shuffle_question() {
 
   document.getElementById("random_question").textContent=random_question;
 }
+
+function checkValid() {
+  var validSubmit = document.getElementById("sharesubmit");
+    console.log(checkLocation);
+    if (document.getElementById("location").value == "Choose")
+      validSubmit.style.display = "hidden"
+    else
+      validSubmit.style.display = "visible"
+}
