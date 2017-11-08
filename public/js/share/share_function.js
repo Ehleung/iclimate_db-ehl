@@ -58,7 +58,7 @@ function shuffle_question() {
 
 function checkValid() {
   var validSubmit = document.getElementById("sharesubmit");
-    console.log(checkLocation);
+    
     if (document.getElementById("location").value == "Choose")
       validSubmit.style.display = "hidden"
     else
