@@ -75,7 +75,7 @@
         <element hidden id="user" name="user"><%= user.local.username %></element>
 
         <div class="select">
-          <select hidden name="location" id="location" onchange="checkValid()">
+          <select name="location" id="location" onchange="checkValid()">
             <% locs.forEach(function(loc) { %>
               <option value=<%= loc.name %>><%= loc.name %></option>
             <% }); %>
@@ -132,7 +132,7 @@
                 <br/>      
                 <div class="columns">
                   <div class="column is-half is-offset-5">
-                    <button class="button is-primary" id="sharesubmit" type="submit">Submit</button>
+                    <button hidden class="button is-primary" id="sharesubmit" type="submit">Submit</button>
                   </div>
                 </div>
               </div>
