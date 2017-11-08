@@ -63,3 +63,7 @@ function checkValid() {
     else
       validSubmit.style.visibility = "visible"
 }
+
+function initSubmit() {
+  document.getElementById("sharesubmit").style.visibility = "hidden"
+}
