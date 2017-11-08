@@ -132,7 +132,7 @@
                 <br/>      
                 <div class="columns">
                   <div class="column is-half is-offset-5">
-                    <button class="button is-primary" id="sharesubmit" type="submit">Submit</button>
+                    <button onclick="saveStory()" class="button is-primary" id="sharesubmit" type="submit">Submit</button>
                   </div>
                 </div>
               </div>
@@ -147,12 +147,12 @@
 </div>
 
 <div class="modal" id="myModal" >
-    <div class="modal-background" id="background" ></div>
+    <div onclick="closeLogin()" class="modal-background" id="background" ></div>
     <form action="/login" method="post">
         <div class="modal-card" >
             <header class="modal-card-head">
                 <p class="modal-card-title">Login</p>
-                <a class="delete" id="del"></a>
+                <a onclick="closeLogin()" class="delete" id="del"></a>
             </header>
             <section class="modal-card-body">
                 <div class="field">
@@ -170,28 +170,11 @@
             </section>
             <footer class="modal-card-foot">
                 <button class="button is-primary" id="submit">Submit</button>
-                <a class="button" id="cancel">Cancel</a>
+                <a onclick="closeLogin()" class="button" id="cancel">Cancel</a>
             </footer>
         </div>
     </form>
 </div>
-
-<script type="text/javascript">
-    document.getElementById("sharesubmit").onload = function() {
-      document.getElementById("sharesubmit").style.visibility = "hidden";
-    }
-
-    var modal = document.getElementById("myModal");
-    document.getElementById("del").onclick = function() { modal.style.display = "none"; }
-    document.getElementById("background").onclick = function() { modal.style.display = "none"; }
-    document.getElementById("cancel").onclick = function() { modal.style.display = "none"; }
-
-    document.getElementById("sharesubmit").onclick = function() {
-      window.sessionStorage.recentStory = document.getElementById("textarea1").value;
-      window.sessionStorage.recentLoc = document.getElementById("location").value;
-      window.sessionStorage.recentTitle = document.getElementById("title").value;
-    }
-</script>
 </body>
 
 <script>

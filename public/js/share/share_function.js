@@ -63,3 +63,14 @@ function checkValid() {
     else
       validSubmit.style.visibility = "visible"
 }
+
+function closeLogin() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+function saveStory() {
+  window.sessionStorage.recentStory = document.getElementById("textarea1").value;
+  window.sessionStorage.recentLoc = document.getElementById("location").value;
+  window.sessionStorage.recentTitle = document.getElementById("title").value;
+}
