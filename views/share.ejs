@@ -186,25 +186,15 @@
       window.sessionStorage.recentStory = document.getElementById("textarea1").value;
       window.sessionStorage.recentLoc = document.getElementById("location").value;
       window.sessionStorage.recentTitle = document.getElementById("title").value;
-
-      if (window.sessionStorage.recentLoc == "Choose")
-        window.sessionStorage.shareError = true;
-      else
-        window.sessionStorage.shareError = false;
-      // console.log(window.sessionStorage.recentStory);
     }
-</script>
 
-<script>
-$(document).ready(function() {
-  if (window.sessionStorage.shareError == null)
-    window.sessionStorage.shareError = false;
-  if (window.sessionStorage.shareError == true) {
-    document.getElementById("textarea1").value = window.sessionStorage.recentStory;
-    document.getElementById("location").value = window.sessionStorage.recentLoc;
-    document.getElementById("title").value = window.sessionStorage.recentTitle;
-  }      
-});
+    var checkLocation = document.getElementById("location").value;
+    var validSubmit = document.getElementById("sharesubmit");
+    if (checkLocation == "Choose your location...")
+      validSubmit.style.display = "hidden"
+    else
+      validSubmit.style.display = "visible"
+
 </script>
 
 </body>

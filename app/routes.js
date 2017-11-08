@@ -100,20 +100,16 @@ module.exports = function(app, passport) {
 		});
 	});
 	app.post('/share', isLoggedIn, function(req, res) {
-		if (req.body.location == "Choose")
-			res.redirect('/share');
-		else {
-			var newStory = new Story();
-			newStory.author = req.user.local.username;
-			newStory.title = req.body.title;
-			newStory.story = req.body.story;
-			newStory.location = req.body.location;
-			newStory.comments = [];
+		var newStory = new Story();
+		newStory.author = req.user.local.username;
+		newStory.title = req.body.title;
+		newStory.story = req.body.story;
+		newStory.location = req.body.location;
+		newStory.comments = [];
 
-			newStory.save(req.body, function(err, doc) {
-				res.redirect('/explore');
-			});
-		}
+		newStory.save(req.body, function(err, doc) {
+			res.redirect('/explore');
+		});
 	});
 
 	app.get('/explore', function(req, res) {
