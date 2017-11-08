@@ -114,9 +114,6 @@ module.exports = function(app, passport) {
 
 	app.get('/explore', function(req, res) {
 		// Need to make a find for each location
-		var locations = function() {
-			locations.grr
-		}
 		Story.find({}, function (err, docs) {
 			Place.find({}, function (error, result) {
 				res.render('explore.ejs', {
