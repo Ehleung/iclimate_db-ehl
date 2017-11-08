@@ -136,12 +136,10 @@
                   </div>
                 </div>
               </div>
-            
           </div>
           <div id="triangle-down" style="align: right;"></div>
         </div>
         <!-- End of story input -->
-      
       </form>
       <!-- End of form -->
   </div>
@@ -186,11 +184,28 @@
 
     document.getElementById("sharesubmit").onclick = function() {
       window.sessionStorage.recentStory = document.getElementById("textarea1").value;
-      console.log(window.sessionStorage.recentStory);
-    }
+      window.sessionStorage.recentLoc = document.getElementById("location").value;
+      window.sessionStorage.recentTitle = document.getElementById("title").value;
 
+      if (window.sessionStorage.recentLoc == "Choose")
+        window.sessionStorage.shareError = true;
+      else
+        window.sessionStorage.shareError = false;
+      // console.log(window.sessionStorage.recentStory);
+    }
 </script>
 
+<script>
+$(document).ready(function() {
+  if (window.sessionStorage.shareError == null)
+    window.sessionStorage.shareError = false;
+  if (window.sessionStorage.shareError == true) {
+    document.getElementById("textarea1").value = window.sessionStorage.recentStory;
+    document.getElementById("location").value = window.sessionStorage.recentLoc;
+    document.getElementById("title").value = window.sessionStorage.recentTitle;
+  }      
+});
+</script>
 
 </body>
 <script>

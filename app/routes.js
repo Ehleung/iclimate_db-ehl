@@ -74,7 +74,10 @@ module.exports = function(app, passport) {
 		});
 	});
 	app.post('/storylist', isLoggedIn, function(req, res) {
-		var newStory = new Story();
+		if (req.body.location == "Choose")
+			res.redirect('/share');
+		else {
+			var newStory = new Story();
 		newStory.author = req.user.local.username;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
@@ -83,9 +86,9 @@ module.exports = function(app, passport) {
 		// console.log(req.body);
 
 		newStory.save(req.body, function(err, doc) {
-			//res.render('storylist_2.ejs', {data:docs});
 			res.redirect('/storylist');
 		});
+		}
 	});
 
 	app.get('/share', isLoggedIn, function(req, res) {
@@ -111,6 +114,9 @@ module.exports = function(app, passport) {
 
 	app.get('/explore', function(req, res) {
 		// Need to make a find for each location
+		var locations = function() {
+			locations.grr
+		}
 		Story.find({}, function (err, docs) {
 			Place.find({}, function (error, result) {
 				res.render('explore.ejs', {
