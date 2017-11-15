@@ -58,10 +58,20 @@ function shuffle_question() {
 
 function checkValid() {
   var validSubmit = document.getElementById("sharesubmit");
-    if (document.getElementById("location").value == "Choose")
-      validSubmit.style.visibility = "hidden"
-    else
-      validSubmit.style.visibility = "visible"
+  var location, title, story = true
+  
+  if (document.getElementById("location").value == "Choose")
+    location = false
+  if (document.getElementById("title").value == null)
+    title = false
+  if (document.getElementById("textarea1").value == null || document.getElementById("textarea1").value == "I imagine...")
+    story = false
+  
+  // Require all three variables to be true for button to appear
+  if (location && title && story)
+    validSubmit.style.visibility = "visible"
+  else
+    validSubmit.style.visibility = "hidden"
 }
 
 function saveStory() {
