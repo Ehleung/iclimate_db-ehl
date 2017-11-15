@@ -1,19 +1,23 @@
 var earth;
 
 var locations = [
-  ["Grand Canyon Nat. Park", [36.055, -112.1224]],
-  ["Petrified Forest Nat. Park", [35.06557, -109.7816]],
-  ["Saguaro Nat. Park", [32.18015, -110.7363]],
-  ["Lake Havasu", [34.47398, -114.3459]],
-  ["Bisbee", [31.44185, -109.9148]],
-  ["Flagstaff", [35.1982, -111.6513]],
-  ["Nogales", [31.33783, -110.9401]],
-  ["Payson", [34.23132, -111.3247]],
-  ["Phoenix", [33.44793, -112.0736]],
-  ["Prescott", [34.54142, -112.4687]],
-  ["Sedona", [34.77309, -111.7655]],
-  ["Window Rock", [35.67085, -109.0592]],
-  ["Yuma", [32.68485, -114.6246]]
+  ["Grand Canyon Nat. Park", [36.05972, -112.10972]],
+  ["Tonto Natural Bridge State Park", [34.32195, -111.45333]],
+  ["Organ Pipe Cactus National Monument ", [31.95556, -112.80028]],
+  ["Lake Havasu", [34.50306, -114.36028]],
+  ["Flagstaff", [35.14417, -111.66639]],
+  ["Nogales", [31.42083, -110.84583]],
+  ["Payson", [34.2325, -111.34473]],
+  ["Phoenix", [33.42778, -112.00389]],
+  ["Prescott", [34.57055, -112.43222]],
+  ["Window Rock", [35.6575, -109.06139]],
+  ["Yuma", [32.65,-114.61667]],
+  ["Safford", [32.85472, -109.63528]],
+  ["Tucson", [32.13139, -110.95528]],
+  ["Tombstone", [31.71194, -110.06961]],
+  ["Tuzigoot National Monument", [34.77055, -112.02639]]
+  // ["Sedona", [34.77309, -111.7655]],
+  // ["Bisbee", [31.44185, -109.9148]],
 ];
 
 function world() {
@@ -38,7 +42,7 @@ function world() {
   // Append every location found in the array at the top to a marker on the map
   for (var i = 0; i < locations.length; i++) {
     var marker = WE.marker(locations[i][1]).addTo(earth);
-    marker.bindPopup("<h7><b>" + locations[i][0] + "</b></h7><br> <h6>TEST</h6></br> <a href=\"#modal1\" ><i class=\"material-icons left\">comment</i>View Entries</a>", {maxWidth: 320, closeButton: true});
+    marker.bindPopup("<h7><b>" + locations[i][0] + "</b></h7><br> <h6>View stories from this location!</h6></br> <a href=\"#modal1\" ><i class=\"material-icons left\">comment</i>comment</a>", {maxWidth: 320, closeButton: true});
   }
 
   earth.switch_map = function switch_map(x)
