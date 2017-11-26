@@ -156,7 +156,7 @@
 
 <script>
 window.sessionStorage.locations = [];
-for (loc in <%- locs %>) {
+for (loc in <%- JSON.Stringify(locs) %>) {
   window.sessionStorage.locations.push(loc);
 }
 </script>
