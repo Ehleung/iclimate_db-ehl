@@ -94,6 +94,7 @@ module.exports = function(app, passport) {
 	var location_function = function(req, res, next) {
 		Place.find({}, function(error, result) {
 			req.locs = result;
+			console.log(req.locs);
 		});
 		next();
 	}
