@@ -73,9 +73,6 @@
      <div class="row">
       <form action="/share" method="post">
         <element hidden id="user" name="user"><%= user.local.username %></element>
-        <script type="javascript">
-          window.sessionStorage.locations = <%- JSON.stringify(locs) %>;
-        </script>
         <div class="select">
           <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc)">
             <% locs.forEach(function(loc) { %>
@@ -155,5 +152,6 @@
      document.getElementById("sharesubmit").style.visibility = "hidden"; 
   });
   shuffle_question();
+  window.sessionStorage.locations = <%- JSON.stringify(locs) %>;
 </script>
 </html>
