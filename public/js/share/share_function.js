@@ -77,9 +77,10 @@ function checkValid() {
 }
 
 function updateTemps(locationStr) {
+  locs = window.sessionStorage.locations
   var i;
-  for (i = 0; i < req.locs.length; i++) {
-    if (req.locs[i].name == locationStr)
+  for (i = 0; i < locs.length; i++) {
+    if (locs[i].name == locationStr)
       break
   }
 
@@ -88,20 +89,20 @@ function updateTemps(locationStr) {
   document.getElementById("rain").style.visibility = "hidden"
   document.getElementById("plant").style.visibility = "hidden"
 
-  if (req.locs[i].weather2017[0] != -200) {
-    document.getElementById("min").value = req.locs[i].weather2017[0];
+  if (locs[i].weather2017[0] != -200) {
+    document.getElementById("min").value = locs[i].weather2017[0];
     document.getElementById("min").style.visibility = "visible";  
   }
-  if (req.locs[i].weather2017[1] != -200) {
-    document.getElementById("max").value = req.locs[i].weather2017[1];
+  if (locs[i].weather2017[1] != -200) {
+    document.getElementById("max").value = locs[i].weather2017[1];
     document.getElementById("max").style.visibility = "visible";  
   }
-  if (req.locs[i].weather2017[2] != -200) {
-    document.getElementById("rain").value = req.locs[i].weather2017[2];
+  if (locs[i].weather2017[2] != -200) {
+    document.getElementById("rain").value = locs[i].weather2017[2];
     document.getElementById("rain").style.visibility = "visible";  
   }
-  if (req.locs[i].weather2017[3] != -200) {
-    document.getElementById("plant").value = req.locs[i].weather2017[3];
+  if (locs[i].weather2017[3] != -200) {
+    document.getElementById("plant").value = locs[i].weather2017[3];
     document.getElementById("plant").style.visibility = "visible";  
   }
 }
