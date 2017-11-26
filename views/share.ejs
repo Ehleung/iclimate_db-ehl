@@ -152,7 +152,13 @@
      document.getElementById("sharesubmit").style.visibility = "hidden"; 
   });
   shuffle_question();
-  console.log(<%=locs%>);
-  // window.sessionStorage.locations = <%= JSON.stringify(locs) %>;
 </script>
+
+<script>
+window.sessionStorage.locations = [];
+for (loc in <%- locs %>) {
+  window.sessionStorage.locations.push(loc);
+}
+</script>
+
 </html>
