@@ -77,8 +77,7 @@ function checkValid() {
 }
 
 function updateTemps(locationStr) {
-  locs = window.sessionStorage.locations;
-  console.log(locs);
+  locs = window.sessionStorage.locations
   var i;
   for (i = 0; i < locs.length; i++) {
     if (locs[i].name == locationStr)
