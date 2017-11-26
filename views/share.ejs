@@ -155,12 +155,8 @@
 </script>
 
 <script>
-var temp = [];
-for (loc in <%- (locs) %>) {
-  temp.push(loc);
-}
-window.sessionStorage.locations = <%- locs %>;
-console.log(window.sessionStorage.locations);
+window.sessionStorage.locs = <%- locs %>;
+console.log(window.sessionStorage.locs);
 </script>
 
 </html>
