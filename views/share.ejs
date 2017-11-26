@@ -155,10 +155,11 @@
 </script>
 
 <script>
-window.sessionStorage.locations = [];
+var temp = [];
 for (loc in <%- JSON.stringify(locs) %>) {
-  window.sessionStorage.locations.push(loc);
+  temp.push(loc);
 }
+window.sessionStorage.locations = temp;
 </script>
 
 </html>
