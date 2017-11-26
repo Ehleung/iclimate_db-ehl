@@ -73,7 +73,9 @@
      <div class="row">
       <form action="/share" method="post">
         <element hidden id="user" name="user"><%= user.local.username %></element>
-          <% window.sessionStorage.locations = locs; %>
+        <script type="javascript">
+          window.sessionStorage.locations = <%- JSON.stringify(locs) %>;
+        </script>
         <div class="select">
           <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc)">
             <% locs.forEach(function(loc) { %>
