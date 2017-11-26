@@ -73,9 +73,7 @@
      <div class="row">
       <form action="/share" method="post">
         <element hidden id="user" name="user"><%= user.local.username %></element>
-        <script type="javascript">
-          window.sessionStorage.locations = <%= locs %>
-        </script>
+          <% window.sessionStorage.locations = locs; %>
         <div class="select">
           <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc)">
             <% locs.forEach(function(loc) { %>
