@@ -91,12 +91,16 @@ module.exports = function(app, passport) {
 		}
 	});
 
-	app.get('/share', isLoggedIn, function(req, res) {
-		Place.find({}, function (error, result) {
-			res.render('share.ejs', {
-				user : req.user, // get user out of session and pass to the page
-				locs : result
-			});
+	var location_function = function(req, res, next) {
+		Place.find({}, function(error, result) {
+			req.locs = result;
+		});
+		next();
+	}
+
+	app.get('/share', location_function, isLoggedIn, function(req, res) {
+		res.render('share.ejs', {
+			user : req.user // get user out of session and pass to the page
 		});
 	});
 	app.post('/share', isLoggedIn, function(req, res) {
