@@ -76,13 +76,9 @@
 
         <div class="select">
           <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc)">
-            <script type="javascript">
-              var i;
-              for (i = 0; i < req.locs.length; i++) {
-                var opt = document.createElement('option');
-                opt.value = opt.text = req.locs[i].name;
-              }
-            </script>
+            <% locs.forEach(function(loc) { %>
+              <option value=<%= loc.name %>><%= loc.name %></option>
+            <% }); %>
           </select>
         </div>
 
