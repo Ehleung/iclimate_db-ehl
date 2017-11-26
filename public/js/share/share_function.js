@@ -76,8 +76,8 @@ function checkValid() {
     validSubmit.style.visibility = "hidden"
 }
 
+var i = 0;
 function updateTemps(var locationStr) {
-  var i;
   for (i = 0; i < req.locs.length; i++) {
     if (req.locs[i].name == locationStr)
       break
