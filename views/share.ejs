@@ -159,7 +159,7 @@ var temp = [];
 for (loc in <%- (locs) %>) {
   temp.push(loc);
 }
-window.sessionStorage.locations = temp;
+window.sessionStorage.locations = <%- locs %>;
 console.log(window.sessionStorage.locations);
 </script>
 
