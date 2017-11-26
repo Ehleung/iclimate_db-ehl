@@ -85,7 +85,6 @@ module.exports = function(passport) {
 				
 			if (!user.validPassword(password))
 				{
-				error_modal.style.display = "block";
 				return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
 				}	
 			return done(null, user);
