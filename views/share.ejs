@@ -84,38 +84,44 @@
         <!-- Question Prompt goes here -->
         <div class="animated zoomIn">
           <div class="card">
+            <!-- Refresh question button -->
             <div class="card-content">
               <a class="btn-floating btn-small waves-effect waves-light red" onclick="shuffle_question()"><i class="material-icons">replay</i></a>
               <span id="random_question"></span>
             </div>
 
             <div class="card-action">
-              <div class="row">
-                <div class="col s3">
+              <div class="columns">
+                <!-- Min temperature column -->
+                <div class="column">
                   <div class="animated flipInX" style="animation-delay: 0.5s;">
                     <i id="icon1" class="ion-thermometer" style="font-size:30px"></i><b id="min" style="font-size:30px"></b>
                     <i id="arrow1" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
                   </div>
                 </div>
-                <div class="col s3">
+                <!-- Max temperature column -->
+                <div class="column">
                   <div class="animated flipInX" style="animation-delay: 0.7s;">
                     <i id="icon2" class="ion-thermometer" style="font-size:30px"></i><b id="max" style="font-size:30px"></b>
                     <i id="arrow2" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
                   </div>
                 </div>
-                <div class="col s3">
+                <!-- Rain column -->
+                <div class="column">
                   <div class="animated flipInX" style="animation-delay: 0.9s;">
                     <i id="icon3" class="ion-waterdrop" style="font-size:30px"></i><b id="rain" style="font-size:30px"></b>
                     <i id="arrow3" class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
                   </div>
                 </div>
-                <div class="col s3">
+                <!-- Plant cover column -->
+                <div class="column">
                   <div class="animated flipInX" style="animation-delay: 1.1s;">
                     <i id="icon4" class="ion-leaf" style="font-size:30px"></i><b id="plant" style="font-size:30px"></b>
                     <i id="arrow4" class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
                   </div>
                 </div>
-                <div class="col s3">
+                <!-- Shift column -->
+                <div class="column">
                   <div class="animated flipInX" style="animation-delay: 1.3s;">
                     <i id="shift" class="arrow-circle-right" onclick="newTemps(window.sessionStorage.currentTemps)" style="font-size:30px"></i>
                   </div>
