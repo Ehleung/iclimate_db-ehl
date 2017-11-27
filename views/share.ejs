@@ -89,7 +89,7 @@
               <a class="btn-floating btn-small waves-effect waves-light red" onclick="shuffle_question()"><i class="material-icons">replay</i></a>
               <span id="random_question"></span>
             </div>
-            <div class="card-action">
+            <div id="all_data" class="card-action">
               <div class="columns">
                 <!-- Min temperature column -->
                 <div class="column">
@@ -122,8 +122,9 @@
                 <!-- Shift column -->
                 <div class="column">
                   <div class="animated flipInX" style="animation-delay: 1.3s;">
-                    <b id="shift_text" style="font-size:30px">2017</b>
+                    <b id="shift_text1" style="font-size:30px">2017</b>
                     <i id="shift" class="ion-arrow-right-a" onclick="newTemps(window.sessionStorage.currentTemps)" style="font-size:30px; color: rgba(0, 0, 0, 0.6)"></b></i>
+                    <b id="shift_text2" style="font-size:30px">2050</b>
                   </div>
                 </div>
               </div>
@@ -182,7 +183,8 @@
      document.getElementById("arrow4").style.visibility = "hidden";
 
      document.getElementById("shift").style.visibility = "hidden";
-     document.getElementById("shift_text").style.visibility = "hidden";
+     document.getElementById("shift_text1").style.visibility = "hidden";
+     document.getElementById("shift_text2").style.visibility = "hidden";
   });
   shuffle_question();
 </script>
