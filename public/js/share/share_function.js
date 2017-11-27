@@ -63,7 +63,7 @@ function checkValid() {
   if (document.getElementById("location").value == "Choose")
     location = false
   else
-    window.sessionStorage.selectedLoc = document.getElementById("location");
+    window.sessionStorage.selectedLoc = document.getElementById("location").value;
   if (document.getElementById("title").value == null)
     title = false
   if (document.getElementById("textarea1").value == null || document.getElementById("textarea1").value == "I imagine...")
