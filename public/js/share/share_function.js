@@ -92,19 +92,19 @@ function hide_all() {
 }
 
 function hide_arrows() {
-  document.getElementById("arrow1up").style.display = "none";
-  document.getElementById("arrow1down").style.display = "none";
-  document.getElementById("arrow2up").style.display = "none";
-  document.getElementById("arrow2down").style.display = "none";
-  document.getElementById("arrow3up").style.display = "none";
-  document.getElementById("arrow3down").style.display = "none";
-  document.getElementById("arrow4up").style.display = "none";
-  document.getElementById("arrow4down").style.display = "none";
+  document.getElementById("arrow1up").style.visibility = "hidden";
+  document.getElementById("arrow1down").style.visibility = "hidden";
+  document.getElementById("arrow2up").style.visibility = "hidden";
+  document.getElementById("arrow2down").style.visibility = "hidden";
+  document.getElementById("arrow3up").style.visibility = "hidden";
+  document.getElementById("arrow3down").style.visibility = "hidden";
+  document.getElementById("arrow4up").style.visibility = "hidden";
+  document.getElementById("arrow4down").style.visibility = "hidden";
 }
 
 var locations = [
   ["Tuzigoot National Monument", [47, 81, 13.39, -200], [52, 86, 13.3, -200] ],
-  ["Window Rock", [33, 68, 12.19, 34], [37, 72, 10.88, 11] ],
+  ["Window Rock", [33, 68, 12.19, -200], [37, 72, 10.88, -200] ],
   ["Tombstone", [50.3, 76.8, 14.2, -200], [54, 87, 13.97, -200] ],
   ["Nogales", [49, 83, 14.42, -200], [47, 86, 16.35, -200] ],
   ["Tucson", [58, 87, 11.4, -200], [58, 91, 10.63, -200] ],
@@ -172,27 +172,27 @@ function newTemps(currentTemps) {
   if (currentTemps == 0) {
     document.getElementById("min").innerHTML = locations[i][2][0];
     if (locations[i][1][0] > locations[i][2][0])
-      document.getElementById("arrow1down").style.display = "block";
+      document.getElementById("arrow1down").style.visibility = "visible";
     else
-      document.getElementById("arrow1up").style.display = "block";
+      document.getElementById("arrow1up").style.visibility = "visible";
 
     document.getElementById("max").innerHTML = locations[i][2][1];
     if (locations[i][1][1] > locations[i][2][1])
-      document.getElementById("arrow2down").style.display = "block";
+      document.getElementById("arrow2down").style.visibility = "visible";
     else
-      document.getElementById("arrow2up").style.display = "block";
+      document.getElementById("arrow2up").style.visibility = "visible";
 
     document.getElementById("rain").innerHTML = locations[i][2][2] + "%";
     if (locations[i][1][2] > locations[i][2][2])
-      document.getElementById("arrow3down").style.display = "block";
+      document.getElementById("arrow3down").style.visibility = "visible";
     else
-      document.getElementById("arrow3up").style.display = "block";
+      document.getElementById("arrow3up").style.visibility = "visible";
 
     document.getElementById("plant").innerHTML = locations[i][2][3] + "%";
     if (locations[i][1][3] > locations[i][2][3])
-      document.getElementById("arrow4down").style.display = "block";
+      document.getElementById("arrow4down").style.visibility = "visible";
     else
-      document.getElementById("arrow4up").style.display = "block";
+      document.getElementById("arrow4up").style.visibility = "visible";
 
     document.getElementById("shift_text1").innerHTML = 2050;
     document.getElementById("shift_text2").innerHTML = 2017;
