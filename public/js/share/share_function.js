@@ -77,6 +77,39 @@ function checkValid() {
     validSubmit.style.visibility = "hidden";
 }
 
+function hide_all() {
+  document.getElementById("min").style.visibility = "hidden";
+  document.getElementById("icon1").style.visibility = "hidden";
+  document.getElementById("arrow1up").style.visibility = "hidden";
+  document.getElementById("arrow1down").style.visibility = "hidden";
+  document.getElementById("max").style.visibility = "hidden";
+  document.getElementById("icon2").style.visibility = "hidden";
+  document.getElementById("arrow2up").style.visibility = "hidden";
+  document.getElementById("arrow2down").style.visibility = "hidden";
+  document.getElementById("rain").style.visibility = "hidden";
+  document.getElementById("icon3").style.visibility = "hidden";
+  document.getElementById("arrow3up").style.visibility = "hidden";
+  document.getElementById("arrow3down").style.visibility = "hidden";
+  document.getElementById("plant").style.visibility = "hidden";
+  document.getElementById("icon4").style.visibility = "hidden";
+  document.getElementById("arrow4up").style.visibility = "hidden";
+  document.getElementById("arrow4down").style.visibility = "hidden";
+  document.getElementById("shift").style.visibility = "hidden";
+  document.getElementById("shift_text1").style.visibility = "hidden";
+  document.getElementById("shift_text2").style.visibility = "hidden";
+}
+
+function hide_arrows() {
+  document.getElementById("arrow1up").style.visibility = "hidden";
+  document.getElementById("arrow1down").style.visibility = "hidden";
+  document.getElementById("arrow2up").style.visibility = "hidden";
+  document.getElementById("arrow2down").style.visibility = "hidden";
+  document.getElementById("arrow3up").style.visibility = "hidden";
+  document.getElementById("arrow3down").style.visibility = "hidden";
+  document.getElementById("arrow4up").style.visibility = "hidden";
+  document.getElementById("arrow4down").style.visibility = "hidden";
+}
+
 var locations = [
   ["Tuzigoot National Monument", [47, 81, 13.39, -200], [52, 86, 13.3, -200] ],
   ["Window Rock", [33, 68, 12.19, 34], [37, 72, 10.88, 11] ],
@@ -105,22 +138,7 @@ function updateTemps(locationStr) {
   }
   window.sessionStorage.curr_location_index = i;
 
-  document.getElementById("all_data").style.visibility = "hidden";
-  // document.getElementById("min").style.visibility = "hidden";
-  // document.getElementById("icon1").style.visibility = "hidden";
-  // document.getElementById("arrow1").style.visibility = "hidden";
-  // document.getElementById("max").style.visibility = "hidden";
-  // document.getElementById("icon2").style.visibility = "hidden";
-  // document.getElementById("arrow2").style.visibility = "hidden";
-  // document.getElementById("rain").style.visibility = "hidden";
-  // document.getElementById("icon3").style.visibility = "hidden";
-  // document.getElementById("arrow3").style.visibility = "hidden";
-  // document.getElementById("plant").style.visibility = "hidden";
-  // document.getElementById("icon4").style.visibility = "hidden";
-  // document.getElementById("arrow3").style.visibility = "hidden";
-  // document.getElementById("shift").style.visibility = "hidden";
-  // document.getElementById("shift_text1").style.visibility = "hidden";
-  // document.getElementById("shift_text2").style.visibility = "hidden";
+  hide_all();
 
   // Example: locations[i][0] <- refers to the location string
   // locations[i][1][0] <- refers to min temperature 2017
@@ -136,41 +154,60 @@ function updateTemps(locationStr) {
       document.getElementById("min").innerHTML = locations[i][1][0];
       document.getElementById("min").style.visibility = "visible";
       document.getElementById("icon1").style.visibility = "visible";
-      document.getElementById("arrow1").style.visibility = "visible";
     }
     if (locations[i][1][1] != -200) {
       document.getElementById("max").innerHTML = locations[i][1][1];
       document.getElementById("max").style.visibility = "visible";
       document.getElementById("icon2").style.visibility = "visible";
-      document.getElementById("arrow2").style.visibility = "visible";
     }
     if (locations[i][1][2] != -200) {
       document.getElementById("rain").innerHTML = locations[i][1][2] + "%";
       document.getElementById("rain").style.visibility = "visible";
       document.getElementById("icon3").style.visibility = "visible";
-      document.getElementById("arrow3").style.visibility = "visible";
     }
     if (locations[i][1][3] != -200) {
       document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
       document.getElementById("plant").style.visibility = "visible";
       document.getElementById("icon4").style.visibility = "visible";
-      document.getElementById("arrow4").style.visibility = "visible";
     }
   }
 }
 
 function newTemps(currentTemps) {
   var i = window.sessionStorage.curr_location_index;
+  // Going from 2017 to 2050
   if (currentTemps == 0) {
     document.getElementById("min").innerHTML = locations[i][2][0];
+    if (locations[i][1][0] > locations[i][2][0])
+      document.getElementById("arrow1down").style.visibility = "visible";
+    else
+      document.getElementById("arrow1up").style.visibility = "visible";
+
     document.getElementById("max").innerHTML = locations[i][2][1];
+    if (locations[i][1][1] > locations[i][2][1])
+      document.getElementById("arrow2down").style.visibility = "visible";
+    else
+      document.getElementById("arrow2up").style.visibility = "visible";
+
     document.getElementById("rain").innerHTML = locations[i][2][2] + "%";
+    if (locations[i][1][2] > locations[i][2][2])
+      document.getElementById("arrow3down").style.visibility = "visible";
+    else
+      document.getElementById("arrow3up").style.visibility = "visible";
+
     document.getElementById("plant").innerHTML = locations[i][2][3] + "%";
+    if (locations[i][1][3] > locations[i][2][3])
+      document.getElementById("arrow4down").style.visibility = "visible";
+    else
+      document.getElementById("arrow4up").style.visibility = "visible";
+
     document.getElementById("shift_text1").innerHTML = 2050;
     document.getElementById("shift_text2").innerHTML = 2017;
     window.sessionStorage.currentTemps = 1;
   }
+  // Going back from 2050 to 2017, hide the arrows
   else {
+    hide_arrows();
     document.getElementById("min").innerHTML = locations[i][1][0];
     document.getElementById("max").innerHTML = locations[i][1][1];
     document.getElementById("rain").innerHTML = locations[i][1][2] + "%";
