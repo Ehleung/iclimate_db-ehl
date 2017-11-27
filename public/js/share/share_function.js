@@ -97,7 +97,7 @@ var locations = [
 function updateTemps(locationStr) {
   var i;
   for (i = 0; i < locations.length; i++) {
-    if (locations[i][0].name == locationStr)
+    if (locations[i][0] == locationStr)
       break
   }
 
