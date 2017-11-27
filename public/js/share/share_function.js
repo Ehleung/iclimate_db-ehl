@@ -90,14 +90,10 @@ function hide_all() {
   document.getElementById("icon3").style.visibility = "hidden";
   document.getElementById("arrow3up").style.visibility = "hidden";
   document.getElementById("arrow3down").style.visibility = "hidden";
-  // document.getElementById("plant").style.visibility = "hidden";
-  // document.getElementById("icon4").style.visibility = "hidden";
-  // document.getElementById("arrow4up").style.visibility = "hidden";
-  // document.getElementById("arrow4down").style.visibility = "hidden";
-  document.getElementById("plant").style.display = "none";
-  document.getElementById("icon4").style.display = "none";
-  document.getElementById("arrow4up").style.display = "none";
-  document.getElementById("arrow4down").style.display = "none";
+  document.getElementById("plant").style.visibility = "hidden";
+  document.getElementById("icon4").style.visibility = "hidden";
+  document.getElementById("arrow4up").style.visibility = "hidden";
+  document.getElementById("arrow4down").style.visibility = "hidden";
   document.getElementById("shift").style.visibility = "hidden";
   document.getElementById("shift_text1").style.visibility = "hidden";
   document.getElementById("shift_text2").style.visibility = "hidden";
@@ -171,8 +167,8 @@ function updateTemps(locationStr) {
     }
     if (locations[i][1][3] != -200) {
       document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
-      document.getElementById("plant").style.display = "block";
-      document.getElementById("icon4").style.display = "block";
+      document.getElementById("plant").style.visibility = "visible";
+      document.getElementById("icon4").style.visibility = "visible";
     }
   }
 }
@@ -201,9 +197,9 @@ function newTemps(currentTemps) {
 
     document.getElementById("plant").innerHTML = locations[i][2][3] + "%";
     if (locations[i][1][3] > locations[i][2][3])
-      document.getElementById("arrow4down").style.display = "block";
+      document.getElementById("arrow4down").style.visibility = "visible";
     else
-      document.getElementById("arrow4up").style.display = "block";
+      document.getElementById("arrow4up").style.visibility = "visible";
 
     document.getElementById("shift_text1").innerHTML = 2050;
     document.getElementById("shift_text2").innerHTML = 2017;
