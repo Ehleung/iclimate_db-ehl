@@ -117,6 +117,9 @@ function updateTemps(locationStr) {
   document.getElementById("plant").style.visibility = "hidden";
   document.getElementById("icon4").style.visibility = "hidden";
   document.getElementById("arrow3").style.visibility = "hidden";
+  document.getElementById("shift").style.visibility = "hidden";
+  document.getElementById("shift_text").style.visibility = "hidden";
+
 
   // Example: locations[i][0] <- refers to the location string
   // locations[i][1][0] <- refers to min temperature 2017
@@ -124,6 +127,9 @@ function updateTemps(locationStr) {
   // locations[i][2][3] <- refers to plant cover 2050
   // ANY VALUES that equal -200 are counted as null.
   if (locationStr != "Choose your location...") {
+    document.getElementById("shift").style.visibility = "visible";
+    document.getElementById("shift_text").style.visibility = "visible";
+
     if (locations[i][1][0] != -200) {
       document.getElementById("min").innerHTML = locations[i][1][0];
       document.getElementById("min").style.visibility = "visible";
@@ -158,6 +164,7 @@ function newTemps(currentTemps) {
     document.getElementById("max").innerHTML = locations[i][2][1];
     document.getElementById("rain").innerHTML = locations[i][2][2] + "%";
     document.getElementById("plant").innerHTML = locations[i][2][3] + "%";
+    document.getElementById("shift_text").innerHTML = 2050;
     window.sessionStorage.currentTemps = 1;
   }
   else {
@@ -165,6 +172,7 @@ function newTemps(currentTemps) {
     document.getElementById("max").innerHTML = locations[i][1][1];
     document.getElementById("rain").innerHTML = locations[i][1][2] + "%";
     document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
+    document.getElementById("shift_text").innerHTML = 2017;
     window.sessionStorage.currentTemps = 0;
   }
 }
