@@ -58,24 +58,24 @@ function shuffle_question() {
 
 function checkValid() {
   var validSubmit = document.getElementById("sharesubmit");
-  var location, title, story = true
+  var location = true, title = true, story = true;
   
   if (document.getElementById("location").value == "Choose")
-    location = false
+    location = false;
   else {
     window.sessionStorage.selectedLoc = document.getElementById("location").value;
     document.getElementById("shift").style.visibility = "visible";
   }
   if (document.getElementById("title").value == "")
-    title = false
+    title = false;
   if (document.getElementById("textarea1").value == "")
-    story = false
+    story = false;
   
   // Require all three variables to be true for button to appear
-  if (location && title && story)
-    validSubmit.style.visibility = "visible"
+  if (location == true && title == true && story == true)
+    validSubmit.style.visibility = "visible";
   else
-    validSubmit.style.visibility = "hidden"
+    validSubmit.style.visibility = "hidden";
 }
 
 var locations = [
