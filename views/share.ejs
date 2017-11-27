@@ -117,6 +117,11 @@
                     <i id="arrow3" class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
                   </div>
                 </div>
+                <div class="col s3">
+                  <div class="animated flipInX" style="animation-delay: 1.3s;">
+                    <i id="shift" class="arrow-circle-right" onclick="newTemps(window.sessionStorage.currentTemps)" style="font-size:30px"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -170,7 +175,9 @@
 
      document.getElementById("plant").style.visibility = "hidden";
      document.getElementById("icon4").style.visibility = "hidden";
-     document.getElementById("arrow3").style.visibility = "hidden";
+     document.getElementById("arrow4").style.visibility = "hidden";
+
+     document.getElementById("shift").style.visibility = "hidden";
   });
   shuffle_question();
 </script>

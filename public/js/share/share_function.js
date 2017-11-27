@@ -62,11 +62,13 @@ function checkValid() {
   
   if (document.getElementById("location").value == "Choose")
     location = false
-  else
-    window.sessionStorage.selectedLoc = document.getElementById("location").value;
-  if (document.getElementById("title").value == null)
+  else {
+    window.sessionStorage.selectedLoc = document.getElementById("location").innerHTML;
+    document.getElementById("shift").style.visibility = "visible";
+  }
+  if (document.getElementById("title").innerHTML == null)
     title = false
-  if (document.getElementById("textarea1").value == null || document.getElementById("textarea1").value == "I imagine...")
+  if (document.getElementById("textarea1").innerHTML == null || document.getElementById("textarea1").value == "I imagine...")
     story = false
   
   // Require all three variables to be true for button to appear
@@ -95,11 +97,13 @@ var locations = [
 ];
 
 function updateTemps(locationStr) {
+  window.sessionStorage.currentTemps = 0;
   var i;
   for (i = 0; i < locations.length; i++) {
     if (locations[i][0] == locationStr)
       break
   }
+  window.sessionStorage.curr_location_index = i;
 
   document.getElementById("min").style.visibility = "hidden";
   document.getElementById("icon1").style.visibility = "hidden";
@@ -133,16 +137,34 @@ function updateTemps(locationStr) {
     document.getElementById("arrow2").style.visibility = "visible";
   }
   if (locations[i][1][2] != -200) {
-    document.getElementById("rain").innerHTML = locations[i][1][2];
+    document.getElementById("rain").innerHTML = locations[i][1][2] + "%";
     document.getElementById("rain").style.visibility = "visible";
     document.getElementById("icon3").style.visibility = "visible";
     document.getElementById("arrow3").style.visibility = "visible";
   }
   if (locations[i][1][3] != -200) {
-    document.getElementById("plant").innerHTML = locations[i][1][3];
+    document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
     document.getElementById("plant").style.visibility = "visible";
     document.getElementById("icon4").style.visibility = "visible";
     document.getElementById("arrow4").style.visibility = "visible";
+  }
+}
+
+function newTemps(currentTemps) {
+  var i = window.sessionStorage.curr_location_index;
+  if (currentTemps == 0) {
+    document.getElementById("min").innerHTML = locations[i][2][0];
+    document.getElementById("max").innerHTML = locations[i][2][1];
+    document.getElementById("rain").innerHTML = locations[i][2][2] + "%";
+    document.getElementById("plant").innerHTML = locations[i][2][3] + "%";
+    window.sessionStorage.currentTemps = 1;
+  }
+  else {
+    document.getElementById("min").innerHTML = locations[i][1][0];
+    document.getElementById("max").innerHTML = locations[i][1][1];
+    document.getElementById("rain").innerHTML = locations[i][1][2] + "%";
+    document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
+    window.sessionStorage.currentTemps = 0;
   }
 }
 
