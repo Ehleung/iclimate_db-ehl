@@ -101,10 +101,18 @@ function updateTemps(locationStr) {
       break
   }
 
-  document.getElementById("min").style.visibility = "hidden"
-  document.getElementById("max").style.visibility = "hidden"
-  document.getElementById("rain").style.visibility = "hidden"
-  document.getElementById("plant").style.visibility = "hidden"
+  document.getElementById("min").style.visibility = "hidden";
+  document.getElementById("icon1").style.visibility = "hidden";
+  document.getElementById("arrow1").style.visibility = "hidden";
+  document.getElementById("max").style.visibility = "hidden";
+  document.getElementById("icon2").style.visibility = "hidden";
+  document.getElementById("arrow2").style.visibility = "hidden";
+  document.getElementById("rain").style.visibility = "hidden";
+  document.getElementById("icon3").style.visibility = "hidden";
+  document.getElementById("arrow3").style.visibility = "hidden";
+  document.getElementById("plant").style.visibility = "hidden";
+  document.getElementById("icon4").style.visibility = "hidden";
+  document.getElementById("arrow3").style.visibility = "hidden";
 
   // Example: locations[i][0] <- refers to the location string
   // locations[i][1][0] <- refers to min temperature 2017
@@ -115,18 +123,26 @@ function updateTemps(locationStr) {
   if (locations[i][1][0] != -200) {
     document.getElementById("min").innerHTML = locations[i][1][0];
     document.getElementById("min").style.visibility = "visible";
+    document.getElementById("icon1").style.visibility = "visible";
+    document.getElementById("arrow1").style.visibility = "visible";
   }
   if (locations[i][1][1] != -200) {
     document.getElementById("max").innerHTML = locations[i][1][1];
-    document.getElementById("max").style.visibility = "visible";  
+    document.getElementById("max").style.visibility = "visible";
+    document.getElementById("icon2").style.visibility = "visible";
+    document.getElementById("arrow2").style.visibility = "visible";
   }
   if (locations[i][1][2] != -200) {
     document.getElementById("rain").innerHTML = locations[i][1][2];
-    document.getElementById("rain").style.visibility = "visible";  
+    document.getElementById("rain").style.visibility = "visible";
+    document.getElementById("icon3").style.visibility = "visible";
+    document.getElementById("arrow3").style.visibility = "visible";
   }
   if (locations[i][1][3] != -200) {
     document.getElementById("plant").innerHTML = locations[i][1][3];
     document.getElementById("plant").style.visibility = "visible";
+    document.getElementById("icon4").style.visibility = "visible";
+    document.getElementById("arrow4").style.visibility = "visible";
   }
 }
 
