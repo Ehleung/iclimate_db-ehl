@@ -60,7 +60,7 @@ function checkValid() {
   var validSubmit = document.getElementById("sharesubmit");
   var location = true, title = true, story = true;
   window.sessionStorage.selectedLoc = document.getElementById("location").value;
-  
+
   if (document.getElementById("location").value == "Choose your location...")
     location = false;
   else
@@ -79,7 +79,7 @@ function checkValid() {
 
 var locations = [
   ["Tuzigoot National Monument", [47, 81, 13.39, -200], [52, 86, 13.3, -200] ],
-  ["Window Rock", [33, 68, 12.19, -200], [37, 72, 10.88, -200] ],
+  ["Window Rock", [33, 68, 12.19, 34], [37, 72, 10.88, 11] ],
   ["Tombstone", [50.3, 76.8, 14.2, -200], [54, 87, 13.97, -200] ],
   ["Nogales", [49, 83, 14.42, -200], [47, 86, 16.35, -200] ],
   ["Tucson", [58, 87, 11.4, -200], [58, 91, 10.63, -200] ],

@@ -84,12 +84,11 @@
         <!-- Question Prompt goes here -->
         <div class="animated zoomIn">
           <div class="card">
-            <!-- Refresh question button -->
+            <!-- Question button & prompt -->
             <div class="card-content">
               <a class="btn-floating btn-small waves-effect waves-light red" onclick="shuffle_question()"><i class="material-icons">replay</i></a>
               <span id="random_question"></span>
             </div>
-
             <div class="card-action">
               <div class="columns">
                 <!-- Min temperature column -->
@@ -123,7 +122,7 @@
                 <!-- Shift column -->
                 <div class="column">
                   <div class="animated flipInX" style="animation-delay: 1.3s;">
-                    <i id="shift" class="arrow-circle-right" onclick="newTemps(window.sessionStorage.currentTemps)" style="font-size:30px"></i>
+                    <i id="shift" class="ion-arrow-right-a" onclick="newTemps(window.sessionStorage.currentTemps)" style="font-size:30px; color: rgba(0, 0, 0, 0.6)"></i>
                   </div>
                 </div>
               </div>
