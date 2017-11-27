@@ -76,11 +76,28 @@ function checkValid() {
     validSubmit.style.visibility = "hidden"
 }
 
+locations = [
+  ["Tuzigoot National Monument", [47, 81, 13.39, -200], [52, 86, 13.3, -200] ],
+  ["Window Rock", [33, 68, 12.19, -200], [37, 72, 10.88, -200] ],
+  ["Tombstone", [50.3, 76.8, 14.2, -200], [54, 87, 13.97, -200] ],
+  ["Nogales", [49, 83, 14.42, -200], [47, 86, 16.35, -200] ],
+  ["Tucson", [58, 87, 11.4, -200], [58, 91, 10.63, -200] ],
+  ["Flagstaff", [33, 63, 24.11, -200], [34, 69, 18.79, -200] ],
+  ["Safford", [52, 83, 11.8, -200], [49, 87, 5.73, -200] ],  
+  ["Lake Havasu", [63, 88, 4.77, -200], [65, 93, 4.83, -200] ],
+  ["Phoenix", [65, 89, 5.67, -200], [63, 93, 7.07, -200] ],
+  ["Yuma", [65, 90, 2.46, -200], [64, 95, 4.47, -200] ],
+  ["Payson", [42, 75, 21.74, -200], [42, 80, 19.27, -200] ],
+  ["Prescott", [41, 72, 22.04, -200], [43, 76, 15.09, -200] ],
+  ["Organ Pipe Cactus National Monument", [56, 87, 8, -200], [59, 93, 5.85, -200] ],
+  ["Tonto Natural Bridge State Park", [43, 74, 20.69, -200], [43, 78, 25.89, -200] ],
+  ["Grand Canyon National Park", [41, 62, 20.74, -200], [39, 70, 13.17, -200] ]
+];
+
 function updateTemps(locationStr) {
-  locs = window.sessionStorage.locations
   var i;
-  for (i = 0; i < locs.length; i++) {
-    if (locs[i].name == locationStr)
+  for (i = 0; i < locations.length; i++) {
+    if (locations[i][0].name == locationStr)
       break
   }
 
@@ -89,20 +106,20 @@ function updateTemps(locationStr) {
   document.getElementById("rain").style.visibility = "hidden"
   document.getElementById("plant").style.visibility = "hidden"
 
-  if (locs[i].weather2017[0] != -200) {
-    document.getElementById("min").value = locs[i].weather2017[0];
+  if (locations[i].weather2017[0] != -200) {
+    document.getElementById("min").value = locations[i].weather2017[0];
     document.getElementById("min").style.visibility = "visible";  
   }
-  if (locs[i].weather2017[1] != -200) {
-    document.getElementById("max").value = locs[i].weather2017[1];
+  if (locations[i].weather2017[1] != -200) {
+    document.getElementById("max").value = locations[i].weather2017[1];
     document.getElementById("max").style.visibility = "visible";  
   }
-  if (locs[i].weather2017[2] != -200) {
-    document.getElementById("rain").value = locs[i].weather2017[2];
+  if (locations[i].weather2017[2] != -200) {
+    document.getElementById("rain").value = locations[i].weather2017[2];
     document.getElementById("rain").style.visibility = "visible";  
   }
-  if (locs[i].weather2017[3] != -200) {
-    document.getElementById("plant").value = locs[i].weather2017[3];
+  if (locations[i].weather2017[3] != -200) {
+    document.getElementById("plant").value = locations[i].weather2017[3];
     document.getElementById("plant").style.visibility = "visible";  
   }
 }

@@ -75,8 +75,10 @@
         <element hidden id="user" name="user"><%= user.local.username %></element>
         <div class="select">
           <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc)">
+            <% var count; %>
             <% locs.forEach(function(loc) { %>
-              <option value=<%= loc.name %>><%= loc.name %></option>
+              <% count += 1; %>
+              <option id=<%count%> value=<%= loc.name %>><%= loc.name %></option>
             <% }); %>
           </select>
         </div>
