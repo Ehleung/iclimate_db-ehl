@@ -106,21 +106,27 @@ function updateTemps(locationStr) {
   document.getElementById("rain").style.visibility = "hidden"
   document.getElementById("plant").style.visibility = "hidden"
 
-  if (locations[i].weather2017[0] != -200) {
-    document.getElementById("min").value = locations[i].weather2017[0];
-    document.getElementById("min").style.visibility = "visible";  
+  // Example: locations[i][0] <- refers to the location string
+  // locations[i][1][0] <- refers to min temperature 2017
+  // locations[i][1][2] <- refers to rain 2017
+  // locations[i][2][3] <- refers to plant cover 2050
+  // ANY VALUES that equal -200 are counted as null.
+
+  if (locations[i][1][0] != -200) {
+    document.getElementById("min").value = locations[i][1][0];
+    document.getElementById("min").style.visibility = "visible";
   }
-  if (locations[i].weather2017[1] != -200) {
-    document.getElementById("max").value = locations[i].weather2017[1];
+  if (locations[i][1][1] != -200) {
+    document.getElementById("max").value = locations[i][1][1];
     document.getElementById("max").style.visibility = "visible";  
   }
-  if (locations[i].weather2017[2] != -200) {
-    document.getElementById("rain").value = locations[i].weather2017[2];
+  if (locations[i][1][2] != -200) {
+    document.getElementById("rain").value = locations[i][1][2];
     document.getElementById("rain").style.visibility = "visible";  
   }
-  if (locations[i].weather2017[3] != -200) {
-    document.getElementById("plant").value = locations[i].weather2017[3];
-    document.getElementById("plant").style.visibility = "visible";  
+  if (locations[i][1][3] != -200) {
+    document.getElementById("plant").value = locations[i][1][3];
+    document.getElementById("plant").style.visibility = "visible";
   }
 }
 
