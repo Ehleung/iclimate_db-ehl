@@ -133,10 +133,10 @@
                <div class="card-content">
                 <div class="columns">
                   <div class="column is-half is-offset-one-quarter">
-                    <input class="input" type="text" name="title" id="title" placeholder="Give your story a title!"></input>
+                    <input class="input" onchange="checkValid()" type="text" id="title" placeholder="Give your story a title!"></input>
                   </div>
                 </div>
-                <textarea id="textarea1" name="story" class="textarea" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="I imagine..."></textarea>
+                <textarea id="textarea1" onchange="checkValid()" class="textarea" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="I imagine..."></textarea>
                 <br/>      
                 <div class="columns">
                   <div class="column is-half is-offset-5">

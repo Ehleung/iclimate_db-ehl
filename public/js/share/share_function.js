@@ -32,7 +32,7 @@ function spin()
 
 function stop_spin (){cancelAnimationFrame(world_spin);}
 
-topics = [
+var topics = [
   "children",
   "people",
   "plant life",
@@ -66,9 +66,9 @@ function checkValid() {
     window.sessionStorage.selectedLoc = document.getElementById("location").value;
     document.getElementById("shift").style.visibility = "visible";
   }
-  if (document.getElementById("title").innerHTML == null)
+  if (document.getElementById("title").value == null)
     title = false
-  if (document.getElementById("textarea1").innerHTML == null || document.getElementById("textarea1").value == "I imagine...")
+  if (document.getElementById("textarea1").value == null || document.getElementById("textarea1").value == "I imagine...")
     story = false
   
   // Require all three variables to be true for button to appear
