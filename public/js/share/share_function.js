@@ -59,13 +59,12 @@ function shuffle_question() {
 function checkValid() {
   var validSubmit = document.getElementById("sharesubmit");
   var location = true, title = true, story = true;
+  window.sessionStorage.selectedLoc = document.getElementById("location").value;
   
   if (document.getElementById("location").value == "Choose your location...")
     location = false;
-  else {
-    window.sessionStorage.selectedLoc = document.getElementById("location").value;
+  else
     document.getElementById("shift").style.visibility = "visible";
-  }
   if (document.getElementById("title").value == "")
     title = false;
   if (document.getElementById("textarea1").value == "")
