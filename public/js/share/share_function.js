@@ -97,6 +97,7 @@ var locations = [
 ];
 
 function updateTemps(locationStr) {
+  console.log(locationStr);
   window.sessionStorage.currentTemps = 0;
   var i;
   for (i = 0; i < locations.length; i++) {
