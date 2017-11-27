@@ -60,7 +60,7 @@ function checkValid() {
   var validSubmit = document.getElementById("sharesubmit");
   var location = true, title = true, story = true;
   
-  if (document.getElementById("location").value == "Choose")
+  if (document.getElementById("location").value == "Choose your location...")
     location = false;
   else {
     window.sessionStorage.selectedLoc = document.getElementById("location").value;
@@ -123,30 +123,31 @@ function updateTemps(locationStr) {
   // locations[i][1][2] <- refers to rain 2017
   // locations[i][2][3] <- refers to plant cover 2050
   // ANY VALUES that equal -200 are counted as null.
-
-  if (locations[i][1][0] != -200) {
-    document.getElementById("min").innerHTML = locations[i][1][0];
-    document.getElementById("min").style.visibility = "visible";
-    document.getElementById("icon1").style.visibility = "visible";
-    document.getElementById("arrow1").style.visibility = "visible";
-  }
-  if (locations[i][1][1] != -200) {
-    document.getElementById("max").innerHTML = locations[i][1][1];
-    document.getElementById("max").style.visibility = "visible";
-    document.getElementById("icon2").style.visibility = "visible";
-    document.getElementById("arrow2").style.visibility = "visible";
-  }
-  if (locations[i][1][2] != -200) {
-    document.getElementById("rain").innerHTML = locations[i][1][2] + "%";
-    document.getElementById("rain").style.visibility = "visible";
-    document.getElementById("icon3").style.visibility = "visible";
-    document.getElementById("arrow3").style.visibility = "visible";
-  }
-  if (locations[i][1][3] != -200) {
-    document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
-    document.getElementById("plant").style.visibility = "visible";
-    document.getElementById("icon4").style.visibility = "visible";
-    document.getElementById("arrow4").style.visibility = "visible";
+  if (locationStr != "Choose your location...") {
+    if (locations[i][1][0] != -200) {
+      document.getElementById("min").innerHTML = locations[i][1][0];
+      document.getElementById("min").style.visibility = "visible";
+      document.getElementById("icon1").style.visibility = "visible";
+      document.getElementById("arrow1").style.visibility = "visible";
+    }
+    if (locations[i][1][1] != -200) {
+      document.getElementById("max").innerHTML = locations[i][1][1];
+      document.getElementById("max").style.visibility = "visible";
+      document.getElementById("icon2").style.visibility = "visible";
+      document.getElementById("arrow2").style.visibility = "visible";
+    }
+    if (locations[i][1][2] != -200) {
+      document.getElementById("rain").innerHTML = locations[i][1][2] + "%";
+      document.getElementById("rain").style.visibility = "visible";
+      document.getElementById("icon3").style.visibility = "visible";
+      document.getElementById("arrow3").style.visibility = "visible";
+    }
+    if (locations[i][1][3] != -200) {
+      document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
+      document.getElementById("plant").style.visibility = "visible";
+      document.getElementById("icon4").style.visibility = "visible";
+      document.getElementById("arrow4").style.visibility = "visible";
+    }
   }
 }
 
