@@ -63,7 +63,7 @@ function checkValid() {
   if (document.getElementById("location").value == "Choose")
     location = false
   else {
-    window.sessionStorage.selectedLoc = document.getElementById("location").innerHTML;
+    window.sessionStorage.selectedLoc = document.getElementById("location").value;
     document.getElementById("shift").style.visibility = "visible";
   }
   if (document.getElementById("title").innerHTML == null)
