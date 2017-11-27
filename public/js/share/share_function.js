@@ -113,19 +113,19 @@ function updateTemps(locationStr) {
   // ANY VALUES that equal -200 are counted as null.
 
   if (locations[i][1][0] != -200) {
-    document.getElementById("min").value = locations[i][1][0];
+    document.getElementById("min").innerHTML = locations[i][1][0];
     document.getElementById("min").style.visibility = "visible";
   }
   if (locations[i][1][1] != -200) {
-    document.getElementById("max").value = locations[i][1][1];
+    document.getElementById("max").innerHTML = locations[i][1][1];
     document.getElementById("max").style.visibility = "visible";  
   }
   if (locations[i][1][2] != -200) {
-    document.getElementById("rain").value = locations[i][1][2];
+    document.getElementById("rain").innerHTML = locations[i][1][2];
     document.getElementById("rain").style.visibility = "visible";  
   }
   if (locations[i][1][3] != -200) {
-    document.getElementById("plant").value = locations[i][1][3];
+    document.getElementById("plant").innerHTML = locations[i][1][3];
     document.getElementById("plant").style.visibility = "visible";
   }
 }
