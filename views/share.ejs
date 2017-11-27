@@ -78,7 +78,7 @@
             <% var count; %>
             <% locs.forEach(function(loc) { %>
               <% count += 1; %>
-              <option id=<%count%> value=<%= loc.name %>><%= loc.name %></option>
+              <option id=<%=count%> value=<%=loc.name%>><%= loc.name %></option>
             <% }); %>
           </select>
         </div>
@@ -155,10 +155,4 @@
   });
   shuffle_question();
 </script>
-
-<script>
-// window.sessionStorage.locs = <%= locs %>;
-// console.log(window.sessionStorage.locs);
-</script>
-
 </html>
