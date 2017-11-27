@@ -76,7 +76,7 @@ function checkValid() {
     validSubmit.style.visibility = "hidden"
 }
 
-locations = [
+var locations = [
   ["Tuzigoot National Monument", [47, 81, 13.39, -200], [52, 86, 13.3, -200] ],
   ["Window Rock", [33, 68, 12.19, -200], [37, 72, 10.88, -200] ],
   ["Tombstone", [50.3, 76.8, 14.2, -200], [54, 87, 13.97, -200] ],
