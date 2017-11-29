@@ -16,8 +16,6 @@ var locations = [
   ["Tucson", [32.13139, -110.95528]],
   ["Tombstone", [31.71194, -110.06961]],
   ["Tuzigoot National Monument", [34.77055, -112.02639]]
-  // ["Sedona", [34.77309, -111.7655]],
-  // ["Bisbee", [31.44185, -109.9148]],
 ];
 
 function world() {
@@ -42,7 +40,7 @@ function world() {
   // Append every location found in the array at the top to a marker on the map
   for (var i = 0; i < locations.length; i++) {
     var marker = WE.marker(locations[i][1]).addTo(earth);
-    marker.bindPopup("<h7><b>" + locations[i][0] + "</b></h7><br> <h6>View stories from this location!</h6></br> <a href=\"#modal1\" ><i class=\"material-icons left\">comment</i>comment</a>", {maxWidth: 320, closeButton: true});
+    marker.bindPopup("<h6>View stories from" + locations[i][0] + "!</h6></br> <a href=\"#modal1\" >Click Here!</a>", {maxWidth: 320, closeButton: true});
   }
 
   earth.switch_map = function switch_map(x)
