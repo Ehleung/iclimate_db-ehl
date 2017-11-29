@@ -166,7 +166,7 @@ function updateTemps(locationStr) {
 }
 
 function newTemps(currentTemps) {
-  var locations = window.sessionStorage.locations;
+  // var locations = window.sessionStorage.locations;
   var i = window.sessionStorage.curr_location_index;
   // Going from 2017 to 2050
   if (currentTemps == 0) {
