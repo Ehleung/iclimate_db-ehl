@@ -89,7 +89,8 @@ function hide_arrows() {
 }
 
 function updateTemps(locationStr) {
-  var locations[] = window.sessionStorage.locations;
+  var locations = [];
+  locations = window.sessionStorage.locations;
   console.log(locationStr);
   window.sessionStorage.currentTemps = 0;
   var i;
