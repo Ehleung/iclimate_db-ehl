@@ -26,5 +26,5 @@ var earth
         toner.addTo(earth);
         earth.swith_map(1);
         setTimeout(spin(), 5000);
-
+        storage();
   }
