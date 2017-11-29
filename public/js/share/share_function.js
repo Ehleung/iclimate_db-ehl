@@ -32,7 +32,8 @@ function spin()
 function stop_spin (){cancelAnimationFrame(world_spin);}
 
 function shuffle_question() {
-  topics[] = window.sessionStorage.topics;
+  var topics = [];
+  topics = window.sessionStorage.topics;
   random_question = "What would happen to "
   var x = Math.floor((Math.random() * 12));
   random_question += topics[x];
