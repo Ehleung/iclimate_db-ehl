@@ -41,7 +41,7 @@ var earth
       ["Tonto Natural Bridge State Park", [43, 74, 20.69, -200], [43, 78, 25.89, -200] ],
       ["Grand Canyon National Park", [41, 62, 20.74, -200], [39, 70, 13.17, -200] ]
     ];
-    window.sessionStorage.locations[] = initlocations;
+    window.sessionStorage.locations = initlocations;
 
     var inittopics = [
       "children",
@@ -56,9 +56,9 @@ var earth
       "buildings",
       "water resources",
     ];
-    window.sessionStorage.topics[] = inittopics;
+    window.sessionStorage.topics = inittopics;
   }
-  
+
   function world() {
     var options = {
          sky: true,
