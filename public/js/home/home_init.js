@@ -1,4 +1,21 @@
 var earth
+  var world_spin;
+  function spin()
+            {
+                var before = null;
+                world_spin = requestAnimationFrame(function animate(now)
+                      {
+                        var c = earth.getPosition();
+                        var elapsed = before? now - before: 0;
+                        before = now;
+                        earth.setCenter([c[0], c[1] + 0.1]);
+                        world_spin = requestAnimationFrame(animate);
+
+                        });
+            }
+
+  function stop_spin (){cancelAnimationFrame(world_spin);}
+
   function world() {
     var options = {
          sky: true,
