@@ -125,29 +125,19 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/view', function(req, res) {
-		var search = GetURLParameter('location');
 		Story.find({location: search}, function(err, docs) {
 			res.render('view.ejs', {
 				data : docs
 			});
 		});
 	});
+	app.post('/view', function(req, res) {
+		var search = req.body.viewLoc;
+		Story.find({location: search}, function(err, docs) {
+			res.render('view.ejs', {data:docs});
+		});
+	});
 };
-
-// Credit: http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
-function GetURLParameter(sParam)
-{
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
-    {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
-        {
-            return sParameterName[1];
-        }
-    }
-}​
 
 function isLoggedIn(req, res, next) {
 	// if user is authenticated in session, continue
