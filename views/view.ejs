@@ -46,13 +46,17 @@
 
 <body onload="world()">
   <div id="earth_div"  class="wrapper">
+    <div class ="hover">
+      <% data.forEach(function(story) { %>
+      <tr>
+        <td><%= story.title %></td>
+        <td><%= story.author %></td>
+        <td><%= story.story %></td>
+        <td><span class="icon"><i class="fa fa-remove"></i></span></td>
+      </tr>
+      <% }); %> 
+    </div>
   </div>
 </body>
-
-<script>
-$(document).ready(function() {
-  var location = window.location.href;
-});
-</script>
 
 </html>
