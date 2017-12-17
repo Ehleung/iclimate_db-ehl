@@ -45,12 +45,16 @@
   </nav>
 
 <body onload="world()">
-  <div id="earth_div"  class="wrapper">
+  <div id="earth_div" class="wrapper">
     <div class ="hover">
+      <script> console.log("HIIIIIi"); </script>
       <% data.forEach(function(entry) { %>
-        <center><%= entry.title %></center>
-        <center><%= entry.author %></center>
-        <td><%= entry.story %></center>
+        <script>
+          console.log(<%= entry %>);
+        </script>
+        <center><h2><%= entry.title %></h2></center>
+        <center><h4><%= entry.author %></h4></center>
+        <center><h5><%= entry.story %></h5></center>
         <center><span class="icon"><i class="fa fa-remove"></i></span></center>
       <% }); %> 
     </div>

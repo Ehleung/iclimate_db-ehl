@@ -134,6 +134,7 @@ module.exports = function(app, passport) {
 	app.post('/view', function(req, res) {
 		var search = req.body.viewLoc;
 		Story.find({location: search}, function(err, docs) {
+			console.log(docs);
 			res.render('view.ejs', {data:docs});
 		});
 	});
