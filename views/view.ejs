@@ -6,8 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="css/explore/explore_main.css">
 
     <script src="http://www.webglearth.com/v2/api.js"></script>
-		<script src="js/explore/explore_init.js"></script>
-		<script src="js/explore/explore_function.js"></script>
+		<script src="js/home/home_init.js"></script>
+    <script src="js/home/home_function.js"></script>
 
 		<title>View</title>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -44,14 +44,14 @@
     </div>
   </nav>
 
-<body>
+<body onload="world()">
   <div id="earth_div"  class="wrapper">
     <div class ="hover">
-      <% data.forEach(function(story) { %>
+      <% data.forEach(function(entry) { %>
       <tr>
-        <td><%= story.title %></td>
-        <td><%= story.author %></td>
-        <td><%= story.story %></td>
+        <center><%= entry.title %></center>
+        <td><%= entry.author %></td>
+        <td><%= entry.story %></td>
         <td><span class="icon"><i class="fa fa-remove"></i></span></td>
       </tr>
       <% }); %> 
