@@ -48,12 +48,10 @@
   <div id="earth_div"  class="wrapper">
     <div class ="hover">
       <% data.forEach(function(entry) { %>
-      <tr>
         <center><%= entry.title %></center>
-        <td><%= entry.author %></td>
-        <td><%= entry.story %></td>
-        <td><span class="icon"><i class="fa fa-remove"></i></span></td>
-      </tr>
+        <center><%= entry.author %></center>
+        <td><%= entry.story %></center>
+        <center><span class="icon"><i class="fa fa-remove"></i></span></center>
       <% }); %> 
     </div>
   </div>
