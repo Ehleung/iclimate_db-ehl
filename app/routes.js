@@ -133,6 +133,8 @@ module.exports = function(app, passport) {
 	});
 	app.post('/view', function(req, res) {
 		var search = req.body.viewLoc;
+		console.log("req-body-viewloc = " + req.body.viewLoc);
+		console.log("search = " + search);
 		Story.find({location: search}, function(err, docs) {
 			console.log(docs);
 			res.render('view.ejs', {data:docs});
