@@ -40,9 +40,9 @@ function world() {
   // Append every location found in the array at the top to a marker on the map
   for (var i = 0; i < locations.length; i++) {
     var marker = WE.marker(locations[i][1]).addTo(earth);
-    marker.bindPopup("<h7><b>View stories from:</b></h7>" +
+    marker.bindPopup("<h7><b>View stories from: </b></h7>" +
                       // "<br><h6>""</h6></br>" +
-                      "<a id=\""+locations[i][0]+"\"href=\"#modal1\"><i class=\"material-icons left\"></i>"+locations[i][0]+"</i></a>", {maxWidth: 320, closeButton: true});
+                      "<a id=\""+locations[i][0]+"\"href=\"#modal1\">"+locations[i][0]+"</a>", {maxWidth: 320, closeButton: true});
   }
 
   earth.switch_map = function switch_map(x)
