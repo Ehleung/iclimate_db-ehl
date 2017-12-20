@@ -7,6 +7,7 @@ module.exports = function(app, passport) {
 	
 	// HOME PAGE (with login links) ===========================================
 	app.get('/', function(req, res) {
+		res.send("hello");
 		res.render('index.ejs', { message: req.flash('loginMessage') });	// load index.ejs file
 	});
 
@@ -122,23 +123,6 @@ module.exports = function(app, passport) {
 				});	
 			});
 		});		
-	});
-
-	app.get('/view', function(req, res) {
-		Story.find({location: search}, function(err, docs) {
-			res.render('view.ejs', {
-				data : docs
-			});
-		});
-	});
-	app.post('/view', function(req, res) {
-		var search = req.body.viewLoc;
-		console.log("req-body-viewloc = " + req.body.viewLoc);
-		console.log("search = " + search);
-		Story.find({location: search}, function(err, docs) {
-			console.log(docs);
-			res.render('view.ejs', {data:docs});
-		});
 	});
 };
 
