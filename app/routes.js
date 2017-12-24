@@ -118,7 +118,16 @@ module.exports = function(app, passport) {
 		var stories = [];
 		Story.find({}, function (error, data) {
 			data.forEach(function(dbData) {
-				console.log(dbData);
+				var newStory;
+				newStory.id = dbData._id;
+				newStory.location = dbData.location;
+				newStory.story = dbData.story;
+				newStory.author = dbData.author;
+				newStory.comments = [];
+				dbData.comments.forEach(function(comment) {
+					newStory.comments.push(comment);
+				});
+				console.log(newStory);
 				console.log('next');
 			});
 			res.render('explore.ejs', {
