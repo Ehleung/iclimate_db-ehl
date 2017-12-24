@@ -116,8 +116,9 @@ module.exports = function(app, passport) {
 		// Need to make a find for each location
 		var stories = [];
 		Story.find({}, function (error, data) {
-			for (var item in data)
-				stories.push(item);
+			data.forEach(function(dbData) {
+				stories.push(dbData);
+			});
 			console.log('data' + data);
 			console.log('stories' + stories);
 			res.render('explore.ejs', {
