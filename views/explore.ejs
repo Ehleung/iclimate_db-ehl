@@ -71,9 +71,9 @@ $(document).ready(function(){
 // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
 $('.modal').modal();
 });
-var temp = "<%= data %>";
+var temp = "<%= mySearch %>";
 var stories = [];
-data.forEach(function(dbData) {
+temp.forEach(function(dbData) {
   var story;
   story.id = dbData._id;
   story.location = dbData.location;
