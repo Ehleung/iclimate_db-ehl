@@ -71,16 +71,16 @@ $(document).ready(function(){
 // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
 $('.modal').modal();
 });
-var temp = "<%= mySearch %>";
 var stories = [];
-temp.forEach(function(dbData) {
-  var story;
-  story.id = dbData._id;
-  story.location = dbData.location;
-  story.title = dbData.title;
-  story.author = dbData.author;
-  story.comments = dbData.comments;
-  stories.push(story);
+
+"<%= mySearch %>".forEach(function(dbData) {
+  var newStory;
+  newStory.id = <%= dbData._id %>;
+  newStory.location = <%= dbData.location %>;
+  newStory.title = <%= dbData.title %>;
+  newStory.author = <%= dbData.author %>;
+  newStory.comments = <%= dbData.comments %>;
+  stories.push(newStory);
 });
 
 console.log(stories);

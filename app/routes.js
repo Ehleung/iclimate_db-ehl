@@ -111,7 +111,7 @@ module.exports = function(app, passport) {
 			res.redirect('/explore');
 		});
 	});
-
+	
 	app.get('/explore', function(req, res) {
 		// Need to make a find for each location
 		var stories = [];
