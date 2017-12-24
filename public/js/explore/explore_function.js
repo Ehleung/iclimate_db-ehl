@@ -43,7 +43,3 @@ var locations = [
   ["Tombstone", [31.71194, -110.06961]],
   ["Tuzigoot National Monument", [34.77055, -112.02639]]
 ];
-
-function loadStories (var location) {
-    
-}
