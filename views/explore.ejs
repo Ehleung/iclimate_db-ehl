@@ -74,10 +74,16 @@ $('.modal').modal();
 var temp = "<%= data %>";
 var stories = [];
 data.forEach(function(dbData) {
-  stores.push(dbData);
+  var story;
+  story.id = dbData._id;
+  story.location = dbData.location;
+  story.title = dbData.title;
+  story.author = dbData.author;
+  story.comments = dbData.comments;
+  stories.push(story);
 });
 
-console.log(temp);
+console.log(stories);
 </script>
 
 </html>
