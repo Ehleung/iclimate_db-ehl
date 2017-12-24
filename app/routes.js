@@ -120,7 +120,7 @@ module.exports = function(app, passport) {
 			data.forEach(function(dbData) {
 				var newStory;
 				console.log("location" + dbData.location);
-				newStory.id = dbData.id;
+				// newStory.id = dbData.id;
 				newStory.location = dbData.location;
 				newStory.story = dbData.story;
 				newStory.author = dbData.author;
