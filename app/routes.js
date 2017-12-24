@@ -119,7 +119,8 @@ module.exports = function(app, passport) {
 		Story.find({}, function (error, data) {
 			data.forEach(function(dbData) {
 				var newStory;
-				newStory.id = dbData._id;
+				console.log("location" + dbData.location);
+				newStory.id = dbData.id;
 				newStory.location = dbData.location;
 				newStory.story = dbData.story;
 				newStory.author = dbData.author;
