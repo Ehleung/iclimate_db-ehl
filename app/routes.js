@@ -102,9 +102,10 @@ module.exports = function(app, passport) {
 	app.post('/share', isLoggedIn, function(req, res) {
 		var newStory = new Story();
 		newStory.author = req.user.local.username;
+		newStory.location = req.body.location;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
-		newStory.location = req.body.location;
+		
 		newStory.comments = [];
 
 		newStory.save(req.body, function(err, doc) {
@@ -116,7 +117,9 @@ module.exports = function(app, passport) {
 		// Need to make a find for each location
 		var stories = [];
 		Story.find({}, function (error, data) {
-			console.log(data);
+			data.forEach(function(dbData) {
+				console.log(dbData);
+			});
 			res.render('explore.ejs', {
 				mySearch : data
 			});
