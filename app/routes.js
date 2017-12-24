@@ -119,6 +119,7 @@ module.exports = function(app, passport) {
 		Story.find({}, function (error, data) {
 			data.forEach(function(dbData) {
 				console.log(dbData);
+				console.log('next');
 			});
 			res.render('explore.ejs', {
 				mySearch : data
