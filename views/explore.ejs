@@ -75,13 +75,13 @@ var stories = [];
 
 "<%= mySearch %>".forEach(function(dbData) {
   var newStory;
-  newStory.id = <%= dbData._id %>;
-  newStory.location = <%= dbData.location %>;
-  newStory.title = <%= dbData.title %>;
-  newStory.author = <%= dbData.author %>;
-  newStory.comments = <%= dbData.comments %>;
+  newStory.id = dbData._id;
+  newStory.location = dbData.location;
+  newStory.title = dbData.title;
+  newStory.author = dbData.author;
+  newStory.comments = dbData.comments;
   stories.push(newStory);
-});
+})
 
 console.log(stories);
 </script>
