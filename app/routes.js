@@ -118,6 +118,8 @@ module.exports = function(app, passport) {
 		Story.find({}, function (error, data) {
 			for (item in data)
 				stories.push(item);
+			console.log('data' + data);
+			console.log('stories' + stories);
 			res.render('explore.ejs', {
 				data : stories
 			});
