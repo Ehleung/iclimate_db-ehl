@@ -114,13 +114,13 @@ module.exports = function(app, passport) {
 
 	app.get('/explore', function(req, res) {
 		// Need to make a find for each location
-		var mySearch = Story.find();
 		var stories = [];
-		for (item in mySearch) {
-			stories.push(item);
-		}
-		res.render('explore.ejs', {
-			data : stories
+		Story.find({}, function (error, data) {
+			for (item in data)
+				stories.push(item);
+			res.render('explore.ejs', {
+				data : stories
+			});
 		});
 	});
 };
