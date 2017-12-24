@@ -73,6 +73,9 @@ $('.modal').modal();
 });
 var temp = "<%= data %>";
 var stories = [];
+data.forEach(function(dbData) {
+  stores.push(dbData);
+});
 
 console.log(temp);
 </script>
