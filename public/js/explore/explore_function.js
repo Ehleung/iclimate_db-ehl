@@ -44,7 +44,7 @@ var locations = [
   ["Tuzigoot National Monument", [34.77055, -112.02639]]
 ];
 
-function loadStories() {
+function loadStories(location) {
   $.get('/locations', function(locs) {
     var $locs = $('<div class="col-md-4"></div>');
     locs.forEach(function(loc) {
