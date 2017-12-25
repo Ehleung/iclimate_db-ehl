@@ -105,9 +105,7 @@ module.exports = function(app, passport) {
 		newStory.location = req.body.location;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
-		
 		newStory.comments = [];
-
 		newStory.save(req.body, function(err, doc) {
 			res.redirect('/explore');
 		});
@@ -119,11 +117,13 @@ module.exports = function(app, passport) {
 		Story.find({}, function (error, data) {
 			data.forEach(function(dbData) {
 				var newStory = JSON.stringify(dbData);
+				stories.push(newStory);
 				console.log(newStory);
-				console.log(newStory.location);
+				// console.log(newStory.location);
+				console.log(newStory["location"]);
 			});
 			res.render('explore.ejs', {
-				mySearch : data
+				mySearch : stories
 			});
 		});
 	});
