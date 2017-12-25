@@ -118,7 +118,7 @@ module.exports = function(app, passport) {
 		var stories = [];
 		Story.find({}, function (error, data) {
 			data.forEach(function(dbData) {
-				var newStory = JSON.parse(dbData);
+				var newStory = JSON.stringify(dbData);
 				console.log(newStory);
 				console.log(newStory.location);
 			});
