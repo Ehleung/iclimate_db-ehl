@@ -46,7 +46,13 @@
     <div class="animated zoomIn" style="animation-delay: 0.1s; padding-left: 20px;padding-right: 20px;padding-top: 20px;">
       <div class="card" style="margin-bottom: 0px;">
             <div class="card-content">
-              <div id="content" class="chip">Display inside modal1</div>
+              <div id="content" class="chip">
+                <script>
+                $.get('/locations', function(html) {
+                  $('#locs-container').html(html);
+                });
+                </script>
+              </div>
             </div>
       </div>
       <div id="triangle-down" style="align: right;"></div>
@@ -71,20 +77,6 @@ $(document).ready(function(){
 // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
 $('.modal').modal();
 });
-var stories = [];
-
-"<%= mySearch %>".forEach(function(dbData) {
-  var newStory;
-  newStory.id = dbData._id;
-  newStory.location = dbData.location;
-  console.log(dbData.location);
-  newStory.title = dbData.title;
-  newStory.author = dbData.author;
-  newStory.comments = dbData.comments;
-  stories.push(newStory);
-})
-
-console.log(stories);
 </script>
 
 </html>
