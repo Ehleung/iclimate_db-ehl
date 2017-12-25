@@ -45,13 +45,11 @@ var locations = [
 ];
 
 function loadStories(location) {
-  $.get('/locations', function(locs) {
-    var $locs = $('<div class="col-md-4"></div>');
-    locs.forEach(function(loc) {
-      $locs.append(`<h1>${loc.title}</h1>`);
-      $locs.append(`<h2>${loc.story}</h2>`);
-      $locs.append(`<h3>${loc.author}</h2>`);
+  $.get('/locations', function(stories) {
+    var $stories = $('<div class="col-md-4"></div>');
+    stories.forEach(function(story) {
+      $stories.append(`<h1>${story.location}</h1>`);
     });
-    $('#locs-container').html($locs);
+    $('#stories-container').html($stories);
   });
 }

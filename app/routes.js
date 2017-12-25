@@ -117,8 +117,8 @@ module.exports = function(app, passport) {
 
 	app.get('/locations', function(req, res) {
 		var search = req.body.search;
-		Story.find(function(err, locs) {
-			res.send(locs);
+		Story.find({}, function(err, stories) {
+			res.send(stories);
 		});
 	});
 };
