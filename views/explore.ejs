@@ -77,13 +77,14 @@ var stories = [];
   var newStory;
   newStory.id = dbData._id;
   newStory.location = dbData.location;
+  console.log(dbData.location);
   newStory.title = dbData.title;
   newStory.author = dbData.author;
   newStory.comments = dbData.comments;
   stories.push(newStory);
 })
 
-console.log(<%= mySearch %>);
+console.log(stories);
 </script>
 
 </html>
