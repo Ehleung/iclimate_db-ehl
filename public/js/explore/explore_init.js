@@ -42,8 +42,8 @@ function world() {
     var marker = WE.marker(locations[i][1]).addTo(earth);
     marker.bindPopup("<h7><b>View stories from: </b></h7>" +
                       // "<br><h6>""</h6></br>" +
-                      "<a onclick=\"loadStories("+")\" href=\"#modal1\">"+locations[i][0]+"</a>", {maxWidth: 320, closeButton: true});
-  }
+                      "<a id=\"icon-"+locations[i][0]"\" onclick=\"getStories("+locations[i][0]+")\" >"+locations[i][0]+"</a>", {maxWidth: 320, closeButton: true});
+  }//href=\"#modal"+locations[i][0]+"\"
 
   earth.switch_map = function switch_map(x)
    {

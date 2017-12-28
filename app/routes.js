@@ -115,9 +115,9 @@ module.exports = function(app, passport) {
 		res.render('explore.ejs');
 	});
 
-	app.get('/locations', function(req, res) {
-		var search = req.body.search;
-		Story.find({}, function(err, stories) {
+	app.get('/locations/:search', function(req, res) {
+		var search = req.params.search;
+		Story.find({location: search}, function(err, stories) {
 			res.send(stories);
 		});
 	});
