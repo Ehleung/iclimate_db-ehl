@@ -42,7 +42,7 @@ function world() {
     var marker = WE.marker(locations[i][1]).addTo(earth);
     marker.bindPopup("<h7><b>View stories from: </b></h7>" +
                       // "<br><h6>""</h6></br>" +
-                      "<a id=\""+locations[i][0]+"\" href=\"#modal1"+"\" onclick=\"getStories(\""+locations[i][0]+"\")\">"+locations[i][0]+"</a>", {maxWidth: 320, closeButton: true});
+                      "<a id=\""+locations[i][0]+"\" href=\"#modal1"+"\" onclick=\"getStories(\'"+locations[i][0]+"\'')\">"+locations[i][0]+"</a>", {maxWidth: 320, closeButton: true});
   }//+locations[i][0]
   earth.switch_map = function switch_map(x)
    {
