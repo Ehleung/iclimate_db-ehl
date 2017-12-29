@@ -73,6 +73,59 @@ $(document).ready(function(){
 // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
 $('.modal').modal();
 });
+
+$(document).ready(function() {
+  var locations = [
+    ["Grand_Canyon_National_Park", [36.05972, -112.10972]],
+    ["Tonto_Natural_Bridge_State_Park", [34.32195, -111.45333]],
+    ["Organ_Pipe_Cactus_National_Monument ", [31.95556, -112.80028]],
+    ["Lake_Havasu", [34.50306, -114.36028]],
+    ["Flagstaff", [35.14417, -111.66639]],
+    ["Nogales", [31.42083, -110.84583]],
+    ["Payson", [34.2325, -111.34473]],
+    ["Phoenix", [33.42778, -112.00389]],
+    ["Prescott", [34.57055, -112.43222]],
+    ["Window_Rock", [35.6575, -109.06139]],
+    ["Yuma", [32.65,-114.61667]],
+    ["Safford", [32.85472, -109.63528]],
+    ["Tucson", [32.13139, -110.95528]],
+    ["Tombstone", [31.71194, -110.06961]],
+    ["Tuzigoot_National_Monument", [34.77055, -112.02639]]
+  ];
+
+  $("a#Flagstaff").click(function() {
+    alert("flagstaff clicked");
+    
+    $.ajax({
+      type: "GET",
+      dataType: "jsonp",
+      url: "/locations/Flagstaff?callback=?",
+    }).done(function(data) {
+      // console.log("test" + location);
+      alert("done");
+      console.log(data);
+
+      // console.log("location = " + location);
+      // var xhr = new XMLHttpRequest();
+      // xhr.onreadystatechange = function() {
+      //   console.log ("readyState="+xhr.readyState + "\tstatus="+xhr.status);
+      //   if (xhr.readyState == 4 && xhr.status == 200) {
+      //     document.getElementById("location_content").innerHTML = this.responseText;
+      //   };
+      // };
+      // xhr.open("GET", "http://www.imaginingclimate.com/locations/"+location, true);
+      // xhr.send();
+
+      // $.getJSON("http://imaginingclimate.com/locations/"+location+"?callback=?", function(response) {
+      //     $.each(response.data, function(x, story) {
+      //       console.log("hi" + story);
+      //       $("#location_content").append('<p>' + story.location + "</p>");
+      //     });
+      //   });
+    });
+  });
+});
+
 </script>
 
 </html>
