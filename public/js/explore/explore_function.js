@@ -52,7 +52,7 @@ function getStories(location) {
       document.getElementById("location_content").innerHTML = this.responseText;
     };
   };
-  xhr.open("GET", "/locations/"+location, true);
+  xhr.open("GET", "http://www.imaginingclimate.com/locations/"+location, true);
   xhr.send();
   // $.ajax({
   //   url: "/locations/"+location,
