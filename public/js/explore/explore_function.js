@@ -46,15 +46,15 @@ var locations = [
 
 function getStories(location) {
   console.log("location = " + location);
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    console.log ("readyState="+xhr.readyState + "\tstatus="+xhr.status);
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      document.getElementById("location_content").innerHTML = this.responseText;
-    };
-  };
-  xhr.open("GET", "http://www.imaginingclimate.com/locations/"+location, true);
-  xhr.send();
+  // var xhr = new XMLHttpRequest();
+  // xhr.onreadystatechange = function() {
+  //   console.log ("readyState="+xhr.readyState + "\tstatus="+xhr.status);
+  //   if (xhr.readyState == 4 && xhr.status == 200) {
+  //     document.getElementById("location_content").innerHTML = this.responseText;
+  //   };
+  // };
+  // xhr.open("GET", "http://www.imaginingclimate.com/locations/"+location, true);
+  // xhr.send();
   // $.ajax({
   //   dataType: 'jsonp',
   //   url: "/locations/"+location+"?callback=?",
@@ -63,10 +63,10 @@ function getStories(location) {
   //   console.log(data);
   // });
 
-  // $.getJSON("http://imaginingclimate.com/locations/"+locations[i][0], function(response) {
-  //     $.each(response.data, function(x, story) {
-  //       $("#location_content").append('<li>' + story.location + "</li>");
-  //     });
-  //   });
+  $.getJSON("http://imaginingclimate.com/locations/"+location+"?callback=?", function(response) {
+      $.each(response.data, function(x, story) {
+        $("#location_content").append('<p>' + story.location + "</p>");
+      });
+    });
 
 }
