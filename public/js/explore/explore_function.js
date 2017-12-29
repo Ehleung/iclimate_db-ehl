@@ -65,6 +65,7 @@ function getStories(location) {
 
   $.getJSON("http://imaginingclimate.com/locations/"+location+"?callback=?", function(response) {
       $.each(response.data, function(x, story) {
+        console.log("hi" + story);
         $("#location_content").append('<p>' + story.location + "</p>");
       });
     });
