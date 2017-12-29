@@ -93,18 +93,24 @@ $(document).ready(function() {
     ["Tuzigoot_National_Monument", [34.77055, -112.02639]]
   ];
 
-  $("#Flagstaff").click(function() {
+  $("#\'Flagstaff\'").click(function() {
     console.log("flagstaff clicked");
     
     $.ajax({
       type: "GET",
-      dataType: "jsonp",
+      dataType: "json",
       url: "/locations/Flagstaff?callback=?",
-    }).done(function(data) {
-      // console.log("test" + location);
-      console.log("done");
-      console.log(data);
-
+      success: function() {
+        console.log('success');
+      },
+      error: function() {
+        console.log('error');
+      },
+      complete: function() {
+        console.log('complete');
+      }
+    });
+    console.log('zzz');
       // console.log("location = " + location);
       // var xhr = new XMLHttpRequest();
       // xhr.onreadystatechange = function() {
