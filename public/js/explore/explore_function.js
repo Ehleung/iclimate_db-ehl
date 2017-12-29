@@ -55,19 +55,25 @@ function getStories(location) {
   // };
   // xhr.open("GET", "http://www.imaginingclimate.com/locations/"+location, true);
   // xhr.send();
-  // $.ajax({
-  //   dataType: 'jsonp',
-  //   url: "/locations/"+location+"?callback=?",
-  // }).done(function(data) {
-  //   console.log("test" + location);
-  //   console.log(data);
-  // });
 
-  $.getJSON("http://imaginingclimate.com/locations/"+location+"?callback=?", function(response) {
-      $.each(response.data, function(x, story) {
-        console.log("hi" + story);
-        $("#location_content").append('<p>' + story.location + "</p>");
-      });
-    });
+  $.ajax({
+    type: "GET",
+    dataType: "jsonp",
+    url: "/locations/"+location+"?callback=?",
+    success: function(data) {
+      console.log("test" + location);
+      console.log(data);
+      console.log(data.responseText);
+      alert(data.responseText);
+    };
+    
+  });
+
+  // $.getJSON("http://imaginingclimate.com/locations/"+location+"?callback=?", function(response) {
+  //     $.each(response.data, function(x, story) {
+  //       console.log("hi" + story);
+  //       $("#location_content").append('<p>' + story.location + "</p>");
+  //     });
+  //   });
 
 }
