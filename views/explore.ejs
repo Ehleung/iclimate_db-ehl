@@ -70,6 +70,7 @@
   <script>
   $(document).ready(function(){
   // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+  alert('document ready');
   $('.modal').modal();
   });
 
@@ -91,41 +92,41 @@
     ["Tuzigoot_National_Monument", [34.77055, -112.02639]]
   ];
 
-  jQuery.('#Flagstaff').click(function() {
-    console.log("flagstaff clicked");
+  $('#Flagstaff').click(function() {
+    alert("flagstaff clicked");
     
-    $.ajax({
-      type: "GET",
-      dataType: "json",
-      url: "/locations/Flagstaff?callback=?",
-      success: function() {
-        console.log('success');
-      },
-      error: function() {
-        console.log('error');
-      },
-      complete: function() {
-        console.log('complete');
-      }
-    });
-    console.log('zzz');
-      // console.log("location = " + location);
-      // var xhr = new XMLHttpRequest();
-      // xhr.onreadystatechange = function() {
-      //   console.log ("readyState="+xhr.readyState + "\tstatus="+xhr.status);
-      //   if (xhr.readyState == 4 && xhr.status == 200) {
-      //     document.getElementById("location_content").innerHTML = this.responseText;
-      //   };
-      // };
-      // xhr.open("GET", "http://www.imaginingclimate.com/locations/"+location, true);
-      // xhr.send();
+    // $.ajax({
+    //   type: "GET",
+    //   dataType: "json",
+    //   url: "/locations/Flagstaff?callback=?",
+    //   success: function() {
+    //     console.log('success');
+    //   },
+    //   error: function() {
+    //     console.log('error');
+    //   },
+    //   complete: function() {
+    //     console.log('complete');
+    //   }
+    // });
+    // console.log('zzz');
+    //   // console.log("location = " + location);
+    //   // var xhr = new XMLHttpRequest();
+    //   // xhr.onreadystatechange = function() {
+    //   //   console.log ("readyState="+xhr.readyState + "\tstatus="+xhr.status);
+    //   //   if (xhr.readyState == 4 && xhr.status == 200) {
+    //   //     document.getElementById("location_content").innerHTML = this.responseText;
+    //   //   };
+    //   // };
+    //   // xhr.open("GET", "http://www.imaginingclimate.com/locations/"+location, true);
+    //   // xhr.send();
 
-      // $.getJSON("http://imaginingclimate.com/locations/"+location+"?callback=?", function(response) {
-      //     $.each(response.data, function(x, story) {
-      //       console.log("hi" + story);
-      //       $("#location_content").append('<p>' + story.location + "</p>");
-      //     });
-      //   });
+    //   // $.getJSON("http://imaginingclimate.com/locations/"+location+"?callback=?", function(response) {
+    //   //     $.each(response.data, function(x, story) {
+    //   //       console.log("hi" + story);
+    //   //       $("#location_content").append('<p>' + story.location + "</p>");
+    //   //     });
+    //   //   });
   });
   </script>
 
