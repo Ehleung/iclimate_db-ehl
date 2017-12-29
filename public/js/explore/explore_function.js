@@ -48,6 +48,7 @@ function getStories(location) {
   $.ajax({
     url: "/locations/"+location,
   }).done(function(data) {
+    console.log("test" + location);
     console.log(data);
   });
 }
