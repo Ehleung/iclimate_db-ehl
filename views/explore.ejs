@@ -93,8 +93,8 @@ $(document).ready(function() {
     ["Tuzigoot_National_Monument", [34.77055, -112.02639]]
   ];
 
-  $("a#Flagstaff").click(function() {
-    alert("flagstaff clicked");
+  $("#Flagstaff").click(function() {
+    console.log("flagstaff clicked");
     
     $.ajax({
       type: "GET",
@@ -102,7 +102,7 @@ $(document).ready(function() {
       url: "/locations/Flagstaff?callback=?",
     }).done(function(data) {
       // console.log("test" + location);
-      alert("done");
+      console.log("done");
       console.log(data);
 
       // console.log("location = " + location);
