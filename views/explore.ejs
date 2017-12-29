@@ -46,7 +46,7 @@
     <div class="animated zoomIn" style="animation-delay: 0.1s; padding-left: 20px;padding-right: 20px;padding-top: 20px;">
       <div class="card" style="margin-bottom: 0px;">
             <div class="card-content">
-              <div id="content" class="chip">
+              <div id="location_content" class="chip">
                 
               </div>
             </div>
@@ -94,11 +94,5 @@ var locations = [
   ["Tuzigoot_National_Monument", [34.77055, -112.02639]]
 ];
 
-for (var i = 0; i < locations.length; i++) {
-  // $("a#icon-"+locations[i][0]).click(function() {
-  //   getStories(locations[i][0]);
-  // });
-  document.getElementById(locations[i][0]).addEventListener(click, getStories(locations[i][0]));
-}
 </script>
 </html>
