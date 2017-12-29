@@ -44,6 +44,15 @@ function world() {
                       // "<br><h6>""</h6></br>" +
                       "<a id=\""+locations[i][0]+"\" href=\"#modal1"+"\" >"+locations[i][0]+"</a>", {maxWidth: 320, closeButton: true});
   }//+locations[i][0]   onclick=\"getStories(\'"+locations[i][0]+"\')\"
+
+  $('a#Flagstaff').load(function() {
+    alert("flagstaff loaded");
+
+    $('a#Flagstaff').click(function() {
+      alert("flagstaff clicked");
+    });
+  });
+
   earth.switch_map = function switch_map(x)
    {
      nature.setOpacity(0);
