@@ -75,7 +75,7 @@ $('.modal').modal();
 });
 </script>
 
-<script>
+<script type="text/javascript">
 var locations = [
   ["Grand_Canyon_National_Park", [36.05972, -112.10972]],
   ["Tonto_Natural_Bridge_State_Park", [34.32195, -111.45333]],
@@ -95,9 +95,10 @@ var locations = [
 ];
 
 for (var i = 0; i < locations.length; i++) {
-  $("a#icon-"+locations[i][0]).click(function() {
-    getStories(locations[i][0]);
-  });
+  // $("a#icon-"+locations[i][0]).click(function() {
+  //   getStories(locations[i][0]);
+  // });
+  document.getElementById(locations[i][0]).addEventListener(click, getStories(locations[i][0]));
 }
 </script>
 </html>
