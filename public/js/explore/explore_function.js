@@ -45,6 +45,7 @@ var locations = [
 ];
 
 function getStories(location) {
+  console.log("location = " + location);
   // var xhr = new XMLHttpRequest();
   // xhr.onreadystatechange = function() {
   //   console.log ("readyState="+xhr.readyState + "\tstatus="+xhr.status);
@@ -56,7 +57,7 @@ function getStories(location) {
   // xhr.send();
   $.ajax({
     dataType: 'jsonp',
-    url: "/locations/"+location,
+    url: "/locations/"+location+"?callback=?",
   }).done(function(data) {
     console.log("test" + location);
     console.log(data);
@@ -67,5 +68,5 @@ function getStories(location) {
   //       $("#location_content").append('<li>' + story.location + "</li>");
   //     });
   //   });
-  
+
 }
