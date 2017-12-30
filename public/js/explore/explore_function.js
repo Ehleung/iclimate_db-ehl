@@ -25,3 +25,16 @@ function spin() {
 }
 
 function stop_spin (){cancelAnimationFrame(world_spin);}
+
+function getStories(location) {
+    console.log("location = " + location);
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        console.log("ready="+xhr.readyState + "\tstatus="+xhr.status);
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("location_content").innerHTML = this.responseText;
+        };
+    };
+    xhr.open("GET", "/locations/"+location+"?callback=?", true);
+    xhr.send();
+}
