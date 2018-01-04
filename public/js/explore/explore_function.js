@@ -32,6 +32,7 @@ function getStories(location) {
         // console.log("ready="+xhr.readyState + "\tstatus="+xhr.status);
         if (xhr.readyState == 4 && xhr.status == 200) {
             var array = this.reponseText;
+            console.log(array);
             for (var i = 0; i < array.length; i++) {
                 var obj = array[i];
                 for (var key in obj) {
