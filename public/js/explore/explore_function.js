@@ -26,14 +26,17 @@ function spin() {
 function stop_spin (){cancelAnimationFrame(world_spin);}
 
 function getStories(location) {
-    console.log("location = " + location);
+    // console.log("location = " + location);
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        console.log("ready="+xhr.readyState + "\tstatus="+xhr.status);
+        // console.log("ready="+xhr.readyState + "\tstatus="+xhr.status);
         if (xhr.readyState == 4 && xhr.status == 200) {
-            for (doc in this.responseText) {
-                for (item in doc) {
-                    console.log(item);    
+            var array = this.reponseText;
+            for (var i = 0; i < array.length; i++) {
+                var obj = array[i];
+                for (var key in obj) {
+                    // if (obj.hasOwnProperty(key))
+                    console.log(obj[key]);
                 }
                 console.log(doc.location);
             }
