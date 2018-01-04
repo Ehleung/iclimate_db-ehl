@@ -20,8 +20,7 @@ function spin() {
             before = now;
             //earth.setCenter([c[0], c[1] + 0.1]);
             world_spin = requestAnimationFrame(animate);
-
-            });
+          });
 }
 
 function stop_spin (){cancelAnimationFrame(world_spin);}
@@ -33,7 +32,10 @@ function getStories(location) {
         console.log("ready="+xhr.readyState + "\tstatus="+xhr.status);
         if (xhr.readyState == 4 && xhr.status == 200) {
             for (doc in this.responseText) {
-                console.log(doc);
+                for (item in doc) {
+                    console.log(item);    
+                }
+                console.log(doc.location);
             }
 
             document.getElementById("location_content").innerHTML = this.responseText;
