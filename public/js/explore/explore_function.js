@@ -32,9 +32,11 @@ function getStories(location) {
     xhr.onreadystatechange = function() {
         console.log("ready="+xhr.readyState + "\tstatus="+xhr.status);
         if (xhr.readyState == 4 && xhr.status == 200) {
-            var json = this.responseText.toJSON();
+            for (doc in this.responseText) {
+                console.log(doc);
+            }
 
-            document.getElementById("location_content").innerHTML = json;
+            document.getElementById("location_content").innerHTML = this.responseText;
         };
     };
     xhr.open("GET", "/locations/"+location+"?callback=?", true);
