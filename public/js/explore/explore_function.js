@@ -39,7 +39,7 @@ function getStories(location) {
                     // if (obj.hasOwnProperty(key))
                     console.log(obj[key]);
                 }
-                console.log(doc.location);
+                // console.log(doc.location);
             }
 
             document.getElementById("location_content").innerHTML = this.responseText;
