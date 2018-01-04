@@ -31,10 +31,11 @@ function getStories(location) {
     xhr.onreadystatechange = function() {
         // console.log("ready="+xhr.readyState + "\tstatus="+xhr.status);
         if (xhr.readyState == 4 && xhr.status == 200) {
-            var array = this.responseText;
-            console.log(array);
+            var array = JSON.parse(this.responseText);
+            console.log(array); // the actual text
             for (var i = 0; i < array.length; i++) {
                 var obj = array[i];
+                console.log("obj = "+obj)
                 for (var key in obj) {
                     // if (obj.hasOwnProperty(key))
                     console.log(obj[key]);
