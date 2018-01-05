@@ -26,23 +26,24 @@ function spin() {
 function stop_spin (){cancelAnimationFrame(world_spin);}
 
 function getStories(location) {
-    // console.log("location = " + location);
+    // console.log("location = " + location); // ensure that location is being passed correctly
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        // console.log("ready="+xhr.readyState + "\tstatus="+xhr.status);
+        // console.log("ready="+xhr.readyState + "\tstatus="+xhr.status); // check the status of xhr
         if (xhr.readyState == 4 && xhr.status == 200) {
             var array = JSON.parse(this.responseText);
-            console.log(array); // the actual text
+            console.log("array " + array); // the actual text
             for (var i = 0; i < array.length; i++) {
+                var title = story = author = "";
                 var obj = array[i];
-                console.log("obj = "+obj)
-                for (var key in obj) {
-                    // if (obj.hasOwnProperty(key))
-                    console.log(obj[key]);
-                }
-                // console.log(doc.location);
+                if (obj.hasOwnProperty("title"))
+                    title = obj["title"];
+                if (obj.hasOwnProperty("story"))
+                    story = obj["story"];
+                if (obj.hasOwnProperty("author"))
+                    author = obj["author"];
+                console.log("Title: "+ title + ", Story: " + story + ", Author: " + author);
             }
-
             document.getElementById("location_content").innerHTML = this.responseText;
         };
     };
