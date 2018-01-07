@@ -32,7 +32,7 @@ function getStories(location) {
         // console.log("ready="+xhr.readyState + "\tstatus="+xhr.status); // check the status of xhr
         if (xhr.readyState == 4 && xhr.status == 200) {
             var array = JSON.parse(this.responseText);
-            console.log("array " + array); // the actual text
+            // console.log("array " + array); // the actual text
             for (var i = 0; i < array.length; i++) {
                 var title = story = author = "";
                 var obj = array[i];
@@ -45,13 +45,14 @@ function getStories(location) {
 
                 if (title && story && author != "") {
                     var div = document.createElement('div');
-                    div.className= 'card-content';
+                    div.className= 'animated zoomIn';
+                    div.setAttribute("style", "animation-delay: 0.1s; padding-left: 20px;padding-right: 20px;padding-top: 10px;");
                     var text = document.createTextNode("Author: " + title + "\tTitle: " + title);
                     var paragraph = document.createTextNode(story);
                     div.appendChild(text);
                     div.appendChild(paragraph);
-                    document.getElementById("cardholder").appendChild(div);
-                    console.log('div '+div);
+                    document.getElementById("modal1").appendChild(div);
+                    // console.log('div '+div);
                 }
                 
                 // console.log("Title: "+ title + ", Story: " + story + ", Author: " + author);
