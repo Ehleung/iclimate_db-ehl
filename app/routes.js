@@ -116,7 +116,7 @@ module.exports = function(app, passport) {
 	});
 
 	app.get('/locations/:search', function(req, res) {
-		var search = req.params.search;
+		var search = req.params.search.split("_").join(" ");
 		Story.find({location: search}, function(err, stories) {
 			res.send(stories);
 		});

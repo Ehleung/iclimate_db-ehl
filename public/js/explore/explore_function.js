@@ -51,6 +51,7 @@ function getStories(location) {
                     var div = document.createElement('div');
                     div.className = 'card';
                     div.setAttribute("style", "margin-bottom: 0px;");
+                    div.id = "div" + i;
 
                     var innerdiv = document.createElement('div');
                     innerdiv.className = "card-content";
@@ -72,4 +73,12 @@ function getStories(location) {
     };
     xhr.open("GET", "/locations/"+location+"?callback=?", true);
     xhr.send();
+}
+
+function closeLocation() {
+    // Removing all children from an element
+    var element = document.getElementById("cardholder");
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
 }
