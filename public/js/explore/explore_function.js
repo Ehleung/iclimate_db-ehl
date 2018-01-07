@@ -26,6 +26,7 @@ function spin() {
 function stop_spin (){cancelAnimationFrame(world_spin);}
 
 function getStories(location) {
+    closeLocation();
     // console.log("location = " + location); // ensure that location is being passed correctly
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
