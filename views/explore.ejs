@@ -44,7 +44,6 @@
   </nav>
 
   <div id="modal1" class="modal modal-fixed-footer" style="background-color: rgb(20, 63, 108);">
-    <div onclick="closeLocation()" class="modal-background"></div>
     <div id="cardholder" class="animated zoomIn" style="animation-delay: 0.1s; padding-left: 20px;padding-right: 20px;padding-top: 20px;"></div>
     <div class="animated zoomIn" style="animation-delay: 0.2s; padding-left: 20px;padding-right: 20px;padding-top: 20px;">
       <div class="card" style="margin-bottom: 0px;">
@@ -64,6 +63,10 @@
   // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
   $('.modal').modal();
   });
+
+  document.getElementById("materialize-modal-overlay-5").onclick = function() {
+    closeLocation();
+  };
   </script>
 
 </body>
