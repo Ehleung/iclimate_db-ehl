@@ -44,8 +44,8 @@ function getStories(location) {
                     author = obj["author"];
 
                 if (title && story && author != "") {
-                    var text = document.createTextNode("Author: " + title + "\n\nTitle: " + title);
-                    var paragraph = document.createTextNode("\n\n" + story);
+                    var text = document.createTextNode("Author: " + title + "<br>Title: " + title);
+                    var paragraph = document.createTextNode("<br>" + story);
 
                     var div = document.createElement('div');
                     div.className = 'card';
