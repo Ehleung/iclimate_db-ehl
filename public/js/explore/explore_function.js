@@ -44,8 +44,9 @@ function getStories(location) {
                     author = obj["author"];
 
                 if (title && story && author != "") {
-                    var text = document.createTextNode("Author: " + title + "<br>Title: " + title);
-                    var paragraph = document.createTextNode("<br>" + story);
+                    var authText = document.createTextNode("Author: " + author);
+                    var titleText = document.createTextNode("Title: " + title);
+                    var paragraph = document.createTextNode(story);
 
                     var div = document.createElement('div');
                     div.className = 'card';
@@ -53,7 +54,10 @@ function getStories(location) {
 
                     var innerdiv = document.createElement('div');
                     innerdiv.className = "card-content";
-                    innerdiv.appendChild(text);
+                    innerdiv.appendChild(authText);
+                    innerdiv.appendChild(document.write("<br>"));
+                    innerdiv.appendChild(titleText);
+                    innerdiv.appendChild(document.write("<br>"));
                     innerdiv.appendChild(paragraph);
 
                     div.appendChild(innerdiv);
