@@ -42,9 +42,21 @@ function getStories(location) {
                     story = obj["story"];
                 if (obj.hasOwnProperty("author"))
                     author = obj["author"];
-                console.log("Title: "+ title + ", Story: " + story + ", Author: " + author);
+
+                if (title && story && author != "") {
+                    var div = document.createElement('div');
+                    div.className= 'card-content';
+                    var text = document.createTextNode("Author: " + title + "\tTitle: " + title);
+                    var paragraph = document.createTextNode(story);
+                    div.appendChild(text);
+                    div.appendChild(paragraph);
+                    document.getElementById("cardholder").appendChild(div);
+                    console.log('div '+div);
+                }
+                
+                // console.log("Title: "+ title + ", Story: " + story + ", Author: " + author);
             }
-            document.getElementById("location_content").innerHTML = this.responseText;
+            // document.getElementById("location_content").innerHTML = this.responseText;
         };
     };
     xhr.open("GET", "/locations/"+location+"?callback=?", true);
