@@ -43,7 +43,7 @@ function world() {
     marker.bindPopup("<h7><b>View stories from: </b></h7>" +
                       // "<br><h6>""</h6></br>" +
                       "<a href=\"#modal1"+"\" onclick=\"getStories(\'"+locations[i][0]+"\')\">"
-                      +locations[i][0].split("_").join(" ")+"</a>", {maxWidth: 500, closeButton: true});
+                      +locations[i][0].split("_").join(" ")+"</a>", {maxWidth: 370, closeButton: true});
   }
 
   earth.switch_map = function switch_map(x)

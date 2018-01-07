@@ -33,7 +33,6 @@ function getStories(location) {
         // console.log("ready="+xhr.readyState + "\tstatus="+xhr.status); // check the status of xhr
         if (xhr.readyState == 4 && xhr.status == 200) {
             var array = JSON.parse(this.responseText);
-            // console.log("array " + array); // the actual text
             for (var i = 0; i < array.length; i++) {
                 var title = story = author = "";
                 var obj = array[i];
@@ -64,12 +63,8 @@ function getStories(location) {
 
                     div.appendChild(innerdiv);
                     document.getElementById("cardholder").appendChild(div);
-                    // console.log('div '+div);
-                }
-                
-                // console.log("Title: "+ title + ", Story: " + story + ", Author: " + author);
-            }
-            // document.getElementById("location_content").innerHTML = this.responseText;
+                };
+            };
         };
     };
     xhr.open("GET", "/locations/"+location+"?callback=?", true);

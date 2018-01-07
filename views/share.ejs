@@ -16,6 +16,12 @@
 		<script src="materialize/js/materialize.min.js"></script>
 
     <style>
+    .gradient-icon {
+        background: -webkit-gradient(linear, left top, left bottom, from(#21c3ef), to(#ff0000));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: initial;
+    }
     .dropbtn {
         background-color: #00d1b2;
         color: white;
@@ -74,7 +80,7 @@
       <form action="/share" method="post">
         <element hidden id="user" name="user"><%= user.local.username %></element>
         <div class="select">
-          <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc)">
+          <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);resetYear();">
             <% locs.forEach(function(loc) { %>
               <option value='<%=loc.name%>'><%= loc.name %></option>
             <% }); %>
@@ -94,9 +100,9 @@
                 <!-- Min temperature column -->
                 <div class="column">
                   <div class="animated flipInX" style="animation-delay: 0.5s;">
-                    <i id="arrow1up" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                    <i id="arrow1up" class="ion-arrow-up-a" style="font-size: 30px; color: rgba(33, 195, 239, 0.6);"></i>
                     <i id="icon1" class="ion-thermometer" style="font-size:30px"></i><b id="min" style="font-size:30px"></b>
-                    <i id="arrow1down" class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                    <i id="arrow1down" class="ion-arrow-down-a" style="font-size: 30px; color: rgba(33, 195, 239, 0.6);"></i>
                   </div>
                 </div>
                 <!-- Max temperature column -->
@@ -110,25 +116,25 @@
                 <!-- Rain column -->
                 <div class="column">
                   <div class="animated flipInX" style="animation-delay: 0.9s;">
-                    <i id="arrow3up" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                    <i id="arrow3up" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(11, 83, 226, 0.6);"></i>
                     <i id="icon3" class="ion-waterdrop" style="font-size:30px"></i><b id="rain" style="font-size:30px"></b>
-                    <i id="arrow3down" class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                    <i id="arrow3down" class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(11, 83, 226, 0.6);"></i>
                   </div>
                 </div>
                 <!-- Plant cover column -->
                 <div class="column">
                   <div class="animated flipInX" style="animation-delay: 1.1s;">
-                    <i id="arrow4up" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                    <i id="arrow4up" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(13, 135, 2, 0.6);"></i>
                     <i id="icon4" class="ion-leaf" style="font-size:30px"></i><b id="plant" style="font-size:30px"></b>
-                    <i id="arrow4down" class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
+                    <i id="arrow4down" class="ion-arrow-down-a" style="font-size: 30px;  color: rgba(13, 135, 2, 0.6);"></i>
                   </div>
                 </div>
                 <!-- Shift column -->
                 <div class="column">
                   <div class="animated flipInX" style="animation-delay: 1.3s;">
-                    <b id="shift_text1" style="font-size:30px">2017</b>
-                    <i id="shift" class="ion-arrow-right-a" onclick="newTemps(window.sessionStorage.currentTemps)" style="font-size:30px; color: rgba(0, 0, 0, 0.6); cursor: pointer"></b></i>
-                    <b id="shift_text2" style="font-size:30px">2050</b>
+                    <b id="shift_text1" style="font-size:30px; color: rgba(33, 195, 239, 0.6);">2017</b>
+                    <i id="shift" class="ion-arrow-right-a gradient-icon" onclick="newTemps(window.sessionStorage.currentTemps)" style="font-size:30px; cursor: pointer"></b></i>
+                    <b id="shift_text2" style="font-size:30px; color: rgba(255, 0, 0, 0.6);">2050</b>
                   </div>
                 </div>
               </div>
@@ -151,7 +157,7 @@
                 <br/>      
                 <div class="columns">
                   <div class="column is-half is-offset-5">
-                    <button onclick="saveStory()" class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
+                    <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
                   </div>
                 </div>
               </div>
