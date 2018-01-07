@@ -44,14 +44,20 @@ function getStories(location) {
                     author = obj["author"];
 
                 if (title && story && author != "") {
-                    var div = document.createElement('div');
-                    div.className= 'animated zoomIn';
-                    div.setAttribute("style", "animation-delay: 0.1s; padding-left: 20px;padding-right: 20px;padding-top: 10px;");
                     var text = document.createTextNode("Author: " + title + "\tTitle: " + title);
                     var paragraph = document.createTextNode(story);
-                    div.appendChild(text);
-                    div.appendChild(paragraph);
-                    document.getElementById("modal1").appendChild(div);
+
+                    var div = document.createElement('div');
+                    div.className = 'card';
+                    div.setAttribute("style", "margin-bottom: 0px;");
+
+                    var innerdiv = document.createElement('div');
+                    innerdiv.className = "card-content";
+                    innerdiv.appendChild(text);
+                    innerdiv.appendChild(paragraph);
+
+                    div.appendChild(innerdiv);
+                    document.getElementById("cardholder").appendChild(div);
                     // console.log('div '+div);
                 }
                 
