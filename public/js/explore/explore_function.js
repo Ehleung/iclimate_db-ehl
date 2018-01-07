@@ -55,9 +55,9 @@ function getStories(location) {
                     var innerdiv = document.createElement('div');
                     innerdiv.className = "card-content";
                     innerdiv.appendChild(authText);
-                    innerdiv.appendChild(document.write("<br>"));
+                    innerdiv.appendChild(document.createElement('br'));
                     innerdiv.appendChild(titleText);
-                    innerdiv.appendChild(document.write("<br>"));
+                    innerdiv.appendChild(document.createElement('br'));
                     innerdiv.appendChild(paragraph);
 
                     div.appendChild(innerdiv);
