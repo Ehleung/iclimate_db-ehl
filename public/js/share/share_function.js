@@ -99,12 +99,16 @@ function hide_all() {
 function hide_arrows() {
   document.getElementById("arrow1up").style.visibility = "hidden";
   document.getElementById("arrow1down").style.visibility = "hidden";
+  document.getElementById("minus1").style.visibility = "hidden";
   document.getElementById("arrow2up").style.visibility = "hidden";
   document.getElementById("arrow2down").style.visibility = "hidden";
+  document.getElementById("minus2").style.visibility = "hidden";
   document.getElementById("arrow3up").style.visibility = "hidden";
   document.getElementById("arrow3down").style.visibility = "hidden";
+  document.getElementById("minus3").style.visibility = "hidden";
   document.getElementById("arrow4up").style.visibility = "hidden";
   document.getElementById("arrow4down").style.visibility = "hidden";
+  document.getElementById("minus4").style.visibility = "hidden";
 } 
 
 function updateTemps(locationStr) {
@@ -157,32 +161,40 @@ function newTemps(currentTemps) {
       document.getElementById("min").innerHTML = locations[i][2][0];
       if (locations[i][1][0] > locations[i][2][0])
         document.getElementById("arrow1down").style.visibility = "visible";
-      else
+      else if (locations[i][1][0] < locations[i][2][0])
         document.getElementById("arrow1up").style.visibility = "visible";
+      else
+        document.getElementById("minus1").style.visibility = "visible";
     }
     
     if (locations[i][2][1] != -200) {
       document.getElementById("max").innerHTML = locations[i][2][1];
       if (locations[i][1][1] > locations[i][2][1])
         document.getElementById("arrow2down").style.visibility = "visible";
-      else
+      else if (locations[i][1][1] < locations[i][2][1])
         document.getElementById("arrow2up").style.visibility = "visible";
+      else
+        document.getElementById("minus1").style.visibility = "visible";
     }
 
     if (locations[i][2][2] != -200) {
       document.getElementById("rain").innerHTML = locations[i][2][2] + "%";
       if (locations[i][1][2] > locations[i][2][2])
         document.getElementById("arrow3down").style.visibility = "visible";
-      else
+      else if (locations[i][1][2] < locations[i][2][2])
         document.getElementById("arrow3up").style.visibility = "visible";
+      else
+        document.getElementById("minus1").style.visibility = "visible";
     }
 
     if (locations[i][2][3] != -200) {
       document.getElementById("plant").innerHTML = locations[i][2][3] + "%";
       if (locations[i][1][3] > locations[i][2][3])
         document.getElementById("arrow4down").style.visibility = "visible";
-      else
+      else if (locations[i][1][3] < locations[i][2][3])
         document.getElementById("arrow4up").style.visibility = "visible";
+      else
+        document.getElementById("minus1").style.visibility = "visible";
     }
     document.getElementById("shift_text1").innerHTML = 2050;
     document.getElementById("shift_text2").innerHTML = 2017;
