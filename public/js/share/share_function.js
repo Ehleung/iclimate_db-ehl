@@ -31,7 +31,7 @@ var topics = [
 function shuffle_question() {
   // topics = window.sessionStorage.topics;
   random_question = "What would happen to "
-  var x = Math.floor((Math.random() * 12));
+  var x = Math.floor((Math.random() * topics.length));
   random_question += topics[x];
   
   random_question += " here in the year 2050?";
