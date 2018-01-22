@@ -11,10 +11,6 @@ module.exports = function(app, passport) {
 	});
 
 	// SIGNUP =================================================================
-	app.get('/signup', function(req, res) {
-		//render page and pass any flash data if existing
-		res.render('signup.ejs', { message: req.flash('signupMessage') });
-	});
 	// Process signup form
 	app.post('/signup', passport.authenticate('local-signup', {
 		successRedirect : '/share',
@@ -22,10 +18,6 @@ module.exports = function(app, passport) {
 		failureFlash : true
 	}));
 	// LOGIN ==================================================================
-	app.get('/login', function(req, res) {
-		//render page and pass any flash data if existing
-		res.render('login.ejs', { message: req.flash('loginMessage') });
-	});
 	// Process login form
 	app.post('/login', passport.authenticate('local-login', {
 		successRedirect : '/share', // redirect to secure profile seciton
@@ -72,23 +64,6 @@ module.exports = function(app, passport) {
 				user : req.user
 			});
 		});
-	});
-	app.post('/storylist', isLoggedIn, function(req, res) {
-		if (req.body.location == "Choose")
-			res.redirect('/share');
-		else {
-			var newStory = new Story();
-			newStory.author = req.user.local.username;
-			newStory.title = req.body.title;
-			newStory.story = req.body.story;
-			newStory.location = req.body.location;
-			newStory.comments = [];
-			// console.log(req.body);
-
-			newStory.save(req.body, function(err, doc) {
-				res.redirect('/storylist');
-			});
-		}
 	});
 
 	app.get('/share', isLoggedIn, function(req, res) {
