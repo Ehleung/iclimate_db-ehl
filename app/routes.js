@@ -13,9 +13,9 @@ module.exports = function(app, passport) {
 	// SIGNUP =================================================================
 	// Process signup form
 	app.get('/signup', function(req, res) {
- -		//render page and pass any flash data if existing
- -		res.render('signup.ejs', { message: req.flash('signupMessage') });
- -	});
+ 		//render page and pass any flash data if existing
+ 		res.render('signup.ejs', { message: req.flash('signupMessage') });
+ 	});
 	app.post('/signup', passport.authenticate('local-signup', {
 		successRedirect : '/share',
 		failureRedirect : '/',
