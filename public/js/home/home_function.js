@@ -25,9 +25,8 @@ function closeLogin() {
 }
 
 function showAbout() {
-  $('#about_modal').('about.html');
-  // var aboutModal = document.getElementById("about_modal");
-  // aboutModal.style.display = "block";
+  var aboutModal = document.getElementById("about_modal");
+  aboutModal.style.display = "block";
 }
 function closeAbout() {
   var aboutModal = document.getElementById("about_modal");
