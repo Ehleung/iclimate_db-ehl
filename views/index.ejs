@@ -26,7 +26,7 @@
             <li><a onclick="showLogin()" id="login1">Login/Signup</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
-            <li><a onclick="showAbout()" id="/about_button2">About Us</a></li>
+            <li><a onclick="showAbout()" id="about_button2">About Us</a></li>
             <li><a onclick="showLogin()" id="login2">Login/Signup</a></li>
           </ul>
         </div>
@@ -95,33 +95,12 @@
         </div>
     </div>
     
-    <div class="modal" id="about_modal">
-        <div onclick="closeAbout()" class="modal-background" id="background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">About Us</p>
-                <a onclick="closeAbout()" class="delete" id="about_del"></a>
-            </header>
-            <section class="modal-card-body">
-                <div class="content">
-                    <h2>Welcome to Imagining Climate!</h2>
-                    <h3>Who we are:</h3>
-                    <p>Imagining Climate is an Arizona State University project started by a group of students: 
-                    </p>
 
-                    <p> Work in Progress </p>
-                    
-                    
-                </div>
-            </section>
-            <footer class="modal-card-foot">
-            </footer>
-        </div>
-    </div>
 </body>
 
 <script>
 $(document).ready(function() {
+    // When document is ready, if login was failed, display modal message
     var error_modal = document.getElementById("myError_Modal");
     var login_status = window.location.href;
     if (login_status.includes("failed") == true)
