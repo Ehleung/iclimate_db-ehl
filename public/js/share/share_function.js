@@ -83,6 +83,7 @@ function checkValid() {
     validSubmit.style.visibility = "hidden";
 }
 
+// Called when a location is first selected. 
 function hide_all() {
   document.getElementById("min").style.visibility = "hidden";
   document.getElementById("icon1").style.visibility = "hidden";
@@ -95,6 +96,9 @@ function hide_all() {
   document.getElementById("shift").style.visibility = "hidden";
   document.getElementById("shift_text1").style.visibility = "hidden";
   document.getElementById("shift_text2").style.visibility = "hidden";
+  // Init clickedData to track whether a user has clicked on new data or not.
+  document.getElementById("question_content").style.visibility = "hidden";
+  window.sessionStorage.clickedData = 0;
 }
 function hide_arrows() {
   document.getElementById("arrow1up").style.visibility = "hidden";
@@ -110,7 +114,6 @@ function hide_arrows() {
   document.getElementById("arrow4down").style.visibility = "hidden";
   document.getElementById("minus4").style.visibility = "hidden";
 } 
-
 function updateTemps(locationStr) {
   // console.log(locationStr);
   window.sessionStorage.currentTemps = 0;
@@ -151,7 +154,6 @@ function updateTemps(locationStr) {
     }
   }
 }
-
 function newTemps(currentTemps) {
   // var locations = window.sessionStorage.locations;
   var i = window.sessionStorage.curr_location_index;
@@ -199,6 +201,7 @@ function newTemps(currentTemps) {
     document.getElementById("shift_text1").innerHTML = 2050;
     document.getElementById("shift_text2").innerHTML = 2017;
     window.sessionStorage.currentTemps = 1;
+    window.sessionStorage.clickedData = 1;
   }
   // Going back from 2050 to 2017, hide the arrows
   else {
@@ -212,8 +215,12 @@ function newTemps(currentTemps) {
     window.sessionStorage.currentTemps = 0;
   }
 }
-
 function resetYear() {
+  // If the user switches locations, it will reset the year and the clicked data var
+  window.sessionStorage.clickedData = 0;
   document.getElementById("shift_text1").innerHTML = 2017;
   document.getElementById("shift_text2").innerHTML = 2050;
+}
+function clickedData() {
+
 }
