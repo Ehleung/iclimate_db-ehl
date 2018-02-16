@@ -168,7 +168,6 @@ function newTemps(currentTemps) {
       else
         document.getElementById("minus1").style.visibility = "visible";
     }
-    
     if (locations[i][2][1] != -200) {
       document.getElementById("max").innerHTML = locations[i][2][1];
       if (locations[i][1][1] > locations[i][2][1])
@@ -178,7 +177,6 @@ function newTemps(currentTemps) {
       else
         document.getElementById("minus1").style.visibility = "visible";
     }
-
     if (locations[i][2][2] != -200) {
       document.getElementById("rain").innerHTML = locations[i][2][2] + "%";
       if (locations[i][1][2] > locations[i][2][2])
@@ -188,7 +186,6 @@ function newTemps(currentTemps) {
       else
         document.getElementById("minus1").style.visibility = "visible";
     }
-
     if (locations[i][2][3] != -200) {
       document.getElementById("plant").innerHTML = locations[i][2][3] + "%";
       if (locations[i][1][3] > locations[i][2][3])
@@ -202,6 +199,9 @@ function newTemps(currentTemps) {
     document.getElementById("shift_text2").innerHTML = 2017;
     window.sessionStorage.currentTemps = 1;
     window.sessionStorage.clickedData = 1;
+
+    if (window.sessionStorage.clickedData == 1)
+      document.getElementById("question_content").style.visibility = "visible";
   }
   // Going back from 2050 to 2017, hide the arrows
   else {
@@ -220,7 +220,4 @@ function resetYear() {
   window.sessionStorage.clickedData = 0;
   document.getElementById("shift_text1").innerHTML = 2017;
   document.getElementById("shift_text2").innerHTML = 2050;
-}
-function clickedData() {
-
 }
