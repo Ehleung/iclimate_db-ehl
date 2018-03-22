@@ -8,7 +8,8 @@
         <script src="http://www.webglearth.com/v2/api.js"></script>
         <script src="js/home/home_init.js"></script>
         <script src="js/home/home_function.js"></script>
-        <title>Imagining Climate</title>
+        <script src="js/global/about.js"></script>
+        <title>Home - Imagining Climate</title>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="materialize/css/materialize.min.css">
@@ -23,11 +24,13 @@
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a onclick="showAbout()" id="about_button1">About Us</a></li>
-            <li><a onclick="showLogin()" id="login1">Login/Signup</a></li>
+            <li><a href="/share">Share</a></li>
+            <li><a href="/explore">Explore</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><a onclick="showAbout()" id="about_button2">About Us</a></li>
-            <li><a onclick="showLogin()" id="login2">Login/Signup</a></li>
+            <li><a href="/share">Share</a></li>
+            <li><a href="/explore">Explore</a></li>
           </ul>
         </div>
     </nav>
@@ -42,7 +45,7 @@
             <div class="columns">
                 <div class="column">
                     <center>
-                        <figure class="image is-128x128">
+                        <figure class="image is-256x256">
                             <img src="images/home_icon1.png"/>
                         </figure>
                     </center>
@@ -50,7 +53,7 @@
                 </div>
                 <div class="column">
                     <center>
-                        <figure class="image is-128x128">
+                        <figure class="image is-256x256">
                             <img src="images/home_icon2.png"/>
                         </figure>
                     </center>
@@ -58,64 +61,13 @@
                 </div>
                 <div class="column">
                     <center>
-                        <figure class="image is-128x128">
+                        <figure class="image is-256x256">
                             <img src="images/home_icon3.png"/>
                         </figure>
                     </center>
                     <center><p style="color: rgb(255, 255, 255);">3. Share your prediction with the world!</p></center> 
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Login Modal -->
-    <div class="modal" id="myModal">
-        <div onclick="closeLogin()" class="modal-background" id="background"></div>
-        <form action="/login" method="post">
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Login/Signup</p>
-                    <a onclick="closeLogin()" class="delete" id="del"></a>
-                </header>
-                <section class="modal-card-body">
-                    <div class="field">
-                        <label class="label">Username</label>
-                        <p class="control">
-                            <input class="input" type="text" name="username" id="user" placeholder="Enter your username">
-                        </p>
-                    </div>
-                    <div class="field">
-                        <label class="label">Password</label>
-                        <p class="control">
-                            <input class="input" type="password" name="password" placeholder="Enter your password here">
-                        </p>
-                    </div>
-                </section>
-                <footer class="modal-card-foot">
-                    <button class="button is-primary" id="submit">Login</button>
-                    <a onclick="closeLogin()" class="button" id="cancel">Cancel</a>
-                    <label>Need an account? Sign up <a href="/signup">here</a>.</label>
-                </footer>
-            </div>
-        </form>
-    </div>
-    
-    <!-- Error Modal -->
-    <div class="modal" id="myError_Modal">
-        <div onclick="closeError()" class="modal-background" id="background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Oops!</p>
-                <a onclick="closeError()" class="delete" id="error_del"></a>
-            </header>
-            <section class="modal-card-body">
-                <div class="field">
-                    <label class="label">Your username or password is incorrect!</label>
-                    </p>
-                </div>
-            </section>
-            <footer class="modal-card-foot">
-            </footer>
         </div>
     </div>
     
@@ -135,8 +87,6 @@
                     <br/>
                     <br/>
                     <p>Our climate data is acquired from the <b>Southwest Climate and Environmental Information Collaborative</b>. A link to the data can be found <a href="https://wrcc.dri.edu/csc/scenic/analysis/single/climatology/?gridded_data=True">here</a>. Citation: "Applied Climate Information System." RCC-ACIS. NOAA Regional Climate Centers, [Dec. 13 2017]</p>
-
-
                 </div>
             </section>
             <footer class="modal-card-foot">
@@ -144,15 +94,4 @@
         </div>
     </div>
 </body>
-
-<script>
-$(document).ready(function() {
-    // When document is ready, if login was failed, display modal message
-    var error_modal = document.getElementById("myError_Modal");
-    var login_status = window.location.href;
-    if (login_status.includes("failed") == true)
-       error_modal.style.display = "block";
-});
-</script>
-
 </html>

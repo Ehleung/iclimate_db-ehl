@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 80;
 var mongoose = require('mongoose');
-var passport = require('passport');
 var flash = require('connect-flash');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
@@ -12,8 +11,6 @@ var configDB = require('./config/database.js');
 
 // Config ==========================================================================
 mongoose.connect(configDB.url);
-
-require('./config/passport')(passport);	// pass passport for config
 
 // Use morgan to log reqs to the console
 app.use(morgan('dev'));
@@ -32,4 +29,4 @@ require('./app/routes.js')(app, passport);	// load our routes and pass in our ap
 
 // Launch ==========================================================================
 app.listen(port);
-console.log('Server running at http://localhost:' + port);
+// console.log('Server running at http://localhost:' + port);

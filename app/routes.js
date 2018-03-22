@@ -1,38 +1,12 @@
 // Obtain connection for storylist
 var Story = require('./models/story.js');
 var Place = require('./models/location.js');
-var login_fail_message = false;
 
 module.exports = function(app, passport) {
 	
 	// HOME PAGE (with login links) ===========================================
 	app.get('/', function(req, res) {
-		res.render('index.ejs', { message: req.flash('loginMessage') });	// load index.ejs file
-	});
-
-	// SIGNUP =================================================================
-	// Process signup form
-	app.get('/signup', function(req, res) {
- 		//render page and pass any flash data if existing
- 		res.render('signup.ejs', { message: req.flash('signupMessage') });
- 	});
-	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '/share',
-		failureRedirect : '/',
-		failureFlash : true
-	}));
-	// LOGIN ==================================================================
-	// Process login form
-	app.post('/login', passport.authenticate('local-login', {
-		successRedirect : '/share', // redirect to secure profile seciton
-		failureRedirect : '/?login=failed', // redirect back to signin page if error
-		failureFlash : false // allow flash messages
-	}));
-
-	// LOGOUT =================================================================
-	app.get('/logout', function(req, res) {
-		req.logout();
-		res.redirect('/');
+		res.render('index.ejs');	// load index.ejs file
 	});
 
 	app.get('/search', function(req, res) {
@@ -101,12 +75,3 @@ module.exports = function(app, passport) {
 		});
 	});
 };
-
-function isLoggedIn(req, res, next) {
-	// if user is authenticated in session, continue
-	if (req.isAuthenticated())
-		return next();
-
-	// if not, redirect to home page
-	res.redirect('/');
-}

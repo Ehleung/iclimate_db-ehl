@@ -7,7 +7,8 @@
     <script src="http://www.webglearth.com/v2/api.js"></script>
 		<script src="js/share/share_init.js"></script>
 		<script src="js/share/share_function.js"></script>
-		<title>Imagining Climate</title>
+    <script src="js/global/about.js"></script>
+		<title>Share - Imagining Climate</title>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
  		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="materialize/css/materialize.min.css">
@@ -63,12 +64,12 @@
       <a href="/" class="brand-logo" style="padding-left: 20px">Imagining Climate</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
+        <li><a onclick="showAbout()" id="about_button1">About Us</a></li>
         <li><a href="/explore">Explore</a></li>
-        <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
+        <li><a onclick="showAbout()" id="about_button1">About Us</a></li>
         <li><a href="/explore">Explore</a></li>
-        <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
   </nav>
@@ -175,6 +176,29 @@
       <!-- End of form -->
   </div>
 </div>
+</div>
+
+<!-- About Us Modal -->
+<div class="modal" id="about_modal">
+    <div onclick="closeAbout()" class="modal-background" id="background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">About Us</p>
+            <a onclick="closeAbout()" class="delete" id="about_del"></a>
+        </header>
+        <section class="modal-card-body">
+            <div class="content">
+                <h2>Welcome to Imagining Climate!</h2>
+                <p>Designed by Pat Patanarutapon, we are a group of students at Arizona State University who created Imagining Climate to gauge how local communities understand the changing climate around them.</p>
+                <p>What-if questions, derived from climate data, provoke the public’s imagination. This is a fun, interactive way to learn about our changing environmental conditions while contributing to a call to action or further research on the future of climate change!</p>
+                <br/>
+                <br/>
+                <p>Our climate data is acquired from the <b>Southwest Climate and Environmental Information Collaborative</b>. A link to the data can be found <a href="https://wrcc.dri.edu/csc/scenic/analysis/single/climatology/?gridded_data=True">here</a>. Citation: "Applied Climate Information System." RCC-ACIS. NOAA Regional Climate Centers, [Dec. 13 2017]</p>
+            </div>
+        </section>
+        <footer class="modal-card-foot">
+        </footer>
+    </div>
 </div>
 </body>
 

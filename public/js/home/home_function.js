@@ -15,15 +15,6 @@ function flyToJapan()
 
             }
 
-function showLogin() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "block";
-}
-function closeLogin() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-
 function showAbout() {
   var aboutModal = document.getElementById("about_modal");
   aboutModal.style.display = "block";
@@ -31,9 +22,4 @@ function showAbout() {
 function closeAbout() {
   var aboutModal = document.getElementById("about_modal");
   aboutModal.style.display = "none";
-}
-
-function closeError() {
-  var error_modal = document.getElementById("myError_Modal");
-  error_modal.style.display = "none";
 }
