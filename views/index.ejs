@@ -39,8 +39,8 @@
     <!-- Display for page -->
     <div id="earth_div" class="wrapper">
         <div class="hover">
-            <center><h2 style="color: rgb(255, 255, 255);">Imagining Climate</h2></center>
-            <center><h4 style="color: rgb(255, 255, 255);">A Shared Imagination of Earth's Future</h4></center>
+            <center id="title_ani"><h2 style="color: rgb(255, 255, 255);">Imagining Climate</h2></center>
+            <center id="motto_ani"><h4 style="color: rgb(255, 255, 255);">A Shared Imagination of Earth's Future</h4></center>
             <!-- Icons go here -->
             <div class="columns">
                 <div class="column">
@@ -104,7 +104,11 @@
 <script>
 $(document).ready(function() {
     $("#img_fade1").ready(function() {
-        $("#img_fade1").hide().fadeIn(2000);
+        $("#title_ani").ready(function() {
+            $("#title_ani").hide().fadeIn(1000);
+            $("#motto_ani").hide().fadeIn(1000);
+        });
+        $("#img_fade1").hide().delay(500).fadeIn(2000);
         $("#img_fade2").ready(function() {
             $("#img_fade2").hide().delay(1000).fadeIn(2000);
             $("#img_fade3").ready(function() {
