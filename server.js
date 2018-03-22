@@ -20,12 +20,11 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.use(session({ secret: 'isculpiemrasteec7r1e2t0' }));
-app.use(passport.initialize());
-app.use(passport.session());	// persistent login sessions
+
 app.use(flash());	// use connect-flash for flash messages stored in sessions
 
 // Routes ==========================================================================
-require('./app/routes.js')(app, passport);	// load our routes and pass in our app & fully configured passport
+require('./app/routes.js')(app);	// load our routes and pass in our app & fully configured passport
 
 // Launch ==========================================================================
 app.listen(port);
