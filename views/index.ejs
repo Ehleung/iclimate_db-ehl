@@ -44,7 +44,7 @@
             <!-- Icons go here -->
             <div class="columns">
                 <div class="column">
-                    <div class="img_fade1">
+                    <div id="img_fade1">
                         <center>
                             <figure class="image is-256x256">
                                 <img src="images/home_icon1.png"/>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="img_fade2">
+                    <div id="img_fade2">
                         <center>
                             <figure class="image is-256x256">
                                 <img src="images/home_icon2.png"/>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="img_fade3">
+                    <div id="img_fade3">
                         <center>
                             <figure class="image is-256x256">
                                 <img src="images/home_icon3.png"/>
@@ -103,14 +103,14 @@
 
 <script>
 $(document).ready(function() {
-    $(".img_fade1").ready(function() {
-        $(".img_fade1").fadeIn(900);
+    $("#img_fade1").ready(function() {
+        $("#img_fade1").hide().fadeIn(900);
     });
-    $(".img_fade2").ready(function() {
-        $(".img_fade2").fadeIn(1800);
+    $("#img_fade2").ready(function() {
+        $("#img_fade2").hide().fadeIn(1800);
     });
-    $(".img_fade3").ready(function() {
-        $(".img_fade3").fadeIn(2700);
+    $("#img_fade3").ready(function() {
+        $("#img_fade3").hide().fadeIn(2700);
     });
 });
 </script>
