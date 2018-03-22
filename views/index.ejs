@@ -16,21 +16,12 @@
         <link href="css/ionicons.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="css/animate.css">
         <script src="materialize/js/materialize.min.js"></script>
-
-        <style>
-            .section-fade {
-                display: inline-block;
-                transition: background .25s ease-in-out;
-                -moz-transition: background .25s ease-in-out;
-                -webkit-transition: background .25s ease-in-out;
-            }
-        </style>
     </head>
 
     <nav>
         <div class="nav-wrapper">
           <a href="/" class="brand-logo" style="padding-left: 20px">Imagining Climate</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#" data-toggle="collapse" data-target="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a onclick="showAbout()" id="about_button1">About Us</a></li>
             <li><a href="/share">Share</a></li>
@@ -53,7 +44,7 @@
             <!-- Icons go here -->
             <div class="columns">
                 <div class="column">
-                    <div class="section-fade">
+                    <div class="img_fade1">
                         <center>
                             <figure class="image is-256x256">
                                 <img src="images/home_icon1.png"/>
@@ -63,7 +54,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="section-fade">
+                    <div class="img_fade2">
                         <center>
                             <figure class="image is-256x256">
                                 <img src="images/home_icon2.png"/>
@@ -73,7 +64,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="section-fade">
+                    <div class="img_fade3">
                         <center>
                             <figure class="image is-256x256">
                                 <img src="images/home_icon3.png"/>
@@ -109,4 +100,21 @@
         </div>
     </div>
 </body>
+
+<script>
+$(document).ready(function() {
+$(".img_fade1")
+.fadeIn(900)
+});
+
+$(".img_fade2")
+.fadeIn(1800)
+});
+
+$(".img_fade3")
+.fadeIn(2700)
+});
+
+</script>
+
 </html>
