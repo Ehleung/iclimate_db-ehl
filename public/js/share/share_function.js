@@ -79,7 +79,7 @@ function checkValid() {
     name = false;
   
   // Require all three variables to be true for button to appear
-  if (location == true && title == true && story == true && name == true)
+  if (location == true && title == true && story == true && name == true && window.sessionStorage.clickedData == 1)
     validSubmit.style.visibility = "visible";
   else
     validSubmit.style.visibility = "hidden";
