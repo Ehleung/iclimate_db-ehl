@@ -79,7 +79,6 @@
    <div class="hover">
      <div class="row">
       <form action="/share" method="post">
-        <element hidden id="user" name="user"><%= user.local.username %></element>
         <div class="select">
           <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);resetYear();">
             <% locs.forEach(function(loc) { %>
