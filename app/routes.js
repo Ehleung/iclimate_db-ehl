@@ -4,7 +4,7 @@ var Place = require('./models/location.js');
 
 module.exports = function(app) {
 	
-	// HOME PAGE (with login links) ===========================================
+	// HOME PAGE ===========================================
 	app.get('/', function(req, res) {
 		res.render('index.ejs');	// load index.ejs file
 	});
@@ -35,7 +35,7 @@ module.exports = function(app) {
 	})
 
 	// STORYLIST ==============================================================
-	app.get('/storylist', isLoggedIn, function(req, res) {
+	app.get('/storylist', function(req, res) {
 		Story.find({}, function(err, docs) {
 			res.render('storylist_2.ejs', {
 				data : docs,
@@ -44,7 +44,7 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get('/share', isLoggedIn, function(req, res) {
+	app.get('/share', function(req, res) {
 		Place.find({}, function (error, result) {
 			res.render('share.ejs', {
 				user : req.user, // get user out of session and pass to the page
@@ -52,7 +52,7 @@ module.exports = function(app) {
 			});
 		});
 	});
-	app.post('/share', isLoggedIn, function(req, res) {
+	app.post('/share', function(req, res) {
 		var newStory = new Story();
 		newStory.author = req.user.local.username;
 		newStory.location = req.body.location;
