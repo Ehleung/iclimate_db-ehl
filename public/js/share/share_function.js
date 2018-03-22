@@ -64,7 +64,7 @@ var locations = [
 
 function checkValid() {
   var validSubmit = document.getElementById("sharesubmit");
-  var location = true, title = true, story = true;
+  var location = true, title = true, story = true, name = true;
   window.sessionStorage.selectedLoc = document.getElementById("location").value;
 
   if (document.getElementById("location").value == "Choose your location...")
@@ -75,9 +75,11 @@ function checkValid() {
     title = false;
   if (document.getElementById("textarea1").value == "")
     story = false;
+  if (document.getElementById("user").value == "")
+    name = false;
   
   // Require all three variables to be true for button to appear
-  if (location == true && title == true && story == true)
+  if (location == true && title == true && story == true && name == true)
     validSubmit.style.visibility = "visible";
   else
     validSubmit.style.visibility = "hidden";
