@@ -16,6 +16,15 @@
         <link href="css/ionicons.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="css/animate.css">
         <script src="materialize/js/materialize.min.js"></script>
+
+        <style>
+            .section-fade {
+                display: inline-block;
+                transition: background .25s ease-in-out;
+                -moz-transition: background .25s ease-in-out;
+                -webkit-transition: background .25s ease-in-out;
+            }
+        </style>
     </head>
 
     <nav>
@@ -44,28 +53,34 @@
             <!-- Icons go here -->
             <div class="columns">
                 <div class="column">
-                    <center>
-                        <figure class="image is-256x256">
-                            <img src="images/home_icon1.png"/>
-                        </figure>
-                    </center>
-                    <center><p style="color: rgb(255, 255, 255);">1. Select a location </p></center>
+                    <div class="section-fade">
+                        <center>
+                            <figure class="image is-256x256">
+                                <img src="images/home_icon1.png"/>
+                            </figure>
+                        </center>
+                        <center><p style="color: rgb(255, 255, 255);">1. Select a location </p></center>
+                    </div>
                 </div>
                 <div class="column">
-                    <center>
-                        <figure class="image is-256x256">
-                            <img src="images/home_icon2.png"/>
-                        </figure>
-                    </center>
-                    <center><p style="color: rgb(255, 255, 255);">2. Imagine its future using real data</p></center>
+                    <div class="section-fade">
+                        <center>
+                            <figure class="image is-256x256">
+                                <img src="images/home_icon2.png"/>
+                            </figure>
+                        </center>
+                        <center><p style="color: rgb(255, 255, 255);">2. Imagine its future using real data</p></center>
+                    </div>
                 </div>
                 <div class="column">
-                    <center>
-                        <figure class="image is-256x256">
-                            <img src="images/home_icon3.png"/>
-                        </figure>
-                    </center>
-                    <center><p style="color: rgb(255, 255, 255);">3. Share your prediction with the world!</p></center> 
+                    <div class="section-fade">
+                        <center>
+                            <figure class="image is-256x256">
+                                <img src="images/home_icon3.png"/>
+                            </figure>
+                        </center>
+                        <center><p style="color: rgb(255, 255, 255);">3. Share your prediction with the world!</p></center>
+                    </div>
                 </div>
             </div>
         </div>
