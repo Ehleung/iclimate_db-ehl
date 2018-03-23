@@ -92,6 +92,7 @@
           <div class="card">
             <!-- Data goes here -->
             <div id="all_data" class="card-action">
+
               <!-- Data Labels - 1st row -->
               <div id="labels" class="columns">
                 <div id="label1" class="column">
@@ -103,17 +104,20 @@
                   Avg Max Temp (°F)
                 </div>
                 <div id="label3" class="column">
-                  <i id="icon3" class="ion-waterdrop" style="font-size:30px"></i>
+                  <i id="icon3" class="ion-waterdrop" style="font-size:30px; padding-top:8px;"></i>
                   Avg Rain (in.)
                 </div>
                 <div id="label4" class="column">
-                  <i id="icon4" class="ion-leaf" style="font-size:30px"></i>
+                  <i id="icon4" class="ion-leaf" style="font-size:30px; padding-top:8px;"></i>
                   Avg Plant Cover (%)
                 </div>
                 <div id="swap_measure" class="column">
-                  <button>Switch to Metric!</button>
+                  <center>
+                    <a class="button is-dark" style="padding-top:8px;">Switch to Metric!</a>
+                  </center>
                 </div>
               </div>
+
               <!-- Climate Data - 2nd row -->
               <div id="current_data" class="columns">
                 <!-- Min temperature -->
@@ -134,10 +138,12 @@
                 </div>
                 <!-- Shift column -->
                 <div class="column">
-                  <button id="shift" class="animated flipInX" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</button>
-                  </div>
+                  <center>
+                    <a id="shift" class="button is-iclimate_blue" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
+                  </center>
                 </div>
-              </div>
+              </div>  
+
               <!-- Data Deltas -->
               <div id="data_delta" class="columns">
                 <div class="column">
@@ -161,6 +167,7 @@
                   <b id="delta4" style="font-size:30px;"></b>
                 </div>
               </div>
+
               <!-- 2050 Climate Data - 4th row -->
               <div id="future_data" class="columns">
                 <div class="column">
@@ -245,7 +252,6 @@
   $(document).ready(function() {
      document.getElementById("sharesubmit").style.visibility = "hidden";
      hide_all();
-     hide_arrows();
   });
   shuffle_question();
 </script>
