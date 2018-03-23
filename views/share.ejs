@@ -20,7 +20,7 @@
     body {
       overflow-y: scroll;
     }
-    
+
     .gradient-icon {
         background: -webkit-gradient(linear, left top, left bottom, from(#21c3ef), to(#ff0000));
         -webkit-background-clip: text;
@@ -115,6 +115,12 @@
                   <i id="icon4" class="ion-leaf" style="font-size:30px;"></i>
                   Avg Plant Cover (%)
                 </div>
+                <!-- Shift column -->
+                <div class="column">
+                  <center>
+                    <a id="shift" class="button is-iclimate_blue" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
+                  </center>
+                </div>
               </div>
 
               <!-- Climate Data - 2nd row -->
@@ -135,11 +141,8 @@
                 <div class="column">
                   <b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
                 </div>
-                <!-- Shift column -->
                 <div class="column">
-                  <center>
-                    <a id="shift" class="button is-iclimate_blue" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
-                  </center>
+                  <b id="currentyear" style="font-size:30px;">2017</b>
                 </div>
               </div>  
 
@@ -180,6 +183,9 @@
                 </div>
                 <div class="column">
                   <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
+                </div>
+                <div class="column">
+                  <b id="futureyear" style="font-size:30px;">2050</b>
                 </div>
               </div>
             </div>

@@ -110,6 +110,8 @@ function updateTemps(locationStr) {
 
   if (locationStr != "Choose your location...") {
     document.getElementById("shift").style.visibility = "visible";
+    document.getElementById("currentyear").style.visibility = "visible";
+    document.getElementById("futureyear").style.visibility = "visible";
 
     if (locations[i][1][0] != -200) {
       document.getElementById("min").innerHTML = locations[i][1][0];
@@ -132,7 +134,10 @@ function updateTemps(locationStr) {
       document.getElementById("label4").style.visibility = "visible";
     }
 
-    document.getElementById("swap_measure").style.visibility = "visible";
+    // document.getElementById("swap_measure").style.visibility = "visible";
+  }
+  else {
+    hide_all();
   }
 }
 function newTemps(currentTemps) {
