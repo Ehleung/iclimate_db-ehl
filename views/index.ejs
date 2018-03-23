@@ -18,23 +18,23 @@
         <script src="materialize/js/materialize.min.js"></script>
     </head>
 
-    <nav>
-        <div class="nav-wrapper">
-          <a href="/" class="brand-logo" style="padding-left: 20px">Imagining Climate</a>
-          <a href="#" data-toggle="collapse" data-target="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a onclick="showAbout()" id="about_button1">About Us</a></li>
-            <li><a href="/share">Share</a></li>
-            <li><a href="/explore">Explore</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a onclick="showAbout()" id="about_button2">About Us</a></li>
-            <li><a href="/share">Share</a></li>
-            <li><a href="/explore">Explore</a></li>
-          </ul>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <div class="navbar-burger">
+                <li><a onclick="showAbout()" id="about_button2">About Us</a></li>
+                <li><a href="/share">Share</a></li>
+                <li><a href="/explore">Explore</a></li>
+            </div>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <li><a onclick="showAbout()" id="about_button1">About Us</a></li>
+                <li><a href="/share">Share</a></li>
+                <li><a href="/explore">Explore</a></li>
+            </div>
         </div>
     </nav>
-
+    
 <body onload="world()">
     <!-- Display for page -->
     <div id="earth_div" class="wrapper">

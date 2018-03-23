@@ -87,35 +87,15 @@ function checkValid() {
 
 // Called when a location is first selected. 
 function hide_all() {
-  document.getElementById("min").style.visibility = "hidden";
-  document.getElementById("icon1").style.visibility = "hidden";
-  document.getElementById("max").style.visibility = "hidden";
-  document.getElementById("icon2").style.visibility = "hidden";
-  document.getElementById("rain").style.visibility = "hidden";
-  document.getElementById("icon3").style.visibility = "hidden";
-  document.getElementById("plant").style.visibility = "hidden";
-  document.getElementById("icon4").style.visibility = "hidden";
-  document.getElementById("shift").style.visibility = "hidden";
-  document.getElementById("shift_text1").style.visibility = "hidden";
-  document.getElementById("shift_text2").style.visibility = "hidden";
-  // Init clickedData to track whether a user has clicked on new data or not.
+  document.getElementById("labels").style.visibility = "hidden";
+  document.getElementById("current_data").style.visibility = "hidden";
+  document.getElementById("data_delta").style.visibility = "hidden";
+  document.getElementById("future_data").style.visibility = "hidden";
   document.getElementById("question_content").style.visibility = "hidden";
+
+  // Init clickedData to track whether a user has clicked on new data or not.
   window.sessionStorage.clickedData = 0;
 }
-function hide_arrows() {
-  document.getElementById("arrow1up").style.visibility = "hidden";
-  document.getElementById("arrow1down").style.visibility = "hidden";
-  document.getElementById("minus1").style.visibility = "hidden";
-  document.getElementById("arrow2up").style.visibility = "hidden";
-  document.getElementById("arrow2down").style.visibility = "hidden";
-  document.getElementById("minus2").style.visibility = "hidden";
-  document.getElementById("arrow3up").style.visibility = "hidden";
-  document.getElementById("arrow3down").style.visibility = "hidden";
-  document.getElementById("minus3").style.visibility = "hidden";
-  document.getElementById("arrow4up").style.visibility = "hidden";
-  document.getElementById("arrow4down").style.visibility = "hidden";
-  document.getElementById("minus4").style.visibility = "hidden";
-} 
 function updateTemps(locationStr) {
   // console.log(locationStr);
   window.sessionStorage.currentTemps = 0;
@@ -125,35 +105,34 @@ function updateTemps(locationStr) {
       break
   }
   window.sessionStorage.curr_location_index = i;
-
+  window.sessionStorage.clickedData = 0;
   hide_all();
-  hide_arrows();
 
   if (locationStr != "Choose your location...") {
     document.getElementById("shift").style.visibility = "visible";
-    document.getElementById("shift_text1").style.visibility = "visible";
-    document.getElementById("shift_text2").style.visibility = "visible";
 
     if (locations[i][1][0] != -200) {
       document.getElementById("min").innerHTML = locations[i][1][0];
       document.getElementById("min").style.visibility = "visible";
-      document.getElementById("icon1").style.visibility = "visible";
+      document.getElementById("label1").style.visibility = "visible";
     }
     if (locations[i][1][1] != -200) {
       document.getElementById("max").innerHTML = locations[i][1][1];
       document.getElementById("max").style.visibility = "visible";
-      document.getElementById("icon2").style.visibility = "visible";
+      document.getElementById("label2").style.visibility = "visible"; 
     }
     if (locations[i][1][2] != -200) {
       document.getElementById("rain").innerHTML = locations[i][1][2] + "in";
       document.getElementById("rain").style.visibility = "visible";
-      document.getElementById("icon3").style.visibility = "visible";
+      document.getElementById("label3").style.visibility = "visible";
     }
     if (locations[i][1][3] != -200) {
       document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
       document.getElementById("plant").style.visibility = "visible";
-      document.getElementById("icon4").style.visibility = "visible";
+      document.getElementById("label4").style.visibility = "visible";
     }
+
+    document.getElementById("swap_measure").style.visibility = "visible";
   }
 }
 function newTemps(currentTemps) {
@@ -162,56 +141,45 @@ function newTemps(currentTemps) {
   // Going from 2017 to 2050
   if (currentTemps == 0) {
     if (locations[i][2][0] != -200) {
-      document.getElementById("min").innerHTML = locations[i][2][0];
+      document.getElementById("min2050").innerHTML = locations[i][2][0];
       if (locations[i][1][0] > locations[i][2][0])
-        document.getElementById("arrow1down").style.visibility = "visible";
+        document.getElementById("minus1").style.visibility = "visible";
       else if (locations[i][1][0] < locations[i][2][0])
-        document.getElementById("arrow1up").style.visibility = "visible";
+        document.getElementById("plus1").style.visibility = "visible";
+      document.getElementById("delta1").innerHTML = Math.abs(locations[i][1][0] - locations[i][2][0]);
+      document.getElementById("delta1").style.visibility = "visible";
     }
     if (locations[i][2][1] != -200) {
-      document.getElementById("max").innerHTML = locations[i][2][1];
+      document.getElementById("max2050").innerHTML = locations[i][2][1];
       if (locations[i][1][1] > locations[i][2][1])
-        document.getElementById("arrow2down").style.visibility = "visible";
+        document.getElementById("minus2").style.visibility = "visible";
       else if (locations[i][1][1] < locations[i][2][1])
-        document.getElementById("arrow2up").style.visibility = "visible";
+        document.getElementById("plus2").style.visibility = "visible";
+      document.getElementById("delta2").innerHTML = Math.abs(locations[i][1][1] - locations[i][2][1]);
+      document.getElementById("delta2").style.visibility = "visible";
     }
     if (locations[i][2][2] != -200) {
-      document.getElementById("rain").innerHTML = locations[i][2][2] + "in";
+      document.getElementById("rain2050").innerHTML = locations[i][2][2];
       if (locations[i][1][2] > locations[i][2][2])
-        document.getElementById("arrow3down").style.visibility = "visible";
+        document.getElementById("minus3").style.visibility = "visible";
       else if (locations[i][1][2] < locations[i][2][2])
-        document.getElementById("arrow3up").style.visibility = "visible";
+        document.getElementById("plus3").style.visibility = "visible";
+      document.getElementById("delta3").innerHTML = Math.abs(locations[i][1][2] - locations[i][2][2]);
+      document.getElementById("delta3").style.visibility = "visible";
     }
     if (locations[i][2][3] != -200) {
-      document.getElementById("plant").innerHTML = locations[i][2][3] + "%";
+      document.getElementById("plant2050").innerHTML = locations[i][2][3];
       if (locations[i][1][3] > locations[i][2][3])
-        document.getElementById("arrow4down").style.visibility = "visible";
+        document.getElementById("minus4").style.visibility = "visible";
       else if (locations[i][1][3] < locations[i][2][3])
-        document.getElementById("arrow4up").style.visibility = "visible";
+        document.getElementById("plus4").style.visibility = "visible";
+      document.getElementById("delta4").innerHTML = Math.abs(locations[i][1][3] - locations[i][2][3]);
+      document.getElementById("delta4").style.visibility = "visible";
     }
-    document.getElementById("shift_text1").innerHTML = 2050;
-    document.getElementById("shift_text2").innerHTML = 2017;
     window.sessionStorage.currentTemps = 1;
     window.sessionStorage.clickedData = 1;
 
     if (window.sessionStorage.clickedData == 1)
       document.getElementById("question_content").style.visibility = "visible";
   }
-  // Going back from 2050 to 2017, hide the arrows
-  else {
-    hide_arrows();
-    document.getElementById("min").innerHTML = locations[i][1][0];
-    document.getElementById("max").innerHTML = locations[i][1][1];
-    document.getElementById("rain").innerHTML = locations[i][1][2] + "in";
-    document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
-    document.getElementById("shift_text1").innerHTML = 2017;
-    document.getElementById("shift_text2").innerHTML = 2050;
-    window.sessionStorage.currentTemps = 0;
-  }
-}
-function resetYear() {
-  // If the user switches locations, it will reset the year and the clicked data var
-  window.sessionStorage.clickedData = 0;
-  document.getElementById("shift_text1").innerHTML = 2017;
-  document.getElementById("shift_text2").innerHTML = 2050;
 }

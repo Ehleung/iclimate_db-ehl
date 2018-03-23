@@ -80,7 +80,7 @@
      <div class="row">
       <form action="/share" method="post">
         <div class="select">
-          <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);resetYear();">
+          <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
             <% locs.forEach(function(loc) { %>
               <option value='<%=loc.name%>'><%= loc.name %></option>
             <% }); %>
@@ -92,56 +92,94 @@
           <div class="card">
             <!-- Data goes here -->
             <div id="all_data" class="card-action">
-              <div class="columns">
-                <!-- Min temperature column -->
-                <div class="column">
-                  <div class="animated flipInX" style="animation-delay: 0.5s;">
-                    <i id="arrow1up" class="ion-arrow-up-a" style="font-size: 30px; color: rgba(33, 195, 239, 0.6);"></i>
-                    <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px; padding-top:8px;"></i><b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
-                    <i id="arrow1down" class="ion-arrow-down-a" style="font-size: 30px; color: rgba(33, 195, 239, 0.6);"></i>
-                    <i id="minus1" class="fa fa-minus" style="font-size: 30px;"></i>
-                  </div>
+              <!-- Data Labels - 1st row -->
+              <div id="labels" class="columns">
+                <div id="label1" class="column">
+                  <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px; padding-top:8px;"></i>
+                  Avg Min Temp (°F)
                 </div>
-                <!-- Max temperature column -->
+                <div id="label2"  class="column">
+                  <i id="icon2" class="fa fa-thermometer-full" style="font-size:30px; padding-top:8px;"></i>
+                  Avg Max Temp (°F)
+                </div>
+                <div id="label3" class="column">
+                  <i id="icon3" class="ion-waterdrop" style="font-size:30px"></i>
+                  Avg Rain (in.)
+                </div>
+                <div id="label4" class="column">
+                  <i id="icon4" class="ion-leaf" style="font-size:30px"></i>
+                  Avg Plant Cover (%)
+                </div>
+                <div id="swap_measure" class="column">
+                  <button>Switch to Metric!</button>
+                </div>
+              </div>
+              <!-- Climate Data - 2nd row -->
+              <div id="current_data" class="columns">
+                <!-- Min temperature -->
                 <div class="column">
-                  <div class="animated flipInX" style="animation-delay: 0.7s;">
-                    <i id="arrow2up" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(255, 0, 0, 0.6);"></i>
-                    <i id="icon2" class="fa fa-thermometer-full" style="font-size:30px; padding-top:8px;"></i><b id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></b>
-                    <i id="arrow2down" class="ion-arrow-down-a" style="font-size: 30px; color: rgba(255, 0, 0, 0.6);"></i>
-                    <i id="minus2" class="fa fa-minus" style="font-size: 30px;"></i>
-                  </div>
+                    <b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
+                </div>
+                <!-- Max temperature -->
+                <div class="column">
+                  <b id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></b>
                 </div>
                 <!-- Rain column -->
                 <div class="column">
-                  <div class="animated flipInX" style="animation-delay: 0.9s;">
-                    <i id="arrow3up" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(11, 83, 226, 0.6);"></i>
-                    <i id="icon3" class="ion-waterdrop" style="font-size:30px"></i><b id="rain" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
-                    <i id="arrow3down" class="ion-arrow-down-a" style="font-size: 30px; color: rgba(11, 83, 226, 0.6);"></i>
-                    <i id="minus3" class="fa fa-minus" style="font-size: 30px;"></i>
-                  </div>
+                  <b id="rain" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
                 </div>
                 <!-- Plant cover column -->
                 <div class="column">
-                  <div class="animated flipInX" style="animation-delay: 1.1s;">
-                    <i id="arrow4up" class="ion-arrow-up-a" style="font-size: 30px;  color: rgba(13, 135, 2, 0.6);"></i>
-                    <i id="icon4" class="ion-leaf" style="font-size:30px"></i><b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
-                    <i id="arrow4down" class="ion-arrow-down-a" style="font-size: 30px; color: rgba(13, 135, 2, 0.6);"></i>
-                    <i id="minus4" class="fa fa-minus" style="font-size: 30px;"></i>
-                  </div>
+                  <b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
                 </div>
                 <!-- Shift column -->
                 <div class="column">
-                  <div id="shift" class="animated flipInX" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">
-                    <b id="shift_text1" style="font-size:30px; color: rgba(33, 195, 239, 0.6);" >2017</b>
-                    <i id="shift" class="ion-arrow-right-a gradient-icon" style="font-size:30px; cursor: pointer"></b></i>
-                    <b id="shift_text2" style="font-size:30px; color: rgba(255, 0, 0, 0.6);">2050</b>
+                  <button id="shift" class="animated flipInX" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</button>
                   </div>
+                </div>
+              </div>
+              <!-- Data Deltas -->
+              <div id="data_delta" class="columns">
+                <div class="column">
+                  <i id="plus1" class="fa fa-plus" style="font-size: 30px;"></i>
+                  <i id="minus1" class="fa fa-minus" style="font-size: 30px;"></i>
+                  <b id="delta1" style="font-size:30px;"></b>
+                </div>
+                <div class="column">
+                  <i id="plus2" class="fa fa-plus" style="font-size: 30px;"></i>
+                  <i id="minus2" class="fa fa-minus" style="font-size: 30px;"></i>
+                  <b id="delta2" style="font-size:30px;"></b>
+                </div>
+                <div class="column">
+                  <i id="plus3" class="fa fa-plus" style="font-size: 30px;"></i>
+                  <i id="minus3" class="fa fa-minus" style="font-size: 30px;"></i>
+                  <b id="delta3" style="font-size:30px;"></b>
+                </div>
+                <div class="column">
+                  <i id="plus4" class="fa fa-plus" style="font-size: 30px;"></i>
+                  <i id="minus4" class="fa fa-minus" style="font-size: 30px;"></i>
+                  <b id="delta4" style="font-size:30px;"></b>
+                </div>
+              </div>
+              <!-- 2050 Climate Data - 4th row -->
+              <div id="future_data" class="columns">
+                <div class="column">
+                  <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
+                </div>
+                <div class="column">
+                  <b id="max2050" style="font-size:30px; color: rgba(175, 0, 0, 0.6);"></b>
+                </div>
+                <div class="column">
+                  <b id="rain2050" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
+                </div>
+                <div class="column">
+                  <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
                 </div>
               </div>
             </div>
             <!-- Question button & prompt -->
             <div id="question_content" class="card-content">
-              <a class="btn-floating btn-small waves-effect waves-light red" onclick="shuffle_question()"><i class="material-icons">replay</i></a>
+              <a class="btn-floating btn-small waves-effect waves-light red" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
               <span id="random_question"></span>
             </div>
             
