@@ -93,10 +93,6 @@ function hide_all() {
   document.getElementById("label4").style.visibility = "hidden";
   document.getElementById("shift").style.visibility = "hidden";
 
-  document.getElementById("icon1").style.visibility = "hidden";
-  document.getElementById("icon2").style.visibility = "hidden";
-  document.getElementById("icon3").style.visibility = "hidden";
-  document.getElementById("icon4").style.visibility = "hidden";
   document.getElementById("min").style.visibility = "hidden";
   document.getElementById("max").style.visibility = "hidden";
   document.getElementById("rain").style.visibility = "hidden";
@@ -141,12 +137,12 @@ function updateTemps(locationStr) {
       document.getElementById("label2").style.visibility = "visible"; 
     }
     if (locations[i][1][2] != -200) {
-      document.getElementById("rain").innerHTML = locations[i][1][2] + "in";
+      document.getElementById("rain").innerHTML = locations[i][1][2];
       document.getElementById("rain").style.visibility = "visible";
       document.getElementById("label3").style.visibility = "visible";
     }
     if (locations[i][1][3] != -200) {
-      document.getElementById("plant").innerHTML = locations[i][1][3] + "%";
+      document.getElementById("plant").innerHTML = locations[i][1][3];
       document.getElementById("plant").style.visibility = "visible";
       document.getElementById("label4").style.visibility = "visible";
     }
