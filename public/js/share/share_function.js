@@ -142,6 +142,7 @@ function newTemps(currentTemps) {
   if (currentTemps == 0) {
     if (locations[i][2][0] != -200) {
       document.getElementById("min2050").innerHTML = locations[i][2][0];
+      document.getElementById("min2050").style.visibility = "visible";
       if (locations[i][1][0] > locations[i][2][0])
         document.getElementById("minus1").style.visibility = "visible";
       else if (locations[i][1][0] < locations[i][2][0])
@@ -151,6 +152,7 @@ function newTemps(currentTemps) {
     }
     if (locations[i][2][1] != -200) {
       document.getElementById("max2050").innerHTML = locations[i][2][1];
+      document.getElementById("max2050").style.visibility = "visible";
       if (locations[i][1][1] > locations[i][2][1])
         document.getElementById("minus2").style.visibility = "visible";
       else if (locations[i][1][1] < locations[i][2][1])
@@ -160,6 +162,7 @@ function newTemps(currentTemps) {
     }
     if (locations[i][2][2] != -200) {
       document.getElementById("rain2050").innerHTML = locations[i][2][2];
+      document.getElementById("rain2050").style.visibility = "visible";
       if (locations[i][1][2] > locations[i][2][2])
         document.getElementById("minus3").style.visibility = "visible";
       else if (locations[i][1][2] < locations[i][2][2])
@@ -169,6 +172,7 @@ function newTemps(currentTemps) {
     }
     if (locations[i][2][3] != -200) {
       document.getElementById("plant2050").innerHTML = locations[i][2][3];
+      document.getElementById("plant2050").style.visibility = "visible";
       if (locations[i][1][3] > locations[i][2][3])
         document.getElementById("minus4").style.visibility = "visible";
       else if (locations[i][1][3] < locations[i][2][3])
