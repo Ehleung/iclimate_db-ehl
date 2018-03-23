@@ -17,10 +17,6 @@
 		<script src="materialize/js/materialize.min.js"></script>
 
     <style>
-    body {
-      overflow-y: scroll;
-    }
-
     .gradient-icon {
         background: -webkit-gradient(linear, left top, left bottom, from(#21c3ef), to(#ff0000));
         -webkit-background-clip: text;
@@ -98,13 +94,14 @@
               <div id="all_data" class="card-action">
                 <!-- Data Labels - 1st row -->
                 <div id="labels" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                  <div class="column is-narrow"></div>
                   <div id="label1" class="column is-narrow">
-                    Avg Min Temp (°F)
                     <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px;"></i>
+                    Avg Min Temp (°F)
                   </div>
                   <div id="label2"  class="column is-narrow">
-                    Avg Max Temp (°F)
                     <i id="icon2" class="fa fa-thermometer-full" style="font-size:30px;"></i>
+                    Avg Max Temp (°F)
                   </div>
                   <div id="label3" class="column is-narrow">
                     Avg Rain (in.)
@@ -126,6 +123,11 @@
                   <!-- Min temperature -->
                   <div class="column">
                     <center>
+                      <b id="currentyear" style="font-size:30px;">   2017</b>
+                    </center>
+                  </div>
+                  <div class="column">
+                    <center>
                       <b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
                     </center>
                   </div>
@@ -143,14 +145,15 @@
                   <div class="column">
                     <b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
                   </div>
-                  <div class="column">
-                    <center>
-                      <b id="currentyear" style="font-size:30px;">   2017</b>
-                    </center>
-                  </div>
+                  <div class="column"></div>
                 </div>
                 <!-- 2050 Climate Data - 4th row -->
                 <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                  <div class="column">
+                    <center>
+                      <b id="futureyear" style="font-size:30px;">2050</b>
+                    </center>
+                  </div>
                   <div class="column">
                     <center>
                       <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
@@ -167,11 +170,7 @@
                   <div class="column">
                     <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
                   </div>
-                  <div class="column">
-                    <center>
-                      <b id="futureyear" style="font-size:30px;">2050</b>
-                    </center>
-                  </div>
+                  <div class="column"></div>
                 </div>
               </div>
               <!-- Question button & prompt -->
