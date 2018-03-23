@@ -32,8 +32,11 @@ function shuffle_question() {
   // topics = window.sessionStorage.topics;
   var x = Math.floor((Math.random() * topics.length));
   if (window.sessionStorage.prevTopic != "") {
-
+    while (topics[x] == window.sessionStorage.prevTopic) {
+      x = Math.floor((Math.random() * topics.length));
+    }
   }
+  window.sessionStorage.prevTopic = topics[x];
   
   random_question = "What would happen to "
   random_question += topics[x];
