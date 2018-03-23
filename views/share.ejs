@@ -89,9 +89,9 @@
 
           <!-- Question Prompt goes here -->
           <div class="tile is-ancestor">
-            <div class="tile is-8 is-vertical">
+            <div class="tile is-8 is-vertical is-parent">
               <!-- top row, labels -->
-              <div class="tile">
+              <div class="tile is-child box">
                 <div id="labels" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                   <div id="label1" class="column is-narrow">
                     <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px;"></i>
@@ -118,7 +118,7 @@
                 </div>
               </div> <!-- end of top row -->
               <!-- middle row, current data -->
-              <div class="tile">
+              <div class="tile is-child box">
                 <!-- Climate Data - 2nd row -->
                 <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                   <!-- Min temperature -->
@@ -150,7 +150,7 @@
                 </div>
               </div>
               <!-- bottom row, future data -->
-              <div class="tile">
+              <div class="tile is-child box">
                 <!-- 2050 Climate Data - 4th row -->
                 <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                   <div class="column">
@@ -178,11 +178,13 @@
                 </div>
               </div>
             </div>
-            <div class="tile is-3 is-vertical">
-              <!-- Question button & prompt -->
-              <div id="question_content" class="card-content" style="padding-top:0px;">
-                <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
-                <span id="random_question"></span>
+            <div class="tile is-3 is-vertical is-parent">
+              <div class="tile is-child box">
+                <!-- Question button & prompt -->
+                <div id="question_content" class="card-content" style="padding-top:0px;">
+                  <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
+                  <span id="random_question"></span>
+                </div>
               </div>
             </div>
           </div>  
