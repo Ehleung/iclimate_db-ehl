@@ -117,20 +117,23 @@
                   <!-- Shift column -->
                   <div class="column">
                     <center>
-                      <a id="shift" class="button is-iclimate_blue" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
+                      <a id="shift" class="button is-link" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
                     </center>
                   </div>
                 </div>
-
                 <!-- Climate Data - 2nd row -->
                 <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                   <!-- Min temperature -->
                   <div class="column">
+                    <center>
                       <b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
+                    </center>
                   </div>
                   <!-- Max temperature -->
                   <div class="column">
-                    <b id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></b>
+                    <center>
+                      <b id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></b>
+                    </center>
                   </div>
                   <!-- Rain column -->
                   <div class="column">
@@ -141,17 +144,22 @@
                     <b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
                   </div>
                   <div class="column">
-                    <b id="currentyear" style="font-size:30px;">2017</b>
+                    <center>
+                      <b id="currentyear" style="font-size:30px;">   2017</b>
+                    </center>
                   </div>
                 </div>
-
                 <!-- 2050 Climate Data - 4th row -->
                 <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                   <div class="column">
-                    <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
+                    <center>
+                      <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
+                    </center>
                   </div>
                   <div class="column">
-                    <b id="max2050" style="font-size:30px; color: rgba(175, 0, 0, 0.6);"></b>
+                    <center>
+                      <b id="max2050" style="font-size:30px; color: rgba(175, 0, 0, 0.6);"></b>
+                    </center>
                   </div>
                   <div class="column">
                     <b id="rain2050" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
@@ -160,7 +168,9 @@
                     <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
                   </div>
                   <div class="column">
-                    <b id="futureyear" style="font-size:30px;">2050</b>
+                    <center>
+                      <b id="futureyear" style="font-size:30px;">2050</b>
+                    </center>
                   </div>
                 </div>
               </div>
@@ -231,6 +241,7 @@
      document.getElementById("sharesubmit").style.visibility = "hidden";
      hide_all();
   });
+  window.sessionStorage.prevTopic = "";
   shuffle_question();
 </script>
 </html>
