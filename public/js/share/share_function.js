@@ -109,6 +109,7 @@ function hide_all() {
   document.getElementById("plant2050").style.visibility = "hidden";
   document.getElementById("futureyear").style.visibility = "hidden";
   
+  document.getElementById("question_content").style.visibility = "hidden";
   // Init clickedData to track whether a user has clicked on new data or not.
   window.sessionStorage.clickedData = 0;
 }
@@ -164,34 +165,18 @@ function newTemps(currentTemps) {
     if (locations[i][2][0] != -200) {
       document.getElementById("min2050").innerHTML = locations[i][2][0];
       document.getElementById("min2050").style.visibility = "visible";
-      if (locations[i][1][0] > locations[i][2][0])
-        document.getElementById("minus1").style.visibility = "visible";
-      else if (locations[i][1][0] < locations[i][2][0])
-        document.getElementById("plus1").style.visibility = "visible";
     }
     if (locations[i][2][1] != -200) {
       document.getElementById("max2050").innerHTML = locations[i][2][1];
       document.getElementById("max2050").style.visibility = "visible";
-      if (locations[i][1][1] > locations[i][2][1])
-        document.getElementById("minus2").style.visibility = "visible";
-      else if (locations[i][1][1] < locations[i][2][1])
-        document.getElementById("plus2").style.visibility = "visible";
     }
     if (locations[i][2][2] != -200) {
       document.getElementById("rain2050").innerHTML = locations[i][2][2];
       document.getElementById("rain2050").style.visibility = "visible";
-      if (locations[i][1][2] > locations[i][2][2])
-        document.getElementById("minus3").style.visibility = "visible";
-      else if (locations[i][1][2] < locations[i][2][2])
-        document.getElementById("plus3").style.visibility = "visible";
     }
     if (locations[i][2][3] != -200) {
       document.getElementById("plant2050").innerHTML = locations[i][2][3];
       document.getElementById("plant2050").style.visibility = "visible";
-      if (locations[i][1][3] > locations[i][2][3])
-        document.getElementById("minus4").style.visibility = "visible";
-      else if (locations[i][1][3] < locations[i][2][3])
-        document.getElementById("plus4").style.visibility = "visible";
     }
     document.getElementById("futureyear").style.visibility = "visible";
     window.sessionStorage.currentTemps = 1;
