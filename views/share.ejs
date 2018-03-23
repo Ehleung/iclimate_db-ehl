@@ -79,111 +79,104 @@
   </nav>
 
 <body onload="world()">
- <div id="earth_div"  class="wrapper">
-   <div class="hover">
-     <div class="row">
-      <form action="/share" method="post">
-        <div class="select">
-          <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
-            <% locs.forEach(function(loc) { %>
-              <option value='<%=loc.name%>'><%= loc.name %></option>
-            <% }); %>
-          </select>
-        </div>
-
-        <!-- Question Prompt goes here -->
-        <div class="animated zoomIn">
-          <div class="card">
-            <!-- Data goes here -->
-            <div id="all_data" class="card-action">
-
-              <!-- Data Labels - 1st row -->
-              <div id="labels" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                <div id="label1" class="column is-narrow">
-                  Avg Min Temp (°F)
-                  <i id="icon1" class="fa fa-thermometer-empty" style=""></i>
-                </div>
-                <div id="label2"  class="column is-narrow">
-                  Avg Max Temp (°F)
-                  <i id="icon2" class="fa fa-thermometer-full" style=""></i>
-                </div>
-                <div id="label3" class="column is-narrow">
-                  Avg Rain (in.)
-                  <i id="icon3" class="fa fa-tint" style=""></i>
-                </div>
-                <div id="label4" class="column is-narrow">
-                  Avg Plant Cover (%)
-                  <i id="icon4" class="fa fa-leaf" style=""></i>
-                </div>
-                <!-- Shift column -->
-                <div class="column">
-                  <center>
-                    <a id="shift" class="button is-iclimate_blue" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
-                  </center>
-                </div>
-              </div>
-
-              <!-- Climate Data - 2nd row -->
-              <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                <!-- Min temperature -->
-                <div class="column">
-                    <b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
-                    
-                </div>
-                <!-- Max temperature -->
-                <div class="column">
-                  <b id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></b>
-                  
-                </div>
-                <!-- Rain column -->
-                <div class="column">
-                  <b id="rain" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
-                  
-                </div>
-                <!-- Plant cover column -->
-                <div class="column">
-                  <b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
-                  
-                </div>
-                <div class="column">
-                  <b id="currentyear" style="font-size:30px;">2017</b>
-                </div>
-              </div>
-
-              <!-- 2050 Climate Data - 4th row -->
-              <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                <div class="column">
-                  <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
-                </div>
-                <div class="column">
-                  <b id="max2050" style="font-size:30px; color: rgba(175, 0, 0, 0.6);"></b>
-                </div>
-                <div class="column">
-                  <b id="rain2050" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
-                </div>
-                <div class="column">
-                  <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
-                </div>
-                <div class="column">
-                  <b id="futureyear" style="font-size:30px;">2050</b>
-                </div>
-              </div>
-            </div>
-            <!-- Question button & prompt -->
-            <div id="question_content" class="card-content" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-              <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
-              <span id="random_question"></span>
-            </div>
-            
+  <div id="earth_div"  class="wrapper">
+    <div class="hover">
+      <div class="row">
+        <form action="/share" method="post">
+          <div class="select">
+            <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
+              <% locs.forEach(function(loc) { %>
+                <option value='<%=loc.name%>'><%= loc.name %></option>
+              <% }); %>
+            </select>
           </div>
-        </div>
-        <!-- End of question prompt -->
 
-        <!-- Story input goes here -->
-        <div class="animated zoomIn" style="animation-delay: 0.2s;">
-          <div class="card" style="margin-bottom: 0px;">
-            
-               <div class="card-content">
+          <!-- Question Prompt goes here -->
+          <div class="animated zoomIn">
+            <div class="card">
+              <!-- Data goes here -->
+              <div id="all_data" class="card-action">
+                <!-- Data Labels - 1st row -->
+                <div id="labels" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                  <div id="label1" class="column is-narrow">
+                    Avg Min Temp (°F)
+                    <i id="icon1" class="fa fa-thermometer-empty" style=""></i>
+                  </div>
+                  <div id="label2"  class="column is-narrow">
+                    Avg Max Temp (°F)
+                    <i id="icon2" class="fa fa-thermometer-full" style=""></i>
+                  </div>
+                  <div id="label3" class="column is-narrow">
+                    Avg Rain (in.)
+                    <i id="icon3" class="fa fa-tint" style=""></i>
+                  </div>
+                  <div id="label4" class="column is-narrow">
+                    Avg Plant Cover (%)
+                    <i id="icon4" class="fa fa-leaf" style=""></i>
+                  </div>
+                  <!-- Shift column -->
+                  <div class="column">
+                    <center>
+                      <a id="shift" class="button is-iclimate_blue" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
+                    </center>
+                  </div>
+                </div>
+
+                <!-- Climate Data - 2nd row -->
+                <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                  <!-- Min temperature -->
+                  <div class="column">
+                      <b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
+                  </div>
+                  <!-- Max temperature -->
+                  <div class="column">
+                    <b id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></b>
+                  </div>
+                  <!-- Rain column -->
+                  <div class="column">
+                    <b id="rain" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
+                  </div>
+                  <!-- Plant cover column -->
+                  <div class="column">
+                    <b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
+                  </div>
+                  <div class="column">
+                    <b id="currentyear" style="font-size:30px;">2017</b>
+                  </div>
+                </div>
+
+                <!-- 2050 Climate Data - 4th row -->
+                <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                  <div class="column">
+                    <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
+                  </div>
+                  <div class="column">
+                    <b id="max2050" style="font-size:30px; color: rgba(175, 0, 0, 0.6);"></b>
+                  </div>
+                  <div class="column">
+                    <b id="rain2050" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
+                  </div>
+                  <div class="column">
+                    <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
+                  </div>
+                  <div class="column">
+                    <b id="futureyear" style="font-size:30px;">2050</b>
+                  </div>
+                </div>
+              </div>
+              <!-- Question button & prompt -->
+              <div id="question_content" class="card-content" style="padding-top:0px;">
+                <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
+                <span id="random_question"></span>
+              </div>
+            </div>
+          </div>
+          <!-- End of question prompt -->
+
+          <!-- Story input goes here -->
+          <div class="animated zoomIn" style="animation-delay: 0.2s; padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+            <div class="card" style="margin-bottom: 0px;">
+              <div class="card-content" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                 <div class="columns">
                   <div class="column is-half is-offset-one-quarter">
                     <input class="input" onkeyup="checkValid()" type="text" id="title" name="title" placeholder="Give your story a title!"></input>
@@ -191,22 +184,22 @@
                 </div>
                 <textarea class="textarea" onkeyup="checkValid()" id="textarea1" name="story" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="Write your story here!"></textarea>
                 <br/>
-                <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:"
+                <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:"></input>
                 <div class="columns">
-                  <div class="column is-half is-offset-5">
+                  <div class="column is-half is-offset-5" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                     <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
                   </div>
                 </div>
-              </div>
+              </div>  
+            </div>
           </div>
           <div id="triangle-down" style="align: right;"></div>
-        </div>
-        <!-- End of story input -->
-      </form>
-      <!-- End of form -->
+          <!-- End of story input -->
+        </form>
+      </div>
+        <!-- End of form -->
+    </div>
   </div>
-</div>
-</div>
 
 <!-- About Us Modal -->
 <div class="modal" id="about_modal">
