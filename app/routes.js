@@ -39,7 +39,6 @@ module.exports = function(app) {
 		Story.find({}, function(err, docs) {
 			res.render('storylist_2.ejs', {
 				data : docs,
-				user : req.user
 			});
 		});
 	});
@@ -47,14 +46,13 @@ module.exports = function(app) {
 	app.get('/share', function(req, res) {
 		Place.find({}, function (error, result) {
 			res.render('share.ejs', {
-				user : req.user, // get user out of session and pass to the page
 				locs : result
 			});
 		});
 	});
 	app.post('/share', function(req, res) {
 		var newStory = new Story();
-		newStory.author = req.user.local.username;
+		newStory.author = req.body.user;
 		newStory.location = req.body.location;
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
