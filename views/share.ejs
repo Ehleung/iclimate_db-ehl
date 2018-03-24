@@ -81,7 +81,12 @@
           <!-- Location selection -->
           <div class="tile is-ancestor">
             <div class="tile is-3 is-parent">
-              <div class="tile is-child box" style="visibility: hidden;"></div>
+              <div class="tile is-child box" style="padding-top:35px;">
+                <center>
+                  <a class="button is-primary" id="shift" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
+                  <button class="button is-primary" id="sharesubmit" type="submit" style="display: none;">Submit your Story!</button>
+                </center>
+              </div>
             </div>
             <div class="tile is-6 is-parent">
               <div class="tile is-child box">
@@ -184,12 +189,6 @@
             </div>
             <!-- Side vertical bar -->
             <div class="tile is-3 is-vertical is-parent">
-              <div class="tile is-child box" style="padding-top:35px;">
-                <center>
-                  <a class="button is-primary" id="shift" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
-                  <button class="button is-primary" id="sharesubmit" type="submit" style="display: none;">Submit your Story!</button>
-                </center>
-              </div>
               <div id="questionbox"class="tile is-child box">
                 <!-- Question button & prompt -->
                 <div id="question_content" class="card-content" style="font-size: 18px; padding-top:0px;">
