@@ -79,16 +79,36 @@
     <div class="hover">
       <div class="row">
         <form action="/share" method="post">
-          <div class="select">
-            <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
-              <% locs.forEach(function(loc) { %>
-                <option value='<%=loc.name%>'><%= loc.name %></option>
-              <% }); %>
-            </select>
+          <!-- Location selection -->
+          <div class="tile is-ancestor">
+            <div class="tile is-4 is-parent">
+              <div class="tile is-child box">
+                <div class="select">
+                  <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
+                    <% locs.forEach(function(loc) { %>
+                      <option value='<%=loc.name%>'><%= loc.name %></option>
+                    <% }); %>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Question Prompt goes here -->
           <div class="tile is-ancestor">
+            <div class="tile is-1 is-vertical is-parent">
+              <div id="filler1" class="tile is-child box"></div>
+              <div class="tile is-child box">
+                <center>
+                  <b id="currentyear" style="font-size:30px;">2017</b>
+                </center>
+              </div>
+              <div class="tile is-child box">
+                <center>
+                  <b id="futureyear" style="font-size:30px;">2050</b>
+                </center>
+              </div>
+            </div>
             <div class="tile is-8 is-vertical is-parent">
               <!-- top row, labels -->
               <div class="tile is-child box">
@@ -109,12 +129,6 @@
                     Avg Plant Cover (%)
                     <i id="icon4" class="fa fa-leaf" style="font-size:30px;"></i>
                   </div>
-                  <!-- Shift column -->
-                  <div class="column is-half is-offset-one-quarter">
-                    <center>
-                      <a id="shift" class="button is-link" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
-                    </center>
-                  </div>
                 </div>
               </div> <!-- end of top row -->
               <!-- middle row, current data -->
@@ -122,11 +136,6 @@
                 <!-- Climate Data - 2nd row -->
                 <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                   <!-- Min temperature -->
-                  <div class="column">
-                    <center>
-                      <b id="currentyear" style="font-size:30px;">   2017</b>
-                    </center>
-                  </div>
                   <div class="column">
                     <center>
                       <b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
@@ -155,11 +164,6 @@
                 <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                   <div class="column">
                     <center>
-                      <b id="futureyear" style="font-size:30px;">2050</b>
-                    </center>
-                  </div>
-                  <div class="column">
-                    <center>
                       <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
                     </center>
                   </div>
@@ -180,10 +184,23 @@
             </div>
             <div class="tile is-3 is-vertical is-parent">
               <div class="tile is-child box">
+                <!-- Shift column -->
+                <div class="column is-half is-offset-one-quarter">
+                  <center>
+                    <a id="shift" class="button is-link" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
+                  </center>
+                </div>
+              </div>
+              <div class="tile is-child box">
                 <!-- Question button & prompt -->
                 <div id="question_content" class="card-content" style="padding-top:0px;">
                   <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
                   <span id="random_question"></span>
+                </div>
+                <div class="columns">
+                  <div class="column is-half is-offset-5" style="padding-top:0px;">
+                    <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -202,11 +219,6 @@
                 <textarea class="textarea" onkeyup="checkValid()" id="textarea1" name="story" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="Write your story here!"></textarea>
                 <br/>
                 <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:"></input>
-                <div class="columns">
-                  <div class="column is-half is-offset-5" style="padding-top:0px;">
-                    <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
-                  </div>
-                </div>
               </div>  
             </div>
           </div>
@@ -246,6 +258,7 @@
   // When the document first loads, set the button to invisible.
   $(document).ready(function() {
      document.getElementById("sharesubmit").style.visibility = "hidden";
+     document.getElementById("filler1").style.visibility = "hidden";
      hide_all();
   });
   window.sessionStorage.prevTopic = "";
