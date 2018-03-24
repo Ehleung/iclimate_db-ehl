@@ -142,61 +142,39 @@
                     <div class="column">
                       <center>
                         <span id="currentyear" style="font-size:25px;">2017</span>
+                        <br/>
+                        <span id="futureyear" style="font-size:25px;">2050</span>
                       </center>
                     </div>
                     <!-- Min temperature -->
                     <div class="column">
                       <center>
                         <span id="min" style="font-size:25px; color:rgba(33, 195, 239, 0.6);"></span>
+                        <br/>
+                        <span id="min2050" style="font-size:25px; color: rgba(33, 195, 239, 0.6);"></span>
                       </center>
                     </div>
                     <!-- Max temperature -->
                     <div class="column">
                       <center>
                         <span id="max" style="font-size:25px; color: rgba(255, 0, 0, 0.6);"></span>
+                        <br/>
+                        <span id="max2050" style="font-size:25px; color: rgba(175, 0, 0, 0.6);"></span>
                       </center>
                     </div>
                     <!-- Rain column -->
                     <div class="column">
                       <center>
                         <span id="rain" style="font-size:25px; color: rgba(11, 83, 226, 0.6);"></span>
+                        <br/>
+                        <span id="rain2050" style="font-size:25px; color: rgba(11, 83, 226, 0.6);"></span>
                       </center>
                     </div>
                     <!-- Plant cover column -->
                     <div class="column">
                       <center>
                         <span id="plant" style="font-size:25px; color: rgba(13, 135, 2, 0.6);"></span>
-                      </center>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- bottom row, future data -->
-              <div class="tile is-parent">
-                <div class="tile is-child box">
-                  <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                    <div class="column">
-                      <center>
-                        <span id="futureyear" style="font-size:25px;">2050</span>
-                      </center>
-                    </div>
-                    <div class="column">
-                      <center>
-                        <span id="min2050" style="font-size:25px; color: rgba(33, 195, 239, 0.6);"></span>
-                      </center>
-                    </div>
-                    <div class="column">
-                      <center>
-                        <span id="max2050" style="font-size:25px; color: rgba(175, 0, 0, 0.6);"></span>
-                      </center>
-                    </div>
-                    <div class="column">
-                      <center>
-                        <span id="rain2050" style="font-size:25px; color: rgba(11, 83, 226, 0.6);"></span>
-                      </center>
-                    </div>
-                    <div class="column">
-                      <center>
+                        <br/>
                         <span id="plant2050" style="font-size:25px; color: rgba(13, 135, 2, 0.6);"></span>
                       </center>
                     </div>
@@ -215,10 +193,10 @@
               <div id="questionbox"class="tile is-child box">
                 <!-- Question button & prompt -->
                 <div id="question_content" class="card-content" style="font-size: 18px; padding-top:0px;">
-                  <span id="random_question"></span>
+                  <span>What would happen to <b id="random_question"></b> here in the year 2050?</span>
                 </div>
                 <center>
-                  <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
+                  <a class="button is-primary waves-effect" onclick="shuffle_question()"><i class="fa fa-refresh"></i>New Topic!</a>
                 </center>
               </div>
             </div>

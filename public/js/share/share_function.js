@@ -37,12 +37,7 @@ function shuffle_question() {
     }
   }
   window.sessionStorage.prevTopic = topics[x];
-  
-  random_question = "What would happen to "
-  random_question += topics[x];
-  random_question += " here in the year 2050?";
-
-  document.getElementById("random_question").textContent=random_question;
+  document.getElementById("random_question").textContent=topics[x];
 }
 
 // Example: locations[i][0] <- refers to the location string
