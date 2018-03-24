@@ -76,7 +76,7 @@ function checkValid() {
   if (document.getElementById("location").value == "Choose your location...")
     location = false;
   else
-    document.getElementById("shift").style.visibility = "visible";
+    document.getElementById("shift").style.display = "block";
   if (document.getElementById("title").value == "")
     title = false;
   if (document.getElementById("textarea1").value == "")
@@ -84,7 +84,7 @@ function checkValid() {
   if (document.getElementById("user").value == "")
     name = false;
   
-  // Require all three variables to be true for button to appear
+  // Require all variables to be true for button to appear
   if (location == true && title == true && story == true && name == true && window.sessionStorage.clickedData == 1)
     validSubmit.style.display = "block";
   else
@@ -187,9 +187,8 @@ function newTemps(currentTemps) {
     window.sessionStorage.currentTemps = 1;
     window.sessionStorage.clickedData = 1;
 
-    if (window.sessionStorage.clickedData == 1) {
-      document.getElementById("question_content").style.visibility = "visible";
-      document.getElementById("shift").style.display = "none";
-    }
+    document.getElementById("question_content").style.visibility = "visible";
+    document.getElementById("shift").style.display = "none";
+    document.getElementById("sharesubmit").style.display = "block";
   }
 }
