@@ -81,14 +81,6 @@
           <!-- Location selection -->
           <div class="tile is-ancestor">
             <div class="tile is-5 is-parent">
-              <div class="tile is-child box" style="padding-top:35px;">
-                <center>
-                  <a class="button is-primary" id="shift" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
-                  <button class="button is-primary" id="sharesubmit" type="submit" style="display: none;">Submit your Story!</button>
-                </center>
-              </div>
-            </div>
-            <div class="tile is-5 is-parent">
               <div class="tile is-child box">
                 <div class="select">
                   <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
@@ -189,6 +181,11 @@
             </div>
             <!-- Side vertical bar -->
             <div class="tile is-3 is-vertical is-parent">
+              <div class="tile is-child box" style="padding-top:35px;">
+                <center>
+                  <a class="button is-primary" id="shift" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
+                </center>
+              </div>
               <div id="questionbox"class="tile is-child box">
                 <!-- Question button & prompt -->
                 <div id="question_content" class="card-content" style="font-size: 18px; padding-top:0px;">
@@ -210,8 +207,11 @@
                   <div class="column">
                     <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:" style="width:300px;"></input>
                   </div>
-                  <div class="column is-half is-offset-one-quarter">
+                  <div class="column">
                     <input class="input" onkeyup="checkValid()" type="text" id="title" name="title" placeholder="Give your story a title!" style="width:500px;"></input>
+                  </div>
+                  <div class="column">
+                    <button class="button is-primary" id="sharesubmit" type="submit" style="visibility: hidden;">Submit your Story!</button>
                   </div>
                 </div>
                 <textarea class="textarea" onkeyup="checkValid()" id="textarea1" name="story" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="Write your story here!"></textarea>

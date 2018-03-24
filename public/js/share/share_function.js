@@ -79,11 +79,10 @@ function checkValid() {
   
   // Require all variables to be true for button to appear
   if (location == true && title == true && story == true && name == true && window.sessionStorage.clickedData == 1) {
-    validSubmit.style.display = "block";
     validSubmit.style.visibility = "visible";
   }
   else
-    validSubmit.style.display = "none";
+    validSubmit.style.visibility = "hidden";
 }
 
 // Called when a location is first selected. 
@@ -114,7 +113,7 @@ function hide_all() {
 
 function updateTemps(locationStr) {
   // console.log(locationStr);
-  document.getElementById("sharesubmit").style.display = "none";
+  document.getElementById("sharesubmit").style.visibility = "hidden";
   window.sessionStorage.currentTemps = 0;
   window.sessionStorage.clickedData = 0;
   var i;
@@ -185,6 +184,6 @@ function newTemps(currentTemps) {
 
     document.getElementById("question_content").style.visibility = "visible";
     document.getElementById("shift").style.display = "none";
-    document.getElementById("sharesubmit").style.display = "block";
+    document.getElementById("sharesubmit").style.visibility = "visible";
   }
 }
