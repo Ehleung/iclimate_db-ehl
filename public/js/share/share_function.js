@@ -90,7 +90,8 @@ function hide_all() {
   document.getElementById("shift").style.display = "none";
   document.getElementById("questionbox").style.display = "none";
   document.getElementById("input_box").style.display = "none";
-  document.getElementById("data_tiles").style.display = "none";
+  document.getElementById("label_tile").style.display = "none";
+    document.getElementById("data_tile").style.display = "none";
 
   document.getElementById("label0").style.visibility = "hidden";
   document.getElementById("label1").style.visibility = "hidden";
@@ -129,7 +130,8 @@ function updateTemps(locationStr) {
   hide_all();
 
   if (locationStr != "Choose your location...") {
-    document.getElementById("data_tiles").style.display = "block";
+    document.getElementById("label_tile").style.display = "block";
+    document.getElementById("data_tile").style.display = "block";
     document.getElementById("shift").style.display = "block";
     document.getElementById("shift").style.visibility = "visible";
     document.getElementById("questionbox").style.display = "block";

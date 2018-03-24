@@ -79,7 +79,7 @@
     <div class="hover">
         <form action="/share" method="post">
           <!-- Ancestor tile -->
-          <div class="tile is-ancestor" id="data_tiles">
+          <div class="tile is-ancestor">
             <div class="tile is-vertical is-9">
               <!-- Location selection -->
               <div class="tile is-parent">
@@ -99,7 +99,7 @@
                 </div>
               </div>
               <!-- top row, labels -->
-              <div class="tile is-parent">
+              <div class="tile is-parent" id="label_tile">
                 <div class="tile is-child box">
                   <div class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                     <div id="label0" class="column" style="font-size:30px;">
@@ -135,7 +135,7 @@
                 </div> <!-- end of top row -->
               </div>
               <!-- middle row, current data -->
-              <div class="tile is-parent">
+              <div class="tile is-parent" id="data_tile">
                 <div class="tile is-child box" style="padding-bottom:0px; margin-bottom: 0px;">
                   <!-- Climate Data - 2nd row -->
                   <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
