@@ -81,7 +81,7 @@
           
           <!-- Location selection -->
           <div class="tile is-ancestor">
-            <div class="tile is-parent is-6">
+            <div class="tile is-parent">
               <div class="tile is-child box">
                 <div class="select">
                   <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
@@ -92,8 +92,8 @@
                 </div>
               </div>
             </div>
-            <div class="tile is-parent is-5">
-              <div class="tile is-child box is-6" id="shift" style="padding-top:35px;">
+            <div class="tile is-parent">
+              <div class="tile is-child box" id="shift" style="padding-top:35px;">
                 <center>
                   <a class="button is-primary" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
                 </center>
