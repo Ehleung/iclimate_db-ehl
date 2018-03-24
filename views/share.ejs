@@ -97,33 +97,30 @@
             </div>
           </div>
 
-          <!-- Question Prompt goes here -->
+          <!-- Ancestor tile -->
           <div class="tile is-ancestor">
-            <div class="tile is-vertical is-2 is-parent">
-              <div class="tile is-child box" style="visibility: hidden;"></div>
-            </div>
-            <div class="tile is-vertical is-8">
+            <div class="tile is-vertical is-9">
               <!-- top row, labels -->
               <div class="tile is-parent">
                 <div class="tile is-child box">
-                  <div id="labels" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                    <div id="label0" class="column is-narrow">
+                  <div class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                    <div id="label0" class="column is-narrow" style="font-size:30px;">
                       Year
                     </div>
                     <div id="label1" class="column is-narrow">
                       <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px;"></i>
-                      Avg Min<br/> Temp (°F)
+                      Avg Min<br/>   Temp (°F)
                     </div>
                     <div id="label2"  class="column is-narrow">
                       <i id="icon2" class="fa fa-thermometer-full" style="font-size:30px;"></i>
-                      Avg Max Temp (°F)
+                      Avg Max<br/>   Temp (°F)
                     </div>
                     <div id="label3" class="column is-narrow">
                       Avg Rain (in.)
                       <i id="icon3" class="fa fa-tint" style="font-size:30px;"></i>
                     </div>
                     <div id="label4" class="column is-narrow">
-                      Avg Plant Cover (%)
+                      Avg Plant<br/> Cover (%)
                       <i id="icon4" class="fa fa-leaf" style="font-size:30px;"></i>
                     </div>
                   </div>
@@ -135,27 +132,23 @@
                   <!-- Climate Data - 2nd row -->
                   <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                     <div class="column">
-                      <p id="currentyear" style="font-size:30px;">2017</p>
+                      <p id="currentyear" style="font-size:20px;">2017</p>
                     </div>
                     <!-- Min temperature -->
                     <div class="column">
-                      <center>
-                        <p id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></p>
-                      </center>
+                      <p id="min" style="font-size:20px; color:rgba(33, 195, 239, 0.6);"></p>
                     </div>
                     <!-- Max temperature -->
                     <div class="column">
-                      <center>
-                        <p id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></p>
-                      </center>
+                      <p id="max" style="font-size:20px; color: rgba(255, 0, 0, 0.6);"></p>
                     </div>
                     <!-- Rain column -->
                     <div class="column">
-                      <p id="rain" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></p>
+                      <p id="rain" style="font-size:20px; color: rgba(11, 83, 226, 0.6);"></p>
                     </div>
                     <!-- Plant cover column -->
                     <div class="column">
-                      <p id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></p>
+                      <p id="plant" style="font-size:20px; color: rgba(13, 135, 2, 0.6);"></p>
                     </div>
                     <div class="column"></div>
                   </div>
@@ -166,25 +159,20 @@
                 <div class="tile is-child box">
                   <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                     <div class="column">
-                      <b id="futureyear" style="font-size:30px;">2050</b>
+                      <p id="futureyear" style="font-size:20px;">2050</p>
                     </div>
                     <div class="column">
-                      <center>
-                        <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
-                      </center>
+                      <p id="min2050" style="font-size:20px; color: rgba(33, 195, 239, 0.6);"></p>
                     </div>
                     <div class="column">
-                      <center>
-                        <b id="max2050" style="font-size:30px; color: rgba(175, 0, 0, 0.6);"></b>
-                      </center>
+                      <p id="max2050" style="font-size:20px; color: rgba(175, 0, 0, 0.6);"></p>
                     </div>
                     <div class="column">
-                      <b id="rain2050" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
+                      <p id="rain2050" style="font-size:20px; color: rgba(11, 83, 226, 0.6);"></p>
                     </div>
                     <div class="column">
-                      <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
+                      <p id="plant2050" style="font-size:20px; color: rgba(13, 135, 2, 0.6);"></p>
                     </div>
-                    <div class="column"></div>
                   </div>
                 </div>
               </div>

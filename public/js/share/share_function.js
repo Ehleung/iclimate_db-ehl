@@ -93,6 +93,7 @@ function checkValid() {
 
 // Called when a location is first selected. 
 function hide_all() {
+  document.getElementById("label0").style.visibility = "hidden";
   document.getElementById("label1").style.visibility = "hidden";
   document.getElementById("label2").style.visibility = "hidden";
   document.getElementById("label3").style.visibility = "hidden";
@@ -131,6 +132,7 @@ function updateTemps(locationStr) {
   if (locationStr != "Choose your location...") {
     document.getElementById("shift").style.visibility = "visible";
     document.getElementById("currentyear").style.visibility = "visible";
+    document.getElementById("label1").style.visibility = "visible";
 
     if (locations[i][1][0] != -200) {
       document.getElementById("min").innerHTML = locations[i][1][0];
