@@ -136,7 +136,7 @@
               </div>
               <!-- middle row, current data -->
               <div class="tile is-parent">
-                <div class="tile is-child box">
+                <div class="tile is-child box" style="padding-bottom:0px; margin-bottom: 0px;">
                   <!-- Climate Data - 2nd row -->
                   <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                     <div class="column">
@@ -193,10 +193,10 @@
               <div id="questionbox"class="tile is-child box">
                 <!-- Question button & prompt -->
                 <div id="question_content" class="card-content" style="font-size: 18px; padding-top:0px;">
-                  <span>What would happen to <b id="random_question"></b> here in the year 2050?</span>
+                  <span>What would happen to <span style="color: #00D1B2;" id="random_question"></span> here in the year 2050?</span>
                 </div>
                 <center>
-                  <a class="button is-primary waves-effect" onclick="shuffle_question()"><i class="fa fa-refresh"></i>New Topic!</a>
+                  <a class="button is-primary waves-effect" onclick="shuffle_question()"><i class="fa fa-refresh" style="font-size:30px;"></i>New Topic!</a>
                 </center>
               </div>
             </div>
