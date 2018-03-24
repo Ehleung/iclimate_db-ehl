@@ -120,13 +120,14 @@ function hide_all() {
 function updateTemps(locationStr) {
   // console.log(locationStr);
   window.sessionStorage.currentTemps = 0;
+  window.sessionStorage.clickedData = 0;
+  document.getElementById("sharesubmit").style.visibility = "hidden";
   var i;
   for (i = 0; i < locations.length; i++) {
     if (locations[i][0] == locationStr)
       break
   }
   window.sessionStorage.curr_location_index = i;
-  window.sessionStorage.clickedData = 0;
   hide_all();
 
   if (locationStr != "Choose your location...") {
