@@ -102,9 +102,11 @@
             <div class="tile is-vertical is-8">
               <!-- top row, labels -->
               <div class="tile is-parent">
-                <div class="tile is-child is-2" style="visibility: hidden;"></div>
-                <div class="tile is-child is-6">
+                <div class="tile is-child box">
                   <div id="labels" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                    <div id="label0" class="column is-narrow">
+                      Year
+                    </div>
                     <div id="label1" class="column is-narrow">
                       <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px;"></i>
                       Avg Min Temp (°F)
@@ -185,17 +187,16 @@
               </div>
             </div>
             <div class="tile is-3 is-vertical is-parent">
-              <div class="tile is-child box">
-                <!-- Shift column -->
-                <a id="shift" class="button is-link" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
-              </div>
+              <div id="shift" class="tile is-child box" style="cursor: pointer;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</div>
               <div class="tile is-child box">
                 <!-- Question button & prompt -->
                 <div id="question_content" class="card-content" style="font-size: 20px; padding-top:0px;">
                   <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
                   <span id="random_question"></span>
                 </div>
-                <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
+                <center>
+                  <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
+                </center>
               </div>
             </div>
           </div>  
