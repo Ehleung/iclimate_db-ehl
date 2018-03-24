@@ -86,7 +86,7 @@ function checkValid() {
   
   // Require all three variables to be true for button to appear
   if (location == true && title == true && story == true && name == true && window.sessionStorage.clickedData == 1)
-    validSubmit.style.display = "inline";
+    validSubmit.style.display = "block";
   else
     validSubmit.style.display = "none";
 }
@@ -98,7 +98,7 @@ function hide_all() {
   document.getElementById("label2").style.visibility = "hidden";
   document.getElementById("label3").style.visibility = "hidden";
   document.getElementById("label4").style.visibility = "hidden";
-  document.getElementById("shift").style.visibility = "hidden";
+  document.getElementById("shift").style.display = "none";
 
   document.getElementById("min").style.visibility = "hidden";
   document.getElementById("max").style.visibility = "hidden";
@@ -131,7 +131,7 @@ function updateTemps(locationStr) {
   hide_all();
 
   if (locationStr != "Choose your location...") {
-    document.getElementById("shift").style.display = "inline";
+    document.getElementById("shift").style.display = "block";
     document.getElementById("currentyear").style.visibility = "visible";
     document.getElementById("label0").style.visibility = "visible";
 
