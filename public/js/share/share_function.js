@@ -191,6 +191,5 @@ function newTemps(currentTemps) {
     document.getElementById("question_content").style.visibility = "visible";
     document.getElementById("shift").style.display = "none";
     document.getElementById("sharesubmit").style.display = "block";
-    document.getElementById("sharesubmit").style.visibility = "visible";
   }
 }
