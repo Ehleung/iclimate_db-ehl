@@ -83,8 +83,10 @@ function checkValid() {
     name = false;
   
   // Require all variables to be true for button to appear
-  if (location == true && title == true && story == true && name == true && window.sessionStorage.clickedData == 1)
+  if (location == true && title == true && story == true && name == true && window.sessionStorage.clickedData == 1) {
     validSubmit.style.display = "block";
+    validSubmit.style.visibility = "visible";
+  }
   else
     validSubmit.style.display = "none";
 }
@@ -130,6 +132,7 @@ function updateTemps(locationStr) {
 
   if (locationStr != "Choose your location...") {
     document.getElementById("shift").style.display = "block";
+    document.getElementById("shift").style.visibility = "visible";
     document.getElementById("currentyear").style.visibility = "visible";
     document.getElementById("label0").style.visibility = "visible";
 
@@ -188,5 +191,6 @@ function newTemps(currentTemps) {
     document.getElementById("question_content").style.visibility = "visible";
     document.getElementById("shift").style.display = "none";
     document.getElementById("sharesubmit").style.display = "block";
+    document.getElementById("sharesubmit").style.visibility = "visible";
   }
 }
