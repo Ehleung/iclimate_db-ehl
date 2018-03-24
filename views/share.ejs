@@ -80,7 +80,7 @@
         <form action="/share" method="post">
           <!-- Location selection -->
           <div class="tile is-ancestor">
-            <div class="tile is-5 is-parent">
+            <div class="tile is-6 is-parent">
               <div class="tile is-child box">
                 <div class="select">
                   <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
@@ -89,6 +89,11 @@
                     <% }); %>
                   </select>
                 </div>
+              </div>
+              <div class="tile is-child box" id="shift" style="padding-top:35px;">
+                <center>
+                  <a class="button is-primary" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
+                </center>
               </div>
             </div>
           </div>
@@ -181,18 +186,13 @@
             </div>
             <!-- Side vertical bar -->
             <div class="tile is-3 is-vertical is-parent">
-              <div class="tile is-child box" id="shift" style="padding-top:35px;">
-                <center>
-                  <a class="button is-primary" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
-                </center>
-              </div>
               <div id="questionbox"class="tile is-child box">
                 <!-- Question button & prompt -->
                 <div id="question_content" class="card-content" style="font-size: 18px; padding-top:0px;">
                   <span>What would happen to <span style="color: #00D1B2;" id="random_question"></span> here in the year 2050?</span>
                 </div>
                 <center>
-                  <a class="button is-primary waves-effect" onclick="shuffle_question()"><i class="fa fa-refresh" style="font-size:30px;"></i>New Topic!</a>
+                  <a class="button is-primary waves-effect" id="shuffle_button" onclick="shuffle_question()"><i class="fa fa-refresh" style="font-size:30px;"></i>New Topic!</a>
                 </center>
               </div>
             </div>
@@ -202,7 +202,7 @@
           <!-- Story input goes here -->
           <div class="tile is-ancestor">
             <div class="tile is-parent">
-              <div class="tile is-child box">
+              <div class="tile is-child box" id="input_box">
                 <div class="columns">
                   <div class="column">
                     <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:" style="width:300px;"></input>

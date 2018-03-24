@@ -87,12 +87,16 @@ function checkValid() {
 
 // Called when a location is first selected. 
 function hide_all() {
+  document.getElementById("shift").style.display = "none";
+  document.getElementById("questionbox").style.display = "none";
+  document.getElementById("input_box").style.display = "none";
+
+
   document.getElementById("label0").style.visibility = "hidden";
   document.getElementById("label1").style.visibility = "hidden";
   document.getElementById("label2").style.visibility = "hidden";
   document.getElementById("label3").style.visibility = "hidden";
   document.getElementById("label4").style.visibility = "hidden";
-  document.getElementById("shift").style.display = "none";
 
   document.getElementById("min").style.visibility = "hidden";
   document.getElementById("max").style.visibility = "hidden";
@@ -106,7 +110,7 @@ function hide_all() {
   document.getElementById("plant2050").style.visibility = "hidden";
   document.getElementById("futureyear").style.visibility = "hidden";
   
-  document.getElementById("question_content").style.visibility = "hidden";
+  
   // Init clickedData to track whether a user has clicked on new data or not.
   window.sessionStorage.clickedData = 0;
 }
@@ -127,6 +131,8 @@ function updateTemps(locationStr) {
   if (locationStr != "Choose your location...") {
     document.getElementById("shift").style.display = "block";
     document.getElementById("shift").style.visibility = "visible";
+    document.getElementById("questionbox").style.display = "block";
+    document.getElementById("shuffle_button").style.visibility = "visible";
     document.getElementById("currentyear").style.visibility = "visible";
     document.getElementById("label0").style.visibility = "visible";
 
@@ -182,8 +188,9 @@ function newTemps(currentTemps) {
     window.sessionStorage.currentTemps = 1;
     window.sessionStorage.clickedData = 1;
 
+    document.getElementById("questionbox").style.display = "block";
     document.getElementById("question_content").style.visibility = "visible";
     document.getElementById("shift").style.display = "none";
-    document.getElementById("sharesubmit").style.visibility = "visible";
+    document.getElementById("input_box").style.display = "none";
   }
 }
