@@ -143,31 +143,31 @@
                   <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                     <div class="column">
                       <center>
-                        <span id="currentyear" style="font-size:20px;">2017</span>
+                        <span id="currentyear" style="font-size:25px;">2017</span>
                       </center>
                     </div>
                     <!-- Min temperature -->
                     <div class="column">
                       <center>
-                        <span id="min" style="font-size:20px; color:rgba(33, 195, 239, 0.6);"></span>
+                        <span id="min" style="font-size:25px; color:rgba(33, 195, 239, 0.6);"></span>
                       </center>
                     </div>
                     <!-- Max temperature -->
                     <div class="column">
                       <center>
-                        <span id="max" style="font-size:20px; color: rgba(255, 0, 0, 0.6);"></span>
+                        <span id="max" style="font-size:25px; color: rgba(255, 0, 0, 0.6);"></span>
                       </center>
                     </div>
                     <!-- Rain column -->
                     <div class="column">
                       <center>
-                        <span id="rain" style="font-size:20px; color: rgba(11, 83, 226, 0.6);"></span>
+                        <span id="rain" style="font-size:25px; color: rgba(11, 83, 226, 0.6);"></span>
                       </center>
                     </div>
                     <!-- Plant cover column -->
                     <div class="column">
                       <center>
-                        <span id="plant" style="font-size:20px; color: rgba(13, 135, 2, 0.6);"></span>
+                        <span id="plant" style="font-size:25px; color: rgba(13, 135, 2, 0.6);"></span>
                       </center>
                     </div>
                   </div>
@@ -179,27 +179,27 @@
                   <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                     <div class="column">
                       <center>
-                        <span id="futureyear" style="font-size:20px;">2050</span>
+                        <span id="futureyear" style="font-size:25px;">2050</span>
                       </center>
                     </div>
                     <div class="column">
                       <center>
-                        <span id="min2050" style="font-size:20px; color: rgba(33, 195, 239, 0.6);"></span>
+                        <span id="min2050" style="font-size:25px; color: rgba(33, 195, 239, 0.6);"></span>
                       </center>
                     </div>
                     <div class="column">
                       <center>
-                        <span id="max2050" style="font-size:20px; color: rgba(175, 0, 0, 0.6);"></span>
+                        <span id="max2050" style="font-size:25px; color: rgba(175, 0, 0, 0.6);"></span>
                       </center>
                     </div>
                     <div class="column">
                       <center>
-                        <span id="rain2050" style="font-size:20px; color: rgba(11, 83, 226, 0.6);"></span>
+                        <span id="rain2050" style="font-size:25px; color: rgba(11, 83, 226, 0.6);"></span>
                       </center>
                     </div>
                     <div class="column">
                       <center>
-                        <span id="plant2050" style="font-size:20px; color: rgba(13, 135, 2, 0.6);"></span>
+                        <span id="plant2050" style="font-size:25px; color: rgba(13, 135, 2, 0.6);"></span>
                       </center>
                     </div>
                   </div>
@@ -208,7 +208,7 @@
             </div>
             <!-- Side vertical bar -->
             <div class="tile is-3 is-vertical is-parent">
-              <div id="shift" class="tile is-child box" style="cursor: pointer;" onclick="newTemps(window.sessionStorage.currentTemps)">
+              <div id="shift" class="tile is-child box" style="padding-top:35px; cursor: pointer;" onclick="newTemps(window.sessionStorage.currentTemps)">
                 <center>
                   View data from 2050!
                 </center>
@@ -228,9 +228,9 @@
           <!-- End of question prompt -->
 
           <!-- Story input goes here -->
-          <div class="animated zoomIn" style="animation-delay: 0.2s; padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-            <div class="card" style="margin-bottom: 0px;">
-              <div class="card-content" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+          <div class="tile is-9 is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child box">
                 <div class="columns">
                   <div class="column is-half is-offset-one-quarter">
                     <input class="input" onkeyup="checkValid()" type="text" id="title" name="title" placeholder="Give your story a title!"></input>
@@ -239,10 +239,9 @@
                 <textarea class="textarea" onkeyup="checkValid()" id="textarea1" name="story" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="Write your story here!"></textarea>
                 <br/>
                 <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:"></input>
-              </div>  
+              </div>
             </div>
           </div>
-          <div id="triangle-down" style="align: right;"></div>
           <!-- End of story input -->
         </form>
       </div>
