@@ -206,19 +206,19 @@
             </div>
             <!-- Side vertical bar -->
             <div class="tile is-3 is-vertical is-parent">
-              <div id="shift" class="tile is-child box" style="padding-top:35px; cursor: pointer;" onclick="newTemps(window.sessionStorage.currentTemps)">
+              <div class="tile is-child box" style="padding-top:35px; cursor: pointer;">
                 <center>
-                  View data from 2050!
+                  <a class="button is-primary" id="shift" style="display: inline;" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
+                  <button class="button is-primary" id="sharesubmit" type="submit" style="display: none;">Submit your Story!</button>
                 </center>
               </div>
               <div id="questionbox"class="tile is-child box">
                 <!-- Question button & prompt -->
                 <div id="question_content" class="card-content" style="font-size: 18px; padding-top:0px;">
-                  <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
                   <span id="random_question"></span>
                 </div>
                 <center>
-                  <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
+                  <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
                 </center>
               </div>
             </div>
@@ -226,17 +226,18 @@
           <!-- End of question prompt -->
 
           <!-- Story input goes here -->
-          <div class="tile is-12 is-ancestor">
+          <div class="tile is-ancestor">
             <div class="tile is-parent">
               <div class="tile is-child box">
                 <div class="columns">
+                  <div class="column">
+                    <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:" style="width:300px;"></input>
+                  </div>
                   <div class="column is-half is-offset-one-quarter">
-                    <input class="input" onkeyup="checkValid()" type="text" id="title" name="title" placeholder="Give your story a title!"></input>
+                    <input class="input" onkeyup="checkValid()" type="text" id="title" name="title" placeholder="Give your story a title!" style="width:500px;"></input>
                   </div>
                 </div>
                 <textarea class="textarea" onkeyup="checkValid()" id="textarea1" name="story" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="Write your story here!"></textarea>
-                <br/>
-                <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:"></input>
               </div>
             </div>
           </div>

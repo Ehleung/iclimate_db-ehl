@@ -86,9 +86,9 @@ function checkValid() {
   
   // Require all three variables to be true for button to appear
   if (location == true && title == true && story == true && name == true && window.sessionStorage.clickedData == 1)
-    validSubmit.style.visibility = "visible";
+    validSubmit.style.display = "inline";
   else
-    validSubmit.style.visibility = "hidden";
+    validSubmit.style.display = "none";
 }
 
 // Called when a location is first selected. 
@@ -119,9 +119,9 @@ function hide_all() {
 
 function updateTemps(locationStr) {
   // console.log(locationStr);
+  document.getElementById("sharesubmit").style.display = "none";
   window.sessionStorage.currentTemps = 0;
   window.sessionStorage.clickedData = 0;
-  document.getElementById("sharesubmit").style.visibility = "hidden";
   var i;
   for (i = 0; i < locations.length; i++) {
     if (locations[i][0] == locationStr)
@@ -131,7 +131,7 @@ function updateTemps(locationStr) {
   hide_all();
 
   if (locationStr != "Choose your location...") {
-    document.getElementById("shift").style.visibility = "visible";
+    document.getElementById("shift").style.display = "inline";
     document.getElementById("currentyear").style.visibility = "visible";
     document.getElementById("label0").style.visibility = "visible";
 
@@ -187,7 +187,9 @@ function newTemps(currentTemps) {
     window.sessionStorage.currentTemps = 1;
     window.sessionStorage.clickedData = 1;
 
-    if (window.sessionStorage.clickedData == 1)
+    if (window.sessionStorage.clickedData == 1) {
       document.getElementById("question_content").style.visibility = "visible";
+      document.getElementById("shift").style.display = "none";
+    }
   }
 }
