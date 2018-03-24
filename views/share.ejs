@@ -104,32 +104,32 @@
               <div class="tile is-parent">
                 <div class="tile is-child box">
                   <div class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                    <div id="label0" class="column" style="font-size:20px;">
+                    <div id="label0" class="column" style="font-size:30px;">
                       <center>
                         Year
                       </center>
                     </div>
                     <div id="label1" class="column ">
                       <center>
-                        <i id="icon1" class="fa fa-thermometer-empty" style="font-size:20px;"></i>
+                        <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px;"></i>
                         Avg Min<br/>   Temp (°F)
                       </center>
                     </div>
                     <div id="label2"  class="column ">
                       <center>
-                        <i id="icon2" class="fa fa-thermometer-full" style="font-size:20px;"></i>
+                        <i id="icon2" class="fa fa-thermometer-full" style="font-size:30px;"></i>
                         Avg Max<br/>   Temp (°F)
                       </center>
                     </div>
                     <div id="label3" class="column ">
                       <center>
-                        <i id="icon3" class="fa fa-tint" style="font-size:20px;"></i>
+                        <i id="icon3" class="fa fa-tint" style="font-size:30px;"></i>
                         Avg Rain (in.)
                       </center>
                     </div>
                     <div id="label4" class="column ">
                       <center>
-                        <i id="icon4" class="fa fa-leaf" style="font-size:20px;"></i>
+                        <i id="icon4" class="fa fa-leaf" style="font-size:30px;"></i>
                         Avg Plant<br/> Cover (%)
                       </center>
                     </div>
@@ -179,42 +179,43 @@
                   <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
                     <div class="column">
                       <center>
-                        <p id="futureyear" style="font-size:20px;">2050</p>
+                        <span id="futureyear" style="font-size:20px;">2050</span>
                       </center>
                     </div>
                     <div class="column">
                       <center>
-                        <p id="min2050" style="font-size:20px; color: rgba(33, 195, 239, 0.6);"></p>
+                        <span id="min2050" style="font-size:20px; color: rgba(33, 195, 239, 0.6);"></span>
                       </center>
                     </div>
                     <div class="column">
                       <center>
-                        <p id="max2050" style="font-size:20px; color: rgba(175, 0, 0, 0.6);"></p>
+                        <span id="max2050" style="font-size:20px; color: rgba(175, 0, 0, 0.6);"></span>
                       </center>
                     </div>
                     <div class="column">
                       <center>
-                        <p id="rain2050" style="font-size:20px; color: rgba(11, 83, 226, 0.6);"></p>
+                        <span id="rain2050" style="font-size:20px; color: rgba(11, 83, 226, 0.6);"></span>
                       </center>
                     </div>
                     <div class="column">
                       <center>
-                        <p id="plant2050" style="font-size:20px; color: rgba(13, 135, 2, 0.6);"></p>
+                        <span id="plant2050" style="font-size:20px; color: rgba(13, 135, 2, 0.6);"></span>
                       </center>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Side vertical bar -->
             <div class="tile is-3 is-vertical is-parent">
               <div id="shift" class="tile is-child box" style="cursor: pointer;" onclick="newTemps(window.sessionStorage.currentTemps)">
                 <center>
                   View data from 2050!
                 </center>
               </div>
-              <div class="tile is-child box">
+              <div id="questionbox"class="tile is-child box">
                 <!-- Question button & prompt -->
-                <div id="question_content" class="card-content" style="font-size: 20px; padding-top:0px;">
+                <div id="question_content" class="card-content" style="font-size: 18px; padding-top:0px;">
                   <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
                   <span id="random_question"></span>
                 </div>
