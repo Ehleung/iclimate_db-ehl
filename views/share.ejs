@@ -80,8 +80,8 @@
         <form action="/share" method="post">
           <!-- Location selection -->
           <div class="tile is-ancestor">
-            <div class="tile is-6 is-parent">
-              <div class="tile is-child box">
+            <div class="tile is-parent">
+              <div class="tile is-child box is-6">
                 <div class="select">
                   <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
                     <% locs.forEach(function(loc) { %>
@@ -98,7 +98,7 @@
             </div>
           </div>
           <!-- Ancestor tile -->
-          <div class="tile is-ancestor">
+          <div class="tile is-ancestor" id="data_tiles">
             <div class="tile is-vertical is-9">
               <!-- top row, labels -->
               <div class="tile is-parent">
