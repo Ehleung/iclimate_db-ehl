@@ -132,7 +132,7 @@ function updateTemps(locationStr) {
   if (locationStr != "Choose your location...") {
     document.getElementById("shift").style.visibility = "visible";
     document.getElementById("currentyear").style.visibility = "visible";
-    document.getElementById("label1").style.visibility = "visible";
+    document.getElementById("label0").style.visibility = "visible";
 
     if (locations[i][1][0] != -200) {
       document.getElementById("min").innerHTML = locations[i][1][0];
