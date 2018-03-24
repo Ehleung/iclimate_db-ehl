@@ -75,8 +75,6 @@ function checkValid() {
 
   if (document.getElementById("location").value == "Choose your location...")
     location = false;
-  else
-    document.getElementById("shift").style.display = "block";
   if (document.getElementById("title").value == "")
     title = false;
   if (document.getElementById("textarea1").value == "")
