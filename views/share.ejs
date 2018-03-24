@@ -78,26 +78,29 @@
   <div id="earth_div"  class="wrapper">
     <div class="hover">
         <form action="/share" method="post">
+          
+          <!-- Location selection -->
+          <div class="tile is-ancestor">
+            <div class="tile is-parent is-9">
+              <div class="tile is-child box is-6">
+                <div class="select">
+                  <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
+                    <% locs.forEach(function(loc) { %>
+                      <option value='<%=loc.name%>'><%= loc.name %></option>
+                    <% }); %>
+                  </select>
+                </div>
+              </div>
+              <div class="tile is-child box is-3" id="shift" style="padding-top:35px;">
+                <center>
+                  <a class="button is-primary" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
+                </center>
+              </div>
+            </div>
+          </div>
           <!-- Ancestor tile -->
           <div class="tile is-ancestor">
             <div class="tile is-vertical is-9">
-              <!-- Location selection -->
-              <div class="tile is-parent">
-                <div class="tile is-child box is-5">
-                  <div class="select">
-                    <select name="location" id="location" onchange="checkValid();updateTemps(window.sessionStorage.selectedLoc);">
-                      <% locs.forEach(function(loc) { %>
-                        <option value='<%=loc.name%>'><%= loc.name %></option>
-                      <% }); %>
-                    </select>
-                  </div>
-                </div>
-                <div class="tile is-child box" id="shift" style="padding-top:35px;">
-                  <center>
-                    <a class="button is-primary" onclick="newTemps(window.sessionStorage.currentTemps)">Click to view data from 2050!</a>
-                  </center>
-                </div>
-              </div>
               <!-- top row, labels -->
               <div class="tile is-parent" id="label_tile">
                 <div class="tile is-child box">
