@@ -81,6 +81,9 @@
         <form action="/share" method="post">
           <!-- Location selection -->
           <div class="tile is-ancestor">
+            <div class="tile is-2 is-parent">
+              <div class="tile is-child box" style="visibility: hidden;"></div>
+            </div>
             <div class="tile is-4 is-parent">
               <div class="tile is-child box">
                 <div class="select">
@@ -96,112 +99,103 @@
 
           <!-- Question Prompt goes here -->
           <div class="tile is-ancestor">
-            <div class="tile is-1 is-vertical is-parent">
-              <div id="filler1" class="tile is-child box"></div>
-              <div class="tile is-child box">
-                <center>
-                  <b id="currentyear" style="font-size:30px;">2017</b>
-                </center>
-              </div>
-              <div class="tile is-child box">
-                <center>
-                  <b id="futureyear" style="font-size:30px;">2050</b>
-                </center>
-              </div>
-            </div>
-            <div class="tile is-8 is-vertical is-parent">
+            <div class="tile is-vertical is-8">
               <!-- top row, labels -->
-              <div class="tile is-child box">
-                <div id="labels" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                  <div id="label1" class="column is-narrow">
-                    <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px;"></i>
-                    Avg Min Temp (°F)
+              <div class="tile is-parent">
+                <div class="tile is-child is-2" style="visibility: hidden;"></div>
+                <div class="tile is-child is-6">
+                  <div id="labels" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                    <div id="label1" class="column is-narrow">
+                      <i id="icon1" class="fa fa-thermometer-empty" style="font-size:30px;"></i>
+                      Avg Min Temp (°F)
+                    </div>
+                    <div id="label2"  class="column is-narrow">
+                      <i id="icon2" class="fa fa-thermometer-full" style="font-size:30px;"></i>
+                      Avg Max Temp (°F)
+                    </div>
+                    <div id="label3" class="column is-narrow">
+                      Avg Rain (in.)
+                      <i id="icon3" class="fa fa-tint" style="font-size:30px;"></i>
+                    </div>
+                    <div id="label4" class="column is-narrow">
+                      Avg Plant Cover (%)
+                      <i id="icon4" class="fa fa-leaf" style="font-size:30px;"></i>
+                    </div>
                   </div>
-                  <div id="label2"  class="column is-narrow">
-                    <i id="icon2" class="fa fa-thermometer-full" style="font-size:30px;"></i>
-                    Avg Max Temp (°F)
-                  </div>
-                  <div id="label3" class="column is-narrow">
-                    Avg Rain (in.)
-                    <i id="icon3" class="fa fa-tint" style="font-size:30px;"></i>
-                  </div>
-                  <div id="label4" class="column is-narrow">
-                    Avg Plant Cover (%)
-                    <i id="icon4" class="fa fa-leaf" style="font-size:30px;"></i>
-                  </div>
-                </div>
-              </div> <!-- end of top row -->
+                </div> <!-- end of top row -->
+              </div>
               <!-- middle row, current data -->
-              <div class="tile is-child box">
-                <!-- Climate Data - 2nd row -->
-                <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                  <!-- Min temperature -->
-                  <div class="column">
-                    <center>
-                      <b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
-                    </center>
+              <div class="tile is-parent">
+                <div class="tile is-child box">
+                  <!-- Climate Data - 2nd row -->
+                  <div id="current_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                    <div class="column">
+                      <b id="currentyear" style="font-size:30px;">2017</b>
+                    </div>
+                    <!-- Min temperature -->
+                    <div class="column">
+                      <center>
+                        <b id="min" style="font-size:30px; color:rgba(33, 195, 239, 0.6);"></b>
+                      </center>
+                    </div>
+                    <!-- Max temperature -->
+                    <div class="column">
+                      <center>
+                        <b id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></b>
+                      </center>
+                    </div>
+                    <!-- Rain column -->
+                    <div class="column">
+                      <b id="rain" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
+                    </div>
+                    <!-- Plant cover column -->
+                    <div class="column">
+                      <b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
+                    </div>
+                    <div class="column"></div>
                   </div>
-                  <!-- Max temperature -->
-                  <div class="column">
-                    <center>
-                      <b id="max" style="font-size:30px; color: rgba(255, 0, 0, 0.6);"></b>
-                    </center>
-                  </div>
-                  <!-- Rain column -->
-                  <div class="column">
-                    <b id="rain" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
-                  </div>
-                  <!-- Plant cover column -->
-                  <div class="column">
-                    <b id="plant" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
-                  </div>
-                  <div class="column"></div>
                 </div>
               </div>
               <!-- bottom row, future data -->
-              <div class="tile is-child box">
-                <!-- 2050 Climate Data - 4th row -->
-                <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
-                  <div class="column">
-                    <center>
-                      <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
-                    </center>
+              <div class="tile is-parent">
+                <div class="tile is-child box">
+                  <div id="future_data" class="columns" style="padding-top:0px; padding-bottom:0px; margin-bottom: 0px;">
+                    <div class="column">
+                      <b id="futureyear" style="font-size:30px;">2050</b>
+                    </div>
+                    <div class="column">
+                      <center>
+                        <b id="min2050" style="font-size:30px; color: rgba(33, 195, 239, 0.6);"></b>
+                      </center>
+                    </div>
+                    <div class="column">
+                      <center>
+                        <b id="max2050" style="font-size:30px; color: rgba(175, 0, 0, 0.6);"></b>
+                      </center>
+                    </div>
+                    <div class="column">
+                      <b id="rain2050" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
+                    </div>
+                    <div class="column">
+                      <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
+                    </div>
+                    <div class="column"></div>
                   </div>
-                  <div class="column">
-                    <center>
-                      <b id="max2050" style="font-size:30px; color: rgba(175, 0, 0, 0.6);"></b>
-                    </center>
-                  </div>
-                  <div class="column">
-                    <b id="rain2050" style="font-size:30px; color: rgba(11, 83, 226, 0.6);"></b>
-                  </div>
-                  <div class="column">
-                    <b id="plant2050" style="font-size:30px; color: rgba(13, 135, 2, 0.6);"></b>
-                  </div>
-                  <div class="column"></div>
                 </div>
               </div>
             </div>
             <div class="tile is-3 is-vertical is-parent">
               <div class="tile is-child box">
                 <!-- Shift column -->
-                <div class="column is-half is-offset-one-quarter">
-                  <center>
-                    <a id="shift" class="button is-link" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
-                  </center>
-                </div>
+                <a id="shift" class="button is-link" style="animation-delay: 1.3s;" onclick="newTemps(window.sessionStorage.currentTemps)">View data from 2050!</a>
               </div>
               <div class="tile is-child box">
                 <!-- Question button & prompt -->
-                <div id="question_content" class="card-content" style="padding-top:0px;">
+                <div id="question_content" class="card-content" style="font-size: 20px; padding-top:0px;">
                   <a class="btn-floating btn-small waves-effect waves-light" onclick="shuffle_question()"><i class="fa fa-refresh"></i></a>
                   <span id="random_question"></span>
                 </div>
-                <div class="columns">
-                  <div class="column is-half is-offset-5" style="padding-top:0px;">
-                    <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
-                  </div>
-                </div>
+                <button class="button is-primary" id="sharesubmit" type="submit">Submit!</button>
               </div>
             </div>
           </div>  
@@ -258,7 +252,6 @@
   // When the document first loads, set the button to invisible.
   $(document).ready(function() {
      document.getElementById("sharesubmit").style.visibility = "hidden";
-     document.getElementById("filler1").style.visibility = "hidden";
      hide_all();
   });
   window.sessionStorage.prevTopic = "";
