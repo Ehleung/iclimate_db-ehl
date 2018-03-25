@@ -91,7 +91,7 @@ function hide_all() {
   document.getElementById("questionbox").style.display = "none";
   document.getElementById("input_box").style.display = "none";
   document.getElementById("label_tile").style.display = "none";
-    document.getElementById("data_tile").style.display = "none";
+  document.getElementById("data_tile").style.display = "none";
 
   document.getElementById("label0").style.visibility = "hidden";
   document.getElementById("label1").style.visibility = "hidden";
@@ -110,7 +110,7 @@ function hide_all() {
   document.getElementById("rain2050").style.visibility = "hidden";
   document.getElementById("plant2050").style.visibility = "hidden";
   document.getElementById("futureyear").style.visibility = "hidden";
-  
+  document.getElementById("sharesubmit").style.visibility = "hidden";
   
   // Init clickedData to track whether a user has clicked on new data or not.
   window.sessionStorage.clickedData = 0;
@@ -118,7 +118,6 @@ function hide_all() {
 
 function updateTemps(locationStr) {
   // console.log(locationStr);
-  document.getElementById("sharesubmit").style.visibility = "hidden";
   window.sessionStorage.currentTemps = 0;
   window.sessionStorage.clickedData = 0;
   var i;
@@ -134,8 +133,6 @@ function updateTemps(locationStr) {
     document.getElementById("data_tile").style.display = "block";
     document.getElementById("shift").style.display = "block";
     document.getElementById("shift").style.visibility = "visible";
-    document.getElementById("questionbox").style.display = "block";
-    document.getElementById("shuffle_button").style.visibility = "visible";
     document.getElementById("currentyear").style.visibility = "visible";
     document.getElementById("label0").style.visibility = "visible";
 
@@ -192,6 +189,7 @@ function newTemps(currentTemps) {
     window.sessionStorage.clickedData = 1;
 
     document.getElementById("questionbox").style.display = "block";
+    document.getElementById("shuffle_button").style.visibility = "visible";
     document.getElementById("question_content").style.visibility = "visible";
     document.getElementById("shift").style.display = "none";
     document.getElementById("input_box").style.display = "block";
