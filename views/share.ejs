@@ -17,6 +17,10 @@
 		<script src="materialize/js/materialize.min.js"></script>
 
     <style>
+    .navbar {
+        background-color: #00D1B2;
+        color: white;
+    }
     .gradient-icon {
         background: -webkit-gradient(linear, left top, left bottom, from(#21c3ef), to(#ff0000));
         -webkit-background-clip: text;
@@ -59,19 +63,22 @@
   </head>
 
 	<!-- navbar -->
-	<nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo" style="padding-left: 20px">Imagining Climate</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a onclick="showAbout()" id="about_button1">About Us</a></li>
-        <li><a href="/explore">Explore</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a onclick="showAbout()" id="about_button1">About Us</a></li>
-        <li><a href="/explore">Explore</a></li>
-      </ul>
-    </div>
+	<nav class="navbar">
+      <div class="navbar-brand">
+          <a class="navbar-item" href="http://www.imaginingclimate.com"><b>Imagining Climate</b></a>
+          <span id="nav-toggle" class="nav-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </span>
+      </div>
+      <div class="navbar-menu is-primary">
+          <div class="navbar-end">
+              <a class="navbar-item" onclick="showAbout()">About Us</a>
+              <a class="navbar-item" href="/share">Share</a>
+              <a class="navbar-item" href="/explore">Explore</a>
+          </div>
+      </div>
   </nav>
 
 <body onload="world()">
