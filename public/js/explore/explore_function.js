@@ -1,7 +1,3 @@
-function setPositionToEverest() { 
-  earth.setView([27.988056, 86.925278]);
-}
-
 function flyToArizona() {
 // earth.fitBounds([[30, -92], [40, -100]]);
 
