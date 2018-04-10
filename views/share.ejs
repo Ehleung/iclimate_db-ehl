@@ -215,7 +215,7 @@
 
           <!-- Story input goes here -->
           <div class="tile is-ancestor">
-            <div class="tile is-parent">
+            <div class="tile is-parent is-9">
               <div class="tile is-child box" id="input_box">
                 <div class="columns">
                   <div class="column">
@@ -229,6 +229,22 @@
                   </div>
                 </div>
                 <textarea class="textarea" onkeyup="checkValid()" id="textarea1" name="story" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="Write your story here!"></textarea>
+              </div>
+            </div>
+            <div class="tile is-parent is-3">
+              <div class="tile is-child box" id="opt_box">
+                <div class="select" id="age" name="age">
+                  <select>
+                    <option>Age (Optional)</option>
+                    <option>Younger than 13 years old</option>
+                    <option>13-19 years old</option>
+                    <option>20-26 years old</option>
+                    <option>27-33 years old</option>
+                    <option>34-40 years old</option>
+                    <option>Older than 40 years old</option>
+                  </select>
+                </div>
+                <input class="input" type="text" id="email" name="email" placeholder="Email (Optional)" style="display:none;"></input>
               </div>
             </div>
           </div>

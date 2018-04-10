@@ -90,6 +90,7 @@ function hide_all() {
   document.getElementById("shift").style.display = "none";
   document.getElementById("questionbox").style.display = "none";
   document.getElementById("input_box").style.display = "none";
+  document.getElementById("opt_box").style.display = "none";
   document.getElementById("label_tile").style.display = "none";
   document.getElementById("data_tile").style.display = "none";
 
@@ -112,6 +113,7 @@ function hide_all() {
   document.getElementById("futureyear").style.visibility = "hidden";
   document.getElementById("sharesubmit").style.visibility = "hidden";
   
+
   // Init clickedData to track whether a user has clicked on new data or not.
   window.sessionStorage.clickedData = 0;
 }
@@ -193,5 +195,6 @@ function newTemps(currentTemps) {
     document.getElementById("question_content").style.visibility = "visible";
     document.getElementById("shift").style.display = "none";
     document.getElementById("input_box").style.display = "block";
+    document.getElementById("opt_box").style.display = "block";
   }
 }
