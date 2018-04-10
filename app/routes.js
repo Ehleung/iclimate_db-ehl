@@ -57,6 +57,8 @@ module.exports = function(app) {
 		newStory.title = req.body.title;
 		newStory.story = req.body.story;
 		newStory.comments = [];
+		newStory.age = req.body.age;
+		newStory.email = req.body.email;
 		newStory.save(req.body, function(err, doc) {
 			res.redirect('/explore');
 		});

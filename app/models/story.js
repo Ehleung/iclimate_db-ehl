@@ -5,7 +5,9 @@ var storySchema = mongoose.Schema({
 	author : String,
 	title : String,
 	story : String,
-	comments : Array	
+	comments : Array,
+	email : String,
+	age : Integer	
 });
 
 // methods ======================================
