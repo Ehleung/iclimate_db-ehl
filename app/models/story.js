@@ -7,7 +7,7 @@ var storySchema = mongoose.Schema({
 	story : String,
 	comments : Array,
 	email : String,
-	age : Integer	
+	age : String
 });
 
 // methods ======================================
