@@ -3,7 +3,7 @@ var earth;
 var locations = [
   ["Grand_Canyon_National_Park", [36.05972, -112.10972]],
   ["Tonto_Natural_Bridge_State_Park", [34.32195, -111.45333]],
-  ["Organ_Pipe_Cactus_National_Monument ", [31.95556, -112.80028]],
+  ["Organ_Pipe_Cactus_National_Monument", [31.95556, -112.80028]],
   ["Lake_Havasu", [34.50306, -114.36028]],
   ["Flagstaff", [35.14417, -111.66639]],
   ["Nogales", [31.42083, -110.84583]],
