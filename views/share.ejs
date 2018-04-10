@@ -222,7 +222,7 @@
                     <input class="input" onkeyup="checkValid()" type="text" id="user" name="user" placeholder="Story written by:" style="width:300px;"></input>
                   </div>
                   <div class="column">
-                    <input class="input" onkeyup="checkValid()" type="text" id="title" name="title" placeholder="Give your story a title!" style="width:500px;"></input>
+                    <input class="input" onkeyup="checkValid()" type="text" id="title" name="title" placeholder="Give your story a title!" style=""></input>
                   </div>
                 </div>
                 <textarea class="textarea" onkeyup="checkValid()" id="textarea1" name="story" style="font-size: 20px; padding-bottom: 0px;padding-top: 0px; margin-bottom: 0px;" placeholder="Write your story here!"></textarea>
@@ -230,22 +230,24 @@
             </div>
             <div class="tile is-vertical is-parent is-3">
               <div class="tile is-child box" id="opt_box">
-                <div class="select" id="age" name="age">
-                  <select>
-                    <option>Age (Optional)</option>
-                    <option>Younger than 13 years old</option>
-                    <option>13-19 years old</option>
-                    <option>20-26 years old</option>
-                    <option>27-33 years old</option>
-                    <option>34-40 years old</option>
-                    <option>Older than 40 years old</option>
-                  </select>
-                </div>
+                <span>
+                  <div class="select" id="age" name="age">
+                    <select>
+                      <option>Age (Optional)</option>
+                      <option>Younger than 13 years old</option>
+                      <option>13-19 years old</option>
+                      <option>20-26 years old</option>
+                      <option>27-33 years old</option>
+                      <option>34-40 years old</option>
+                      <option>Older than 40 years old</option>
+                    </select>
+                  </div>
+                </span>
                 <!--  Uncomment this to include the optional email  
                 <input class="input" type="text" id="email" name="email" placeholder="Email (Optional)" style="display:none;"></input>
                 -->
                 <center>
-                  <button class="button is-primary" id="sharesubmit" type="submit" style="visibility: hidden; padding-top: 50px;">Submit your Story!</button>
+                  <button class="button is-primary" id="sharesubmit" type="submit" style="visibility: hidden;">Submit your Story!</button>
                 </center>
               </div>
             </div>
